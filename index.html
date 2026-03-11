@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>inimu | Workshop</title>
+    <meta
+      name="description"
+      content="香りブランド inimu の Workshop ページヘッダー実装"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Noto+Sans+JP:wght@400;500;700&family=Playfair+Display:wght@600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="site-header__inner">
+        <a class="site-header__brand" href="./index.html" aria-label="inimu ホーム">
+          <span class="site-header__brand-mark">inimu</span>
+        </a>
+
+        <button
+          class="site-header__toggle"
+          type="button"
+          aria-expanded="false"
+          aria-controls="site-navigation"
+          aria-label="メニューを開閉"
+        >
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+
+        <nav class="site-nav" id="site-navigation" aria-label="グローバルナビゲーション">
+          <ul class="site-nav__list">
+            <li><a class="site-nav__link" href="./index.html">Top</a></li>
+            <li><a class="site-nav__link" href="#concept">Brand</a></li>
+            <li>
+              <a class="site-nav__link is-current" href="./index.html" aria-current="page"
+                >Workshop</a
+              >
+            </li>
+            <li><a class="site-nav__link" href="#footer">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main></main>
+
+    <script src="./script.js"></script>
+  </body>
+</html>
