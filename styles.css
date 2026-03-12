@@ -368,7 +368,7 @@ button {
   font-size: 64px;
   font-weight: 600;
   line-height: 1.2;
-  text-align: center;
+  text-align: left;
 }
 
 .workshop-value__list {
@@ -471,7 +471,7 @@ button {
   display: grid;
   justify-items: center;
   padding: 32px 24px 36px;
-  background: #d9d9d9;
+  background: #de9a81;
   text-align: center;
 }
 
