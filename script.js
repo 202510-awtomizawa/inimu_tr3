@@ -11,3 +11,19 @@ if (header && toggleButton && navigation) {
     navigation.classList.toggle("is-open", !isExpanded);
   });
 }
+
+const heroSlider = document.querySelector(".workshop-header__hero-slider");
+const heroSlides = document.querySelectorAll(".workshop-header__hero-slide");
+
+if (heroSlider && heroSlides.length > 1) {
+  let currentSlideIndex = 0;
+
+  window.setInterval(() => {
+    currentSlideIndex = (currentSlideIndex + 1) % heroSlides.length;
+    heroSlider.style.transform = `translateX(-${currentSlideIndex * 100}%)`;
+
+    heroSlides.forEach((slide, index) => {
+      slide.setAttribute("aria-hidden", String(index !== currentSlideIndex));
+    });
+  }, 4000);
+}
