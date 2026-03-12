@@ -363,9 +363,9 @@ button {
 }
 
 .workshop-value__title {
-  margin: 0 0 64px;
+  margin: 0 0 80px;
   font-family: var(--font-heading);
-  font-size: 2rem;
+  font-size: 64px;
   font-weight: 600;
   line-height: 1.2;
   text-align: center;
@@ -374,6 +374,7 @@ button {
 .workshop-value__list {
   display: grid;
   gap: 120px;
+  transform: translateY(16px);
 }
 
 .workshop-value__item {
@@ -397,7 +398,7 @@ button {
   display: block;
   width: 100%;
   height: 360px;
-  background: #d9d9d9;
+  object-fit: cover;
 }
 
 .workshop-value__card {
@@ -421,4 +422,100 @@ button {
   font-size: 1rem;
   line-height: 1.9;
   text-align: center;
+}
+
+.workshop-course {
+  padding: 200px var(--space-2) 0;
+}
+
+.workshop-course__container {
+  width: min(100%, 960px);
+  margin: 0 auto;
+}
+
+.workshop-course__heading {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 20px;
+}
+
+.workshop-course__title {
+  margin: 0;
+  font-family: var(--font-heading);
+  font-size: 64px;
+  font-weight: 600;
+  line-height: 1;
+}
+
+.workshop-course__line {
+  width: 56px;
+  height: 1px;
+  background: #9c9c9c;
+}
+
+.workshop-course__lead {
+  margin: 0;
+  font-size: 0.875rem;
+  line-height: 1.5;
+}
+
+.workshop-course__cards {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 36px;
+  margin-top: 56px;
+}
+
+.workshop-course__card {
+  display: grid;
+  justify-items: center;
+  padding: 32px 24px 36px;
+  background: #d9d9d9;
+  text-align: center;
+}
+
+.workshop-course__card-title {
+  margin: 0;
+  font-family: var(--font-heading);
+  font-size: 2rem;
+  font-weight: 600;
+  line-height: 1.1;
+}
+
+.workshop-course__card-subtitle {
+  margin: 8px 0 0;
+  font-size: 0.875rem;
+  line-height: 1.6;
+}
+
+.workshop-course__image-wrapper {
+  width: min(100%, 220px);
+  margin-top: 28px;
+}
+
+.workshop-course__image {
+  width: 100%;
+  height: 180px;
+  background: #ffffff;
+}
+
+.workshop-course__description {
+  margin: 28px 0 0;
+  font-size: 0.875rem;
+  line-height: 1.7;
+}
+
+.workshop-course__button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 108px;
+  min-height: 34px;
+  margin-top: 28px;
+  border: 1px solid #333333;
+  background: #ffffff;
+  font-size: 1rem;
+  font-weight: 600;
+  line-height: 1;
 }
