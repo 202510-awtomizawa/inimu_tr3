@@ -25,7 +25,7 @@
 
 body {
   margin: 0;
-  background: #efefef;
+  background: var(--color-background);
   color: var(--color-primary);
   font-family: var(--font-body);
 }
@@ -236,6 +236,15 @@ button {
   box-shadow: 0 6px 14px rgba(51, 51, 51, 0.12);
 }
 
+.workshop-header__cta {
+  transition: background-color 0.2s ease, border-color 0.2s ease,
+    box-shadow 0.2s ease, transform 0.22s ease;
+}
+
+.workshop-header__cta:hover {
+  transform: translateY(-2px);
+}
+
 @supports not (aspect-ratio: 1248 / 707) {
   .workshop-header__visual::before {
     content: "";
@@ -298,4 +307,40 @@ button {
     bottom: 12px;
     max-width: 360px;
   }
+}
+
+.workshop-intro {
+  width: min(100%, 1248px);
+  margin: 0 auto;
+  padding: 200px var(--space-2) 0;
+  margin-top: -48px;
+  background: var(--color-background);
+}
+
+.workshop-intro__container {
+  width: min(100%, 960px);
+  margin: 0 auto;
+  text-align: center;
+}
+
+.workshop-intro__title {
+  margin: 0;
+  font-family: var(--font-heading);
+  font-size: 2rem;
+  font-weight: 600;
+  line-height: 1.1;
+}
+
+.workshop-intro__description {
+  margin: 24px 0 0;
+  font-size: 1rem;
+  line-height: 1.9;
+}
+
+.workshop-intro__image-wrapper {
+  width: 100%;
+  height: 390px;
+  margin-top: 64px;
+  background: #ddd;
+  border-radius: 10px;
 }
