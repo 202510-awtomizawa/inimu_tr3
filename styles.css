@@ -612,3 +612,118 @@ button {
   display: block;
   object-fit: cover;
 }
+
+.workshop-reservation {
+  padding: 200px var(--space-2) 0;
+}
+
+.workshop-reservation__container {
+  width: min(100%, 960px);
+  margin: 0 auto;
+}
+
+.workshop-reservation__frame {
+  display: grid;
+  place-items: center;
+  min-height: 240px;
+  background: #de9a81;
+}
+
+.workshop-reservation__link {
+  display: grid;
+  justify-items: center;
+  gap: 0;
+  color: inherit;
+  transition: transform 0.2s ease;
+}
+
+.workshop-reservation__link:hover {
+  transform: translateY(-3px);
+}
+
+.workshop-footer {
+  padding: 200px var(--space-2) 48px;
+}
+
+.workshop-footer__container {
+  width: min(100%, 960px);
+  margin: 0 auto;
+  padding: 72px 48px 24px;
+  background: #333333;
+  color: #ffffff;
+}
+
+.workshop-footer__links {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr 1fr;
+  gap: 56px;
+}
+
+.workshop-footer__column {
+  display: grid;
+  align-content: start;
+  gap: 14px;
+}
+
+.workshop-footer__link {
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.workshop-footer__copyright {
+  margin: 72px 0 0;
+  font-size: 0.75rem;
+  line-height: 1.4;
+  text-align: right;
+}
+
+.workshop-reservation__heading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+}
+
+.workshop-reservation__line {
+  width: 70px;
+  height: 1px;
+  background: #333333;
+}
+
+.workshop-reservation__title {
+  margin: 0;
+  font-family: var(--font-heading);
+  font-size: 64px;
+  font-weight: 600;
+  line-height: 1;
+}
+
+.workshop-reservation__arrow {
+  display: flex;
+  align-items: center;
+  width: 550px;
+  height: 24px;
+}
+
+.workshop-reservation__arrow-line {
+  display: block;
+  width: 532px;
+  height: 1px;
+  background: #333333;
+}
+
+.workshop-reservation__arrow-head {
+  display: block;
+  width: 18px;
+  height: 18px;
+  border-top: 1px solid #333333;
+  border-right: 1px solid #333333;
+  transform: rotate(45deg);
+  transform-origin: center;
+}
+
+.workshop-reservation__text {
+  margin: 4px 0 0;
+  font-size: 20px;
+  line-height: 1.4;
+}
