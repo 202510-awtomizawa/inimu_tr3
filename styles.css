@@ -352,3 +352,73 @@ button {
   display: block;
   object-fit: cover;
 }
+
+.workshop-value {
+  padding: 200px var(--space-2) 0;
+}
+
+.workshop-value__container {
+  width: min(100%, 960px);
+  margin: 0 auto;
+}
+
+.workshop-value__title {
+  margin: 0 0 64px;
+  font-family: var(--font-heading);
+  font-size: 2rem;
+  font-weight: 600;
+  line-height: 1.2;
+  text-align: center;
+}
+
+.workshop-value__list {
+  display: grid;
+  gap: 120px;
+}
+
+.workshop-value__item {
+  position: relative;
+  min-height: 420px;
+}
+
+.workshop-value__image-wrapper {
+  width: min(100%, 620px);
+}
+
+.workshop-value__item--left .workshop-value__image-wrapper {
+  margin-left: auto;
+}
+
+.workshop-value__item--right .workshop-value__image-wrapper {
+  margin-right: auto;
+}
+
+.workshop-value__image {
+  display: block;
+  width: 100%;
+  height: 360px;
+  background: #d9d9d9;
+}
+
+.workshop-value__card {
+  position: absolute;
+  bottom: 24px;
+  width: min(100%, 280px);
+  padding: 24px 20px;
+  background: rgba(222, 154, 129, 0.8);
+}
+
+.workshop-value__item--right .workshop-value__card {
+  right: 24px;
+}
+
+.workshop-value__item--left .workshop-value__card {
+  left: 24px;
+}
+
+.workshop-value__text {
+  margin: 0;
+  font-size: 1rem;
+  line-height: 1.9;
+  text-align: center;
+}
