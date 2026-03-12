@@ -342,5 +342,13 @@ button {
   height: 390px;
   margin-top: 64px;
   background: #ddd;
-  border-radius: 10px;
+  border-radius: 0;
+  overflow: hidden;
+}
+
+.workshop-intro__image {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
 }
