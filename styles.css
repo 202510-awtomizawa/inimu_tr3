@@ -738,3 +738,297 @@ button {
   font-size: 20px;
   line-height: 1.4;
 }
+
+@media (max-width: 1024px) {
+  .workshop-intro,
+  .workshop-value,
+  .workshop-course,
+  .workshop-flow,
+  .workshop-reservation,
+  .workshop-footer {
+    padding-top: 140px;
+  }
+
+  .workshop-value__list {
+    gap: 88px;
+  }
+
+  .workshop-value__item {
+    min-height: 0;
+  }
+
+  .workshop-value__image-wrapper {
+    width: min(100%, 560px);
+  }
+
+  .workshop-value__image {
+    height: 320px;
+  }
+
+  .workshop-course__cards {
+    gap: 24px;
+  }
+
+  .workshop-flow__item,
+  .workshop-flow__item--left-image {
+    grid-template-columns: 120px 1fr 160px;
+    gap: 24px;
+  }
+
+  .workshop-reservation__arrow {
+    width: min(100%, 440px);
+  }
+
+  .workshop-reservation__arrow-line {
+    width: calc(100% - 18px);
+  }
+
+  .workshop-footer__container {
+    padding: 56px 32px 24px;
+  }
+
+  .workshop-footer__links {
+    gap: 32px;
+  }
+}
+
+@media (max-width: 768px) {
+  .workshop-header {
+    padding: 24px 12px 48px;
+  }
+
+  .workshop-header__panel {
+    padding: 20px 12px 32px;
+  }
+
+  .workshop-header__bar {
+    grid-template-columns: 40px 1fr 40px;
+    gap: 12px;
+  }
+
+  .workshop-header__menu,
+  .workshop-header__icon {
+    width: 40px;
+    height: 40px;
+  }
+
+  .workshop-header__menu span,
+  .workshop-header__icon-svg,
+  .workshop-header__logo-image {
+    transform-origin: center;
+    transform: scale(0.78);
+  }
+
+  .workshop-header__breadcrumb-list {
+    font-size: 0.875rem;
+  }
+
+  .workshop-header__content {
+    right: 12px;
+    left: 12px;
+    bottom: 12px;
+    max-width: none;
+    padding: 14px 16px;
+  }
+
+  .workshop-header__copy {
+    font-size: clamp(1.75rem, 7vw, 2.25rem);
+    line-height: 1.3;
+  }
+
+  .workshop-header__subcopy {
+    font-size: clamp(1rem, 4.4vw, 1.5rem);
+  }
+
+  .workshop-header__cta {
+    min-width: 104px;
+    min-height: 36px;
+  }
+
+  .workshop-intro,
+  .workshop-value,
+  .workshop-course,
+  .workshop-flow,
+  .workshop-reservation,
+  .workshop-footer {
+    padding-top: 96px;
+  }
+
+  .workshop-intro {
+    margin-top: 0;
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+
+  .workshop-intro__description {
+    line-height: 1.8;
+  }
+
+  .workshop-intro__image-wrapper {
+    height: 280px;
+    margin-top: 40px;
+  }
+
+  .workshop-value,
+  .workshop-course,
+  .workshop-flow,
+  .workshop-reservation,
+  .workshop-footer {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+
+  .workshop-value__title,
+  .workshop-course__title,
+  .workshop-flow__title,
+  .workshop-reservation__title {
+    font-size: 2.5rem;
+  }
+
+  .workshop-value__title {
+    margin-bottom: 48px;
+  }
+
+  .workshop-value__list {
+    gap: 56px;
+    transform: none;
+  }
+
+  .workshop-value__item {
+    display: grid;
+    gap: 20px;
+  }
+
+  .workshop-value__item--left .workshop-value__image-wrapper,
+  .workshop-value__item--right .workshop-value__image-wrapper {
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  .workshop-value__image-wrapper {
+    width: 100%;
+  }
+
+  .workshop-value__image {
+    height: 260px;
+  }
+
+  .workshop-value__card {
+    position: static;
+    width: 100%;
+    max-width: none;
+  }
+
+  .workshop-course__heading,
+  .workshop-flow__heading {
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+
+  .workshop-course__line,
+  .workshop-flow__line {
+    width: 40px;
+  }
+
+  .workshop-course__cards {
+    grid-template-columns: 1fr;
+    margin-top: 40px;
+  }
+
+  .workshop-course__card {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .workshop-flow__list {
+    margin-top: 40px;
+  }
+
+  .workshop-flow__item,
+  .workshop-flow__item--left-image {
+    grid-template-columns: 1fr;
+    gap: 16px;
+    justify-items: center;
+    text-align: center;
+  }
+
+  .workshop-flow__label,
+  .workshop-flow__content {
+    text-align: center;
+  }
+
+  .workshop-flow__image-wrapper {
+    max-width: 320px;
+  }
+
+  .workshop-reservation__frame {
+    min-height: 200px;
+    padding: 24px 16px;
+  }
+
+  .workshop-reservation__arrow {
+    width: min(100%, 320px);
+  }
+
+  .workshop-reservation__text {
+    font-size: 1rem;
+    text-align: center;
+  }
+
+  .workshop-footer__container {
+    padding: 40px 20px 24px;
+  }
+
+  .workshop-footer__links {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .workshop-footer__copyright {
+    margin-top: 40px;
+    text-align: left;
+  }
+}
+
+@media (max-width: 480px) {
+  .workshop-header__breadcrumb-list {
+    font-size: 0.75rem;
+  }
+
+  .workshop-header__content {
+    padding: 12px;
+  }
+
+  .workshop-header__copy {
+    font-size: clamp(1.375rem, 7.2vw, 1.75rem);
+  }
+
+  .workshop-header__subcopy {
+    font-size: 0.9375rem;
+  }
+
+  .workshop-intro__title,
+  .workshop-course__card-title {
+    font-size: 1.75rem;
+  }
+
+  .workshop-value__title,
+  .workshop-course__title,
+  .workshop-flow__title,
+  .workshop-reservation__title {
+    font-size: 2rem;
+  }
+
+  .workshop-intro__image-wrapper,
+  .workshop-value__image {
+    height: 220px;
+  }
+
+  .workshop-reservation__arrow {
+    width: min(100%, 240px);
+  }
+
+  .workshop-reservation__text {
+    font-size: 0.875rem;
+  }
+}
