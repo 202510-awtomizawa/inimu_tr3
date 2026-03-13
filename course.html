@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>inimu | Course</title>
+  <meta name="description" content="香りブランド inimu のワークショップコース案内ページ" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Noto+Sans+JP:wght@400;500;700&family=Playfair+Display:ital,wght@0,600;1,500;1,600&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="./styles.css" />
+  <link rel="stylesheet" href="./course.css" />
+</head>
+
+<body>
+  <header class="workshop-header">
+    <div class="workshop-header__shell">
+      <div class="workshop-header__panel">
+        <div class="workshop-header__bar">
+          <button class="workshop-header__menu" type="button" aria-label="メニュー">
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+
+          <a class="workshop-header__logo" href="./index.html" aria-label="nana ホーム">
+            <img class="workshop-header__logo-image" src="./assets/logo-nana.svg" alt="nana" />
+          </a>
+
+          <a class="workshop-header__icon" href="#reservation" aria-label="予約">
+            <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false" class="workshop-header__icon-svg">
+              <rect x="3.5" y="4.5" width="17" height="16" rx="1.5"></rect>
+              <path d="M7 2.5V6"></path>
+              <path d="M17 2.5V6"></path>
+              <path d="M3.5 8.5H20.5"></path>
+              <path d="M8 13l2.2 2.2L16 9.8"></path>
+            </svg>
+          </a>
+        </div>
+
+        <nav class="workshop-header__breadcrumb" aria-label="パンくず">
+          <ol class="workshop-header__breadcrumb-list">
+            <li><a href="./index.html">TOP</a></li>
+            <li><a href="./index.html">ワークショップ</a></li>
+            <li aria-current="page">コース</li>
+          </ol>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="course-about" aria-labelledby="course-about-title">
+      <div class="course-about__container">
+        <header class="course-about__header">
+          <h1 class="course-about__title" id="course-about-title">COURSE</h1>
+          <div class="course-about__subhead" aria-label="2つの体験コース">
+            <span class="course-about__line" aria-hidden="true"></span>
+            <p class="course-about__subtitle">2つの体験コース</p>
+            <span class="course-about__line" aria-hidden="true"></span>
+          </div>
+        </header>
+
+        <div class="course-about__body">
+          <p class="course-about__copy">肌にのせられる香水作りのワークショップ。</p>
+
+          <div class="course-about__description">
+            <p>浅草の inimu 実店舗で開催している調香体験です。</p>
+            <p>現在は、香りの選び方や体験内容の異なる2種類のコースをご用意しています。<br />講師が丁寧にサポートするので、初めての方でも安心して香りづくりを楽しめます。</p>
+            <p>さらに、ワークショップで使用した単品香料はお持ち帰り可能。<br />ご自宅でも香りを混ぜて、あなただけの調香を続けられます。</p>
+            <p>浅草に遊びに来た際は、ぜひ体験してみてください。</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="course-detail" aria-labelledby="standard-course-title">
+      <div class="course-detail__container">
+        <article class="course-detail__block course-detail__block--standard">
+          <div class="course-detail__visual">
+            <img class="course-detail__image" src="assets/coursenew01.png" alt="standard course" />
+          </div>
+          <h2 class="course-detail__name" id="standard-course-title">STANDARD COURSE</h2>
+          <div class="course-detail__card">
+            <p class="course-detail__lead">《12種類の香りから4種類》を選び、自分だけの香りを作るスタンダードな調香体験。<br />初めての方でも参加しやすく、香りづくりの楽しさを気軽に体験できます。</p>
+            <dl class="course-detail__meta">
+              <div class="course-detail__meta-row">
+                <dt>【金額】</dt>
+                <dd>おひとり様 / 5,500円</dd>
+              </div>
+              <div class="course-detail__meta-row">
+                <dt>【所要時間】</dt>
+                <dd>1時間程度</dd>
+              </div>
+            </dl>
+          </div>
+        </article>
+
+        <article class="course-detail__block course-detail__block--special" aria-labelledby="special-course-title">
+          <div class="course-detail__visual">
+            <img class="course-detail__image" src="assets/coursenew02.png" alt="special course" />
+          </div>
+          <h2 class="course-detail__name" id="special-course-title">SPECIAL COURSE</h2>
+          <div class="course-detail__card">
+            <p class="course-detail__lead">《20種類以上の香りから4種類》を選び、より自由度の高い調香体験ができるコース。<br />選べる香りの幅が広く、より奥深い香りづくりを楽しみたい方におすすめです。</p>
+            <dl class="course-detail__meta">
+              <div class="course-detail__meta-row">
+                <dt>【金額】</dt>
+                <dd>おひとり様 / 5,500円</dd>
+              </div>
+              <div class="course-detail__meta-row">
+                <dt>【所要時間】</dt>
+                <dd>1時間程度</dd>
+              </div>
+            </dl>
+          </div>
+        </article>
+      </div>
+    </section>
+  </main>
+</body>
+
+</html>
