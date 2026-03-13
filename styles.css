@@ -59,6 +59,7 @@ button {
 .workshop-header__panel {
   padding: var(--space-3) var(--space-2) var(--space-4);
   background: var(--color-background);
+  padding-top: calc(var(--space-3) + 40px);
 }
 
 .workshop-header__bar {
@@ -66,6 +67,15 @@ button {
   grid-template-columns: 48px 1fr 48px;
   align-items: center;
   gap: var(--space-2);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  box-sizing: border-box;
+  padding-left: max(var(--space-2), calc((100vw - 1248px) / 2 + var(--space-2)));
+  padding-right: max(var(--space-2), calc((100vw - 1248px) / 2 + var(--space-2)));
+  z-index: 10;
+  background: rgba(255, 255, 255, 0.92);
 }
 
 .workshop-header__menu,
@@ -282,11 +292,13 @@ button {
   }
 
   .workshop-header__panel {
-    padding: var(--space-4) var(--space-5) 64px;
+    padding: calc(var(--space-4) + 48px) var(--space-5) 64px;
   }
 
   .workshop-header__bar {
     grid-template-columns: 56px 1fr 56px;
+    padding-left: max(var(--space-5), calc((100vw - 1248px) / 2 + var(--space-5)));
+    padding-right: max(var(--space-5), calc((100vw - 1248px) / 2 + var(--space-5)));
   }
 
   .workshop-header__menu,
