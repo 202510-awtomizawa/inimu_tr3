@@ -89,16 +89,21 @@ button {
 
 .workshop-header__menu span {
   display: block;
-  width: 18px;
+  width: 36px;
   height: 2px;
   background: currentColor;
 }
 
 .workshop-header__logo {
+  display: inline-flex;
+  align-items: center;
   justify-self: center;
-  font-family: var(--font-sub);
-  font-size: 0.875rem;
-  letter-spacing: 0.04em;
+}
+
+.workshop-header__logo-image {
+  display: block;
+  height: 36px;
+  width: auto;
 }
 
 .workshop-header__icon {
@@ -106,8 +111,8 @@ button {
 }
 
 .workshop-header__icon-svg {
-  width: 24px;
-  height: 24px;
+  width: 36px;
+  height: 36px;
   fill: none;
   stroke: currentColor;
   stroke-width: 1.7;
@@ -127,7 +132,7 @@ button {
   padding: 0;
   list-style: none;
   font-family: var(--font-sub);
-  font-size: 0.625rem;
+  font-size: 1rem;
   font-weight: 500;
   letter-spacing: 0.03em;
   color: var(--color-sub);
@@ -135,6 +140,7 @@ button {
 
 .workshop-header__breadcrumb-list li + li::before {
   content: ">";
+  font-size: 1em;
   margin-right: var(--space-1);
 }
 
