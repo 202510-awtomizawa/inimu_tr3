@@ -422,8 +422,8 @@ button {
 .workshop-value__card {
   position: absolute;
   bottom: 24px;
-  width: min(100%, 280px);
-  padding: 24px 20px;
+  width: min(100%, 400px);
+  padding: 40px 20px;
   background: rgba(222, 154, 129, 0.8);
 }
 
