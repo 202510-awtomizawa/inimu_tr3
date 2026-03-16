@@ -719,36 +719,57 @@ button {
   font-size: 64px;
   font-weight: 600;
   line-height: 1;
+  color: #333333;
 }
 
 .workshop-reservation__arrow {
+  --reservation-arrow-head-size: 26.44px;
+  --reservation-arrow-angle: 34deg;
   display: flex;
   align-items: center;
   width: 550px;
-  height: 24px;
+  height: 26.44px;
 }
 
 .workshop-reservation__arrow-line {
   display: block;
-  width: 532px;
+  flex: 1 1 auto;
+  width: auto;
   height: 1px;
   background: #333333;
 }
 
 .workshop-reservation__arrow-head {
-  display: block;
-  width: 18px;
-  height: 18px;
-  border-top: 1px solid #333333;
-  border-right: 1px solid #333333;
-  transform: rotate(45deg);
-  transform-origin: center;
+  position: relative;
+  width: var(--reservation-arrow-head-size);
+  height: var(--reservation-arrow-head-size);
+  margin-left: calc(-1 * var(--reservation-arrow-head-size));
+  flex-shrink: 0;
+}
+
+.workshop-reservation__arrow-head-line {
+  position: absolute;
+  top: 50%;
+  right: 0;
+  width: var(--reservation-arrow-head-size);
+  height: 1px;
+  background-color: #333333;
+  transform-origin: right center;
+}
+
+.workshop-reservation__arrow-head-line--top {
+  transform: translateY(-50%) rotate(calc(-1 * var(--reservation-arrow-angle)));
+}
+
+.workshop-reservation__arrow-head-line--bottom {
+  transform: translateY(-50%) rotate(var(--reservation-arrow-angle));
 }
 
 .workshop-reservation__text {
   margin: 4px 0 0;
   font-size: 20px;
   line-height: 1.4;
+  color: #333333;
 }
 
 @media (max-width: 1024px) {
@@ -789,10 +810,6 @@ button {
 
   .workshop-reservation__arrow {
     width: min(100%, 440px);
-  }
-
-  .workshop-reservation__arrow-line {
-    width: calc(100% - 18px);
   }
 
   .workshop-footer__container {
