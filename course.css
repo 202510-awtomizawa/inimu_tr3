@@ -285,3 +285,181 @@
     font-size: 16px;
   }
 }
+
+.fragrance-notes {
+  padding: 200px 16px 120px;
+  background: #ffffff;
+  color: #333333;
+}
+
+.fragrance-notes__container {
+  width: min(100%, 1200px);
+  margin: 0 auto;
+  text-align: center;
+}
+
+.fragrance-notes__header {
+  display: grid;
+  justify-items: center;
+  gap: 24px;
+}
+
+.fragrance-notes__title {
+  margin: 0;
+  font-family: "Playfair Display", serif;
+  font-size: 64px;
+  font-style: italic;
+  font-weight: 600;
+  line-height: 1;
+}
+
+.fragrance-notes__subhead {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+
+.fragrance-notes__line {
+  display: block;
+  width: 56px;
+  height: 1px;
+  background: #7a7979;
+}
+
+.fragrance-notes__subtitle {
+  margin: 0;
+  font-family: "Playfair Display", serif;
+  font-size: 20px;
+  font-style: italic;
+  font-weight: 500;
+  line-height: 1.2;
+}
+
+.fragrance-notes__body {
+  margin-top: 48px;
+}
+
+.fragrance-notes__description {
+  width: min(100%, 860px);
+  margin: 0 auto;
+  font-family: "Noto Sans JP", sans-serif;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 2;
+}
+
+.fragrance-notes__grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 32px;
+  margin-top: 80px;
+}
+
+.fragrance-notes__card {
+  display: grid;
+  justify-items: center;
+  align-content: start;
+  min-height: 240px;
+  padding: 40px 28px;
+  background-color: #de9a81;
+  border-radius: 0;
+  box-shadow: none;
+  text-align: center;
+}
+
+.fragrance-notes__name {
+  margin: 0;
+  font-family: "Playfair Display", serif;
+  font-size: 32px;
+  font-style: italic;
+  font-weight: 600;
+  line-height: 1.2;
+  color: #ffffff;
+}
+
+.fragrance-notes__card-line {
+  display: block;
+  width: 56px;
+  height: 1px;
+  margin-top: 20px;
+  background: rgba(255, 255, 255, 0.75);
+}
+
+.fragrance-notes__jp {
+  margin: 20px 0 0;
+  font-family: "Noto Sans JP", sans-serif;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 1.6;
+  color: #ffffff;
+}
+
+.fragrance-notes__tags {
+  margin: 16px 0 0;
+  font-family: "Noto Sans JP", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.8;
+  color: #ffffff;
+}
+
+@media (max-width: 1024px) {
+  .fragrance-notes__grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 768px) {
+  .fragrance-notes {
+    padding: 120px 16px 96px;
+  }
+
+  .fragrance-notes__title {
+    font-size: 36px;
+  }
+
+  .fragrance-notes__subtitle {
+    font-size: 18px;
+  }
+
+  .fragrance-notes__subhead {
+    gap: 12px;
+  }
+
+  .fragrance-notes__line {
+    width: 36px;
+  }
+
+  .fragrance-notes__body {
+    margin-top: 40px;
+  }
+
+  .fragrance-notes__description {
+    font-size: 16px;
+    line-height: 1.9;
+  }
+
+  .fragrance-notes__grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+    margin-top: 56px;
+  }
+
+  .fragrance-notes__card {
+    min-height: 0;
+    padding: 32px 24px;
+  }
+
+  .fragrance-notes__name {
+    font-size: 28px;
+  }
+
+  .fragrance-notes__jp {
+    font-size: 18px;
+  }
+
+  .fragrance-notes__tags {
+    font-size: 16px;
+  }
+}
