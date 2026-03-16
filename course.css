@@ -463,3 +463,131 @@
     font-size: 16px;
   }
 }
+
+.course-instructor {
+  padding: 200px 16px 120px;
+  background: #ffffff;
+  color: #333333;
+}
+
+.course-instructor__container {
+  width: min(100%, 1200px);
+  margin: 0 auto;
+  text-align: center;
+}
+
+.course-instructor__header {
+  display: grid;
+  justify-items: center;
+  gap: 18px;
+}
+
+.course-instructor__title {
+  margin: 0;
+  font-family: "Playfair Display", serif;
+  font-size: 64px;
+  font-style: italic;
+  font-weight: 600;
+  line-height: 1;
+}
+
+.course-instructor__subhead {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 18px;
+}
+
+.course-instructor__line {
+  display: block;
+  width: 48px;
+  height: 1px;
+  background: #7a7979;
+}
+
+.course-instructor__subtitle {
+  margin: 0;
+  font-family: "Playfair Display", serif;
+  font-size: 20px;
+  font-style: italic;
+  font-weight: 500;
+  line-height: 1.2;
+}
+
+.course-instructor__grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 72px;
+  margin-top: 80px;
+}
+
+.course-instructor__card {
+  display: grid;
+  justify-items: center;
+}
+
+.course-instructor__image {
+  width: min(100%, 272px);
+  aspect-ratio: 1 / 1;
+  background: #d9d9d9;
+}
+
+.course-instructor__name {
+  margin: 24px 0 0;
+  font-family: "Inter", "Noto Sans JP", sans-serif;
+  font-size: 48px;
+  font-weight: 400;
+  line-height: 1.15;
+}
+
+.course-instructor__description {
+  width: min(100%, 470px);
+  margin: 16px 0 0;
+  font-family: "Noto Sans JP", sans-serif;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 1.45;
+  text-align: center;
+}
+
+@media (max-width: 768px) {
+  .course-instructor {
+    padding: 120px 16px 96px;
+  }
+
+  .course-instructor__title {
+    font-size: 36px;
+  }
+
+  .course-instructor__subtitle {
+    font-size: 18px;
+  }
+
+  .course-instructor__subhead {
+    gap: 12px;
+  }
+
+  .course-instructor__line {
+    width: 36px;
+  }
+
+  .course-instructor__grid {
+    grid-template-columns: 1fr;
+    gap: 48px;
+    margin-top: 56px;
+  }
+
+  .course-instructor__image {
+    width: min(100%, 280px);
+  }
+
+  .course-instructor__name {
+    font-size: 32px;
+  }
+
+  .course-instructor__description {
+    width: min(100%, 340px);
+    font-size: 16px;
+    line-height: 1.75;
+  }
+}
