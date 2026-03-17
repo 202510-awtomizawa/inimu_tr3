@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>inimu | Reservation Form</title>
+  <meta name="description" content="香りブランド inimu の予約日付選択ページ" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Noto+Sans+JP:wght@400;500;700&family=Playfair+Display:ital,wght@0,600;1,500;1,600&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="./styles.css" />
+  <link rel="stylesheet" href="./reservation-form.css" />
+</head>
+
+<body>
+  <header class="workshop-header">
+    <div class="workshop-header__shell">
+      <div class="workshop-header__panel">
+        <div class="workshop-header__bar">
+          <button class="workshop-header__menu" type="button" aria-label="メニュー">
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+
+          <a class="workshop-header__logo" href="./index.html" aria-label="nana ホーム">
+            <img class="workshop-header__logo-image" src="./assets/logo-nana.svg" alt="nana" />
+          </a>
+
+          <a class="workshop-header__icon" href="#reservation" aria-label="予約">
+            <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false" class="workshop-header__icon-svg">
+              <rect x="3.5" y="4.5" width="17" height="16" rx="1.5"></rect>
+              <path d="M7 2.5V6"></path>
+              <path d="M17 2.5V6"></path>
+              <path d="M3.5 8.5H20.5"></path>
+              <path d="M8 13l2.2 2.2L16 9.8"></path>
+            </svg>
+          </a>
+        </div>
+
+        <nav class="workshop-header__breadcrumb" aria-label="パンくず">
+          <ol class="workshop-header__breadcrumb-list">
+            <li><a href="./index.html">TOP</a></li>
+            <li><a href="./index.html">ワークショップ</a></li>
+            <li><a href="./reservation.html">予約</a></li>
+            <li aria-current="page">予約フォーム</li>
+          </ol>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="reservation-form-date" aria-labelledby="reservation-form-date-title">
+      <div class="reservation-form-date__container">
+        <h1 class="reservation-form-date__guide" id="reservation-form-date-title">
+          カレンダーからご希望の日付を選択してください。
+        </h1>
+
+        <div class="reservation-form-date__calendar" aria-hidden="true"></div>
+
+        <ul class="reservation-form-date__legend" aria-label="予約状況凡例">
+          <li class="reservation-form-date__legend-item"><span class="reservation-form-date__mark">○</span>即時予約</li>
+          <li class="reservation-form-date__legend-item"><span class="reservation-form-date__mark">△</span>残数わずか</li>
+          <li class="reservation-form-date__legend-item"><span class="reservation-form-date__mark">×</span>受付終了</li>
+          <li class="reservation-form-date__legend-item"><span class="reservation-form-date__mark">―</span>開催なし</li>
+        </ul>
+      </div>
+    </section>
+  </main>
+</body>
+
+</html>
