@@ -487,6 +487,7 @@ button {
 
 .workshop-course__card {
   display: grid;
+  grid-template-rows: auto auto auto 1fr auto;
   justify-items: center;
   padding: 32px 24px 36px;
   background: rgba(222, 154, 129, 0.8);
@@ -508,9 +509,11 @@ button {
 }
 
 .workshop-course__image-wrapper {
-  width: min(100%, 220px);
-  height: 180px;
+  width: min(100%, 190px);
+  aspect-ratio: 1 / 1;
+  height: auto;
   margin-top: 28px;
+  background: #ffffff;
   overflow: hidden;
 }
 
