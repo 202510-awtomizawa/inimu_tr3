@@ -240,6 +240,93 @@
   bottom: 0;
 }
 
+.course-detail-extra {
+  padding: 32px 16px 0;
+  background: #ffffff;
+  color: #333333;
+}
+
+.course-detail-extra__container {
+  width: min(100%, 1200px);
+  margin: 0 auto;
+}
+
+.course-detail-extra__card {
+  position: relative;
+  border: 1px solid #d8d0ca;
+  background: #ffffff;
+}
+
+.course-detail-extra__card::before {
+  content: "";
+  position: absolute;
+  inset: 10px;
+  border: 1px solid rgba(222, 154, 129, 0.45);
+  pointer-events: none;
+}
+
+.course-detail-extra__card::after {
+  content: none;
+}
+
+.course-detail-extra__card--info {
+  width: min(100%, 560px);
+  margin-left: 44px;
+  padding: 28px 32px;
+}
+
+.course-detail-extra__lead {
+  margin: 0;
+  font-family: "Noto Sans JP", sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 1.8;
+}
+
+.course-detail-extra__meta {
+  margin: 24px 0 0;
+}
+
+.course-detail-extra__meta-row + .course-detail-extra__meta-row {
+  margin-top: 16px;
+}
+
+.course-detail-extra__meta-row dt,
+.course-detail-extra__meta-row dd {
+  margin: 0;
+  font-family: "Noto Sans JP", sans-serif;
+  font-size: 18px;
+  line-height: 1.6;
+}
+
+.course-detail-extra__meta-row dt {
+  font-weight: 500;
+}
+
+.course-detail-extra__meta-row dd {
+  margin-top: 4px;
+  font-weight: 400;
+}
+
+.course-detail-extra__card--wide {
+  width: min(100%, 1020px);
+  margin: 120px 0 0 84px;
+  padding: 44px 56px 40px;
+}
+
+.course-detail-extra__note {
+  margin: 18px 0 0;
+  font-family: "Noto Sans JP", sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 1.8;
+  text-align: center;
+}
+
+.course-detail-extra__note:first-child {
+  margin-top: 0;
+}
+
 @media (max-width: 768px) {
   .course-detail {
     padding: 120px 16px 96px;
@@ -283,6 +370,43 @@
   .course-detail__meta-row dt,
   .course-detail__meta-row dd {
     font-size: 16px;
+  }
+
+  .course-detail-extra {
+    padding-top: 24px;
+  }
+
+  .course-detail-extra__card--info {
+    width: 100%;
+    margin-left: 0;
+    padding: 24px 18px;
+  }
+
+  .course-detail-extra__lead {
+    font-size: 16px;
+    line-height: 1.9;
+  }
+
+  .course-detail-extra__meta {
+    margin-top: 20px;
+  }
+
+  .course-detail-extra__meta-row dt,
+  .course-detail-extra__meta-row dd {
+    font-size: 16px;
+    line-height: 1.7;
+  }
+
+  .course-detail-extra__card--wide {
+    width: 100%;
+    margin: 72px 0 0 0;
+    padding: 30px 18px 26px;
+  }
+
+  .course-detail-extra__note {
+    font-size: 16px;
+    line-height: 1.9;
+    text-align: left;
   }
 }
 
