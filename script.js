@@ -27,3 +27,11 @@ if (heroSlider && heroSlides.length > 1) {
     });
   }, 4000);
 }
+
+document.addEventListener("click", (event) => {
+  const availableCell = event.target.closest('.reservation-calendar .calendar-cell[data-status="available"][data-date]');
+  if (!availableCell) return;
+  const selectedDate = availableCell.getAttribute("data-date");
+  if (!selectedDate) return;
+  window.location.href = `./reservation-form.html?date=${encodeURIComponent(selectedDate)}`;
+});

@@ -252,6 +252,7 @@
       </p>
     </div>
   </footer>
+  <script src="./script.js"></script>
   <script>
     (function () {
       const calendarRoot = document.querySelector(".reservation-calendar");
@@ -324,6 +325,7 @@
             courseType = "standard";
           }
           const courseClass = courseType ? ` calendar-cell--${courseType}` : "";
+          const availableAttrs = status === "○" ? ` data-status="available" data-date="${dateStr}"` : "";
           let cardHtml = "";
           if (courseType === "standard") {
             cardHtml = `
@@ -342,7 +344,7 @@
           }
 
           grid.innerHTML += `
-            <div class="calendar-cell${courseClass}">
+            <div class="calendar-cell${courseClass}"${availableAttrs}>
               <div class="date">${d}</div>
               <div class="status">${status}</div>
               ${cardHtml}
