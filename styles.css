@@ -173,6 +173,43 @@ button {
   aspect-ratio: 1248 / 707;
 }
 
+.workshop-header[aria-labelledby="workshop-title"] .workshop-header__hero {
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw);
+}
+
+.workshop-header[aria-labelledby="workshop-title"] {
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw);
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.workshop-header[aria-labelledby="workshop-title"] .workshop-header__shell {
+  width: 100%;
+  max-width: none;
+}
+
+.workshop-header[aria-labelledby="workshop-title"] .workshop-header__breadcrumb {
+  width: 100%;
+  margin-left: 0;
+  margin-right: 0;
+}
+
+.workshop-header[aria-labelledby="workshop-title"] .workshop-header__visual {
+  width: 100%;
+}
+
+@media (min-width: 1249px) {
+  .workshop-header[aria-labelledby="workshop-title"],
+  .workshop-header[aria-labelledby="workshop-title"] + main,
+  .workshop-header[aria-labelledby="workshop-title"] + main + .workshop-footer {
+    zoom: calc(100vw / 1248);
+  }
+}
+
 .workshop-header__hero-slider {
   display: flex;
   width: 100%;
