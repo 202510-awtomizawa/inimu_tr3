@@ -145,6 +145,93 @@
   background: #d9d9d9;
 }
 
+.reservation-calendar {
+  height: 100%;
+  padding: 18px;
+  background: #ffffff;
+}
+
+.reservation-calendar__inner {
+  height: 100%;
+}
+
+.reservation-calendar .calendar-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.reservation-calendar .calendar-title {
+  font-family: "Noto Sans JP", sans-serif;
+  font-size: 20px;
+  font-weight: 500;
+}
+
+.reservation-calendar .calendar-nav {
+  width: 36px;
+  height: 36px;
+  border: 1px solid #c9c9c9;
+  background: #ffffff;
+  cursor: pointer;
+}
+
+.reservation-calendar .calendar-week {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  margin-bottom: 8px;
+  font-family: "Noto Sans JP", sans-serif;
+  font-size: 14px;
+  text-align: center;
+}
+
+.reservation-calendar .calendar-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+}
+
+.reservation-calendar .calendar-cell {
+  height: 72px;
+  border-right: 1px solid #dddddd;
+  border-bottom: 1px solid #dddddd;
+  text-align: center;
+  padding-top: 8px;
+  font-family: "Noto Sans JP", sans-serif;
+}
+
+.reservation-calendar .calendar-cell:nth-child(7n + 1) {
+  border-left: 1px solid #dddddd;
+}
+
+.reservation-calendar .calendar-grid .calendar-cell:nth-child(-n + 7) {
+  border-top: 1px solid #dddddd;
+}
+
+.reservation-calendar .calendar-cell .date {
+  font-size: 14px;
+  line-height: 1.3;
+}
+
+.reservation-calendar .calendar-cell .status {
+  margin-top: 8px;
+  font-size: 16px;
+  line-height: 1;
+}
+
+.reservation-calendar .calendar-cell.empty .status,
+.reservation-calendar .calendar-cell.empty .date {
+  visibility: hidden;
+}
+
+.reservation-calendar .calendar-legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 20px;
+  margin-top: 12px;
+  font-family: "Noto Sans JP", sans-serif;
+  font-size: 14px;
+}
+
 .reservation-date__legend {
   display: flex;
   justify-content: center;
@@ -233,6 +320,34 @@
     margin-top: 16px;
   }
 
+  .reservation-calendar {
+    padding: 10px;
+  }
+
+  .reservation-calendar .calendar-title {
+    font-size: 16px;
+  }
+
+  .reservation-calendar .calendar-cell {
+    height: 46px;
+    padding-top: 4px;
+  }
+
+  .reservation-calendar .calendar-cell .date {
+    font-size: 12px;
+  }
+
+  .reservation-calendar .calendar-cell .status {
+    margin-top: 4px;
+    font-size: 12px;
+  }
+
+  .reservation-calendar .calendar-legend {
+    margin-top: 8px;
+    font-size: 12px;
+    gap: 4px 12px;
+  }
+
   .reservation-date__legend {
     flex-wrap: wrap;
     gap: 16px 24px;
@@ -311,6 +426,7 @@
 
 .reservation-access__left {
   grid-column: 2;
+  grid-row: 1;
 }
 
 .reservation-access__address {
@@ -334,6 +450,7 @@
 .reservation-access__routes {
   margin-top: 48px;
   text-align: center;
+  transform: translateX(-64px);
 }
 
 .reservation-access__route {
@@ -351,6 +468,7 @@
 
 .reservation-access__map {
   grid-column: 1;
+  grid-row: 1;
   width: 100%;
   height: 560px;
   background: #d9d9d9;
@@ -370,6 +488,7 @@
   .reservation-access__left,
   .reservation-access__map {
     grid-column: auto;
+    grid-row: auto;
   }
 
   .reservation-access__address {
@@ -381,6 +500,7 @@
 
   .reservation-access__routes {
     margin-top: 24px;
+    transform: none;
   }
 
   .reservation-access__route {

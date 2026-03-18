@@ -120,14 +120,32 @@
           カレンダーからご希望の日付を選択してください。
         </h2>
 
-        <div class="reservation-date__placeholder" aria-hidden="true"></div>
+        <div class="reservation-date__placeholder">
+          <section class="reservation-calendar" aria-label="予約カレンダー">
+            <div class="reservation-calendar__inner">
+              <div class="calendar-header">
+                <button class="calendar-nav prev" type="button" aria-label="前の月">←</button>
+                <div class="calendar-title">2026年3月</div>
+                <button class="calendar-nav next" type="button" aria-label="次の月">→</button>
+              </div>
 
-        <ul class="reservation-date__legend" aria-label="予約状況凡例">
-          <li class="reservation-date__legend-item"><span class="reservation-date__mark">○</span>即時予約</li>
-          <li class="reservation-date__legend-item"><span class="reservation-date__mark">△</span>残数わずか</li>
-          <li class="reservation-date__legend-item"><span class="reservation-date__mark">×</span>受付終了</li>
-          <li class="reservation-date__legend-item"><span class="reservation-date__mark">―</span>開催なし</li>
-        </ul>
+              <div class="calendar-week" aria-hidden="true">
+                <span>日</span><span>月</span><span>火</span>
+                <span>水</span><span>木</span><span>金</span><span>土</span>
+              </div>
+
+              <div class="calendar-grid"></div>
+
+              <div class="calendar-legend">
+                <span>○ 即時予約</span>
+                <span>△ 残数わずか</span>
+                <span>× 受付終了</span>
+                <span>- 開催なし</span>
+              </div>
+            </div>
+          </section>
+        </div>
+
       </div>
     </section>
 
@@ -216,6 +234,64 @@
       </p>
     </div>
   </footer>
+  <script>
+    (function () {
+      const calendarRoot = document.querySelector(".reservation-calendar");
+      if (!calendarRoot) return;
+
+      const calendarState = {
+        year: 2026,
+        month: 2
+      };
+
+      function renderCalendar() {
+        const grid = calendarRoot.querySelector(".calendar-grid");
+        const title = calendarRoot.querySelector(".calendar-title");
+        const year = calendarState.year;
+        const month = calendarState.month;
+
+        title.textContent = `${year}年${month + 1}月`;
+
+        const firstDay = new Date(year, month, 1).getDay();
+        const lastDate = new Date(year, month + 1, 0).getDate();
+
+        grid.innerHTML = "";
+
+        for (let i = 0; i < firstDay; i++) {
+          grid.innerHTML += '<div class="calendar-cell empty"></div>';
+        }
+
+        for (let d = 1; d <= lastDate; d++) {
+          grid.innerHTML += `
+            <div class="calendar-cell">
+              <div class="date">${d}</div>
+              <div class="status">○</div>
+            </div>
+          `;
+        }
+      }
+
+      calendarRoot.querySelector(".prev").onclick = () => {
+        calendarState.month--;
+        if (calendarState.month < 0) {
+          calendarState.month = 11;
+          calendarState.year--;
+        }
+        renderCalendar();
+      };
+
+      calendarRoot.querySelector(".next").onclick = () => {
+        calendarState.month++;
+        if (calendarState.month > 11) {
+          calendarState.month = 0;
+          calendarState.year++;
+        }
+        renderCalendar();
+      };
+
+      renderCalendar();
+    })();
+  </script>
 </body>
 
 </html>
