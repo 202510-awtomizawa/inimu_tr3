@@ -146,6 +146,24 @@
           </section>
         </div>
 
+        <ul class="reservation-date__legend" aria-label="予約状況凡例">
+          <li class="reservation-date__legend-item"><span class="reservation-date__mark">○</span>即時予約</li>
+          <li class="reservation-date__legend-item"><span class="reservation-date__mark">△</span>残数わずか</li>
+          <li class="reservation-date__legend-item"><span class="reservation-date__mark">×</span>受付終了</li>
+          <li class="reservation-date__legend-item"><span class="reservation-date__mark">―</span>開催なし</li>
+        </ul>
+
+        <ul class="reservation-date__legend reservation-date__legend--course" aria-label="コース凡例">
+          <li class="reservation-date__legend-item">
+            <span class="reservation-date__color-chip reservation-date__color-chip--standard"></span>
+            STANDARD COURSE
+          </li>
+          <li class="reservation-date__legend-item">
+            <span class="reservation-date__color-chip reservation-date__color-chip--special"></span>
+            SPECIAL COURSE
+          </li>
+        </ul>
+
       </div>
     </section>
 
@@ -261,11 +279,73 @@
           grid.innerHTML += '<div class="calendar-cell empty"></div>';
         }
 
+        const holidays = [
+          "2026-01-01",
+          "2026-01-12",
+          "2026-02-11",
+          "2026-02-23",
+          "2026-03-20",
+          "2026-04-29",
+          "2026-05-03",
+          "2026-05-04",
+          "2026-05-05",
+          "2026-05-06",
+          "2026-07-20",
+          "2026-08-11",
+          "2026-09-21",
+          "2026-09-22",
+          "2026-09-23",
+          "2026-10-12",
+          "2026-11-03",
+          "2026-11-23"
+        ];
+        const monthLastDateObj = new Date(year, month + 1, 0);
+        const monthLastDay = monthLastDateObj.getDay();
+        const lastWeekStart = new Date(year, month, monthLastDateObj.getDate() - monthLastDay);
+        const lastWeekEnd = new Date(lastWeekStart);
+        lastWeekEnd.setDate(lastWeekStart.getDate() + 6);
+
         for (let d = 1; d <= lastDate; d++) {
+          const dateObj = new Date(year, month, d);
+          const day = dateObj.getDay();
+          const dateStr = `${year}-${String(month + 1).padStart(2, "0")}-${String(d).padStart(2, "0")}`;
+          const isWeekend = day === 0 || day === 6;
+          const isHoliday = holidays.includes(dateStr);
+          const isInLastWeek = dateObj >= lastWeekStart && dateObj <= lastWeekEnd;
+
+          let status = "―";
+          let courseType = "";
+
+          if (isInLastWeek && isWeekend) {
+            status = "○";
+            courseType = "special";
+          } else if (isWeekend || isHoliday) {
+            status = "○";
+            courseType = "standard";
+          }
+          const courseClass = courseType ? ` calendar-cell--${courseType}` : "";
+          let cardHtml = "";
+          if (courseType === "standard") {
+            cardHtml = `
+              <div class="calendar-course-card calendar-course-card--standard">
+                <p class="calendar-course-card__title">STANDARD COURSE</p>
+                <p class="calendar-course-card__description">１２種類の香りから４種類選べるコース</p>
+              </div>
+            `;
+          } else if (courseType === "special") {
+            cardHtml = `
+              <div class="calendar-course-card calendar-course-card--special">
+                <p class="calendar-course-card__title">SPECIAL COURSE</p>
+                <p class="calendar-course-card__description">２０種類以上の香りから４種類選べるコース</p>
+              </div>
+            `;
+          }
+
           grid.innerHTML += `
-            <div class="calendar-cell">
+            <div class="calendar-cell${courseClass}">
               <div class="date">${d}</div>
-              <div class="status">○</div>
+              <div class="status">${status}</div>
+              ${cardHtml}
             </div>
           `;
         }

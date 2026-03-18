@@ -140,7 +140,7 @@
 
 .reservation-date__placeholder {
   width: 100%;
-  height: 560px;
+  height: 660px;
   margin-top: 24px;
   background: #d9d9d9;
 }
@@ -152,6 +152,8 @@
 }
 
 .reservation-calendar__inner {
+  display: flex;
+  flex-direction: column;
   height: 100%;
 }
 
@@ -188,10 +190,14 @@
 .reservation-calendar .calendar-grid {
   display: grid;
   grid-template-columns: repeat(7, 1fr);
+  flex: 1;
+  grid-auto-rows: 1fr;
 }
 
 .reservation-calendar .calendar-cell {
-  height: 72px;
+  position: relative;
+  height: auto;
+  min-height: 72px;
   border-right: 1px solid #dddddd;
   border-bottom: 1px solid #dddddd;
   text-align: center;
@@ -223,6 +229,61 @@
   visibility: hidden;
 }
 
+.reservation-calendar .calendar-cell--standard {
+  background-color: rgba(202, 232, 226, 0.5);
+}
+
+.reservation-calendar .calendar-cell--special {
+  background-color: #fddac5;
+}
+
+.reservation-calendar .calendar-course-card {
+  display: none;
+  position: absolute;
+  left: calc(100% + 8px);
+  top: 28px;
+  transform: none;
+  width: 256px;
+  height: 64px;
+  padding: 8px 12px;
+  border: 1px solid #333333;
+  background: #ffffff;
+  z-index: 10;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 2px;
+  box-sizing: border-box;
+}
+
+.reservation-calendar .calendar-cell:hover .calendar-course-card {
+  display: flex;
+}
+
+.reservation-calendar .calendar-course-card__title,
+.reservation-calendar .calendar-course-card__description {
+  margin: 0;
+  font-family: "Playfair Display", serif;
+  font-style: italic;
+  line-height: 1.1;
+}
+
+.reservation-calendar .calendar-course-card__title {
+  font-size: 20px;
+}
+
+.reservation-calendar .calendar-course-card__description {
+  font-size: 12px;
+}
+
+.reservation-calendar .calendar-course-card--standard .calendar-course-card__title {
+  text-shadow: 1px 0 0 #cae8e2, -1px 0 0 #cae8e2;
+}
+
+.reservation-calendar .calendar-course-card--special .calendar-course-card__title {
+  text-shadow: 1px 0 0 #fddac5, -1px 0 0 #fddac5;
+}
+
 .reservation-calendar .calendar-legend {
   display: flex;
   flex-wrap: wrap;
@@ -230,6 +291,7 @@
   margin-top: 12px;
   font-family: "Noto Sans JP", sans-serif;
   font-size: 14px;
+  display: none;
 }
 
 .reservation-date__legend {
@@ -237,7 +299,7 @@
   justify-content: center;
   align-items: center;
   gap: 40px;
-  margin: 24px 0 0;
+  margin: 12px 0 0;
   padding: 0;
   list-style: none;
 }
@@ -257,6 +319,27 @@
   display: inline-block;
   min-width: 1em;
   text-align: center;
+}
+
+.reservation-date__legend--course {
+  margin-top: 8px;
+}
+
+.reservation-date__color-chip {
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  margin-right: 4px;
+  border: 1px solid rgba(51, 51, 51, 0.15);
+  border-radius: 2px;
+}
+
+.reservation-date__color-chip--standard {
+  background-color: #cae8e2;
+}
+
+.reservation-date__color-chip--special {
+  background-color: #fddac5;
 }
 
 @media (max-width: 768px) {
@@ -316,7 +399,7 @@
   }
 
   .reservation-date__placeholder {
-    height: 360px;
+    height: 430px;
     margin-top: 16px;
   }
 
@@ -329,7 +412,7 @@
   }
 
   .reservation-calendar .calendar-cell {
-    height: 46px;
+    min-height: 46px;
     padding-top: 4px;
   }
 
