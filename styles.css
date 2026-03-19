@@ -30,6 +30,11 @@ body {
   font-family: var(--font-body);
 }
 
+.page-workshop {
+  --color-background: rgba(169, 169, 169, 0.15);
+  background: rgba(169, 169, 169, 0.15);
+}
+
 a {
   color: inherit;
   text-decoration: none;
@@ -58,7 +63,7 @@ button {
 
 .workshop-header__panel {
   padding: var(--space-3) var(--space-2) var(--space-4);
-  background: var(--color-background);
+  background: rgba(222, 154, 129, 0.8);
   padding-top: calc(var(--space-3) + 40px);
 }
 
@@ -75,7 +80,7 @@ button {
   padding-left: 20px;
   padding-right: 20px;
   z-index: 10;
-  background: rgba(255, 255, 255, 0.92);
+  background: rgba(222, 154, 129, 0.8);
 }
 
 .workshop-header__menu,
@@ -131,6 +136,9 @@ button {
 }
 
 .workshop-header__breadcrumb {
+  display: inline-block;
+  width: fit-content;
+  max-width: 100%;
   margin-top: var(--space-4);
 }
 
@@ -193,7 +201,7 @@ button {
 }
 
 .workshop-header[aria-labelledby="workshop-title"] .workshop-header__breadcrumb {
-  width: 100%;
+  width: fit-content;
   margin-left: 0;
   margin-right: 0;
 }
@@ -826,6 +834,15 @@ button {
 .page-workshop .workshop-reservation__arrow-line,
 .page-workshop .workshop-reservation__arrow-head-line {
   background: #ffffff;
+}
+
+.page-workshop .workshop-header__bar {
+  background: rgba(222, 154, 129, 0.8);
+}
+
+.page-workshop .workshop-course__image-wrapper,
+.page-workshop .workshop-course__button {
+  background: rgba(169, 169, 169, 0.15);
 }
 
 @media (max-width: 1024px) {

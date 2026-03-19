@@ -1,6 +1,6 @@
 .course-about {
   padding: 160px 16px 0;
-  background: #ffffff;
+  background: var(--color-background);
   color: #333333;
 }
 
@@ -119,7 +119,7 @@
 
 .course-detail {
   padding: 200px 16px 120px;
-  background: #ffffff;
+  background: var(--color-background);
   color: #333333;
 }
 
@@ -242,7 +242,7 @@
 
 .course-detail-extra {
   padding: 32px 16px 0;
-  background: #ffffff;
+  background: var(--color-background);
   color: #333333;
 }
 
@@ -412,7 +412,7 @@
 
 .fragrance-notes {
   padding: 200px 16px 120px;
-  background: #ffffff;
+  background: var(--color-background);
   color: #333333;
 }
 
@@ -590,7 +590,7 @@
 
 .course-instructor {
   padding: 200px 16px 120px;
-  background: #ffffff;
+  background: var(--color-background);
   color: #333333;
 }
 
