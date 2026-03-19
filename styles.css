@@ -72,8 +72,8 @@ button {
   left: 0;
   width: 100%;
   box-sizing: border-box;
-  padding-left: max(var(--space-2), calc((100vw - 1248px) / 2 + var(--space-2)));
-  padding-right: max(var(--space-2), calc((100vw - 1248px) / 2 + var(--space-2)));
+  padding-left: 20px;
+  padding-right: 20px;
   z-index: 10;
   background: rgba(255, 255, 255, 0.92);
 }
@@ -334,8 +334,8 @@ button {
 
   .workshop-header__bar {
     grid-template-columns: 56px 1fr 56px;
-    padding-left: max(var(--space-5), calc((100vw - 1248px) / 2 + var(--space-5)));
-    padding-right: max(var(--space-5), calc((100vw - 1248px) / 2 + var(--space-5)));
+    padding-left: 20px;
+    padding-right: 20px;
   }
 
   .workshop-header__menu,
@@ -816,6 +816,16 @@ button {
   font-size: 20px;
   line-height: 1.4;
   color: #333333;
+}
+
+.page-workshop .workshop-reservation__title,
+.page-workshop .workshop-reservation__text {
+  color: #ffffff;
+}
+
+.page-workshop .workshop-reservation__arrow-line,
+.page-workshop .workshop-reservation__arrow-head-line {
+  background: #ffffff;
 }
 
 @media (max-width: 1024px) {
