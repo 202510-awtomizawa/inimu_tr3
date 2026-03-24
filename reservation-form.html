@@ -17,51 +17,53 @@
         </header>
 
         <form class="reservation-form__form" action="#" method="post">
-          <div class="reservation-form__field">
-            <label class="reservation-form__label" for="selected-date">希望日</label>
-            <div class="reservation-form__static">
-              <span id="selected-date">未選択</span>
+          <div id="reservation-step1">
+            <div class="reservation-form__field">
+              <label class="reservation-form__label" for="selected-date">希望日</label>
+              <div class="reservation-form__static">
+                <span id="selected-date">未選択</span>
+              </div>
             </div>
-          </div>
 
-          <div class="reservation-form__field">
-            <label class="reservation-form__label" for="reservation-time">時間選択</label>
-            <select class="reservation-form__select" id="reservation-time" name="reservation-time">
-              <option value="">時間を選択してください</option>
-              <option value="11:00">11:00開始</option>
-              <option value="13:00">13:00開始</option>
-              <option value="15:00">15:00開始</option>
-            </select>
-          </div>
-
-          <div class="reservation-form__field">
-            <label class="reservation-form__label" for="reservation-people">参加人数</label>
-            <select class="reservation-form__select" id="reservation-people" name="reservation-people">
-              <option value="">人数を選択してください</option>
-              <option value="1">1名</option>
-              <option value="2">2名</option>
-              <option value="3">3名</option>
-              <option value="4">4名</option>
-              <option value="5">5名</option>
-              <option value="6">6名</option>
-              <option value="7">7名</option>
-              <option value="8">8名</option>
-              <option value="9">9名</option>
-              <option value="10">10名</option>
-            </select>
-          </div>
-
-          <div class="reservation-form__field">
-            <p class="reservation-form__label">コース確認</p>
-            <div class="reservation-form__static reservation-form__static--course">
-              <p class="reservation-form__course">STANDARD COURSE</p>
-              <p class="reservation-form__note">コースは選択した日程に応じて決まります</p>
+            <div class="reservation-form__field">
+              <label class="reservation-form__label" for="reservation-time">時間選択</label>
+              <select class="reservation-form__select" id="reservation-time" name="reservation-time">
+                <option value="">時間を選択してください</option>
+                <option value="11:00">11:00開始</option>
+                <option value="13:00">13:00開始</option>
+                <option value="15:00">15:00開始</option>
+              </select>
             </div>
+
+            <div class="reservation-form__field">
+              <label class="reservation-form__label" for="reservation-people">参加人数</label>
+              <select class="reservation-form__select" id="reservation-people" name="reservation-people">
+                <option value="">人数を選択してください</option>
+                <option value="1">1名</option>
+                <option value="2">2名</option>
+                <option value="3">3名</option>
+                <option value="4">4名</option>
+                <option value="5">5名</option>
+                <option value="6">6名</option>
+                <option value="7">7名</option>
+                <option value="8">8名</option>
+                <option value="9">9名</option>
+                <option value="10">10名</option>
+              </select>
+            </div>
+
+            <div class="reservation-form__field">
+              <p class="reservation-form__label">コース確認</p>
+              <div class="reservation-form__static reservation-form__static--course">
+                <p class="reservation-form__course">STANDARD COURSE</p>
+                <p class="reservation-form__note">コースは選択した日程に応じて決まります</p>
+              </div>
+            </div>
+
+            <button class="reservation-form__next" type="button">次へ</button>
           </div>
 
-          <button class="reservation-form__next" type="button">次へ</button>
-
-          <section class="reservation-form__step2" aria-labelledby="reservation-step2-title">
+          <section class="reservation-form__step2 is-hidden" id="reservation-step2" aria-labelledby="reservation-step2-title">
             <h2 class="reservation-form__section-title" id="reservation-step2-title">お客様情報</h2>
 
             <div class="reservation-form__field">
@@ -85,7 +87,137 @@
 
             <div class="reservation-form__field">
               <label class="reservation-form__label" for="customer-birthday">生年月日</label>
-              <input class="reservation-form__input" id="customer-birthday" name="customer-birthday" type="date" />
+              <div class="reservation-form__birth-selects" id="customer-birthday">
+                <select class="reservation-form__select" id="birth-year" name="birth-year">
+                  <option value="">西暦を選択</option>
+                  <option value="2026">2026年</option>
+                  <option value="2025">2025年</option>
+                  <option value="2024">2024年</option>
+                  <option value="2023">2023年</option>
+                  <option value="2022">2022年</option>
+                  <option value="2021">2021年</option>
+                  <option value="2020">2020年</option>
+                  <option value="2019">2019年</option>
+                  <option value="2018">2018年</option>
+                  <option value="2017">2017年</option>
+                  <option value="2016">2016年</option>
+                  <option value="2015">2015年</option>
+                  <option value="2014">2014年</option>
+                  <option value="2013">2013年</option>
+                  <option value="2012">2012年</option>
+                  <option value="2011">2011年</option>
+                  <option value="2010">2010年</option>
+                  <option value="2009">2009年</option>
+                  <option value="2008">2008年</option>
+                  <option value="2007">2007年</option>
+                  <option value="2006">2006年</option>
+                  <option value="2005">2005年</option>
+                  <option value="2004">2004年</option>
+                  <option value="2003">2003年</option>
+                  <option value="2002">2002年</option>
+                  <option value="2001">2001年</option>
+                  <option value="2000">2000年</option>
+                  <option value="1999">1999年</option>
+                  <option value="1998">1998年</option>
+                  <option value="1997">1997年</option>
+                  <option value="1996">1996年</option>
+                  <option value="1995">1995年</option>
+                  <option value="1994">1994年</option>
+                  <option value="1993">1993年</option>
+                  <option value="1992">1992年</option>
+                  <option value="1991">1991年</option>
+                  <option value="1990">1990年</option>
+                  <option value="1989">1989年</option>
+                  <option value="1988">1988年</option>
+                  <option value="1987">1987年</option>
+                  <option value="1986">1986年</option>
+                  <option value="1985">1985年</option>
+                  <option value="1984">1984年</option>
+                  <option value="1983">1983年</option>
+                  <option value="1982">1982年</option>
+                  <option value="1981">1981年</option>
+                  <option value="1980">1980年</option>
+                  <option value="1979">1979年</option>
+                  <option value="1978">1978年</option>
+                  <option value="1977">1977年</option>
+                  <option value="1976">1976年</option>
+                  <option value="1975">1975年</option>
+                  <option value="1974">1974年</option>
+                  <option value="1973">1973年</option>
+                  <option value="1972">1972年</option>
+                  <option value="1971">1971年</option>
+                  <option value="1970">1970年</option>
+                  <option value="1969">1969年</option>
+                  <option value="1968">1968年</option>
+                  <option value="1967">1967年</option>
+                  <option value="1966">1966年</option>
+                  <option value="1965">1965年</option>
+                  <option value="1964">1964年</option>
+                  <option value="1963">1963年</option>
+                  <option value="1962">1962年</option>
+                  <option value="1961">1961年</option>
+                  <option value="1960">1960年</option>
+                  <option value="1959">1959年</option>
+                  <option value="1958">1958年</option>
+                  <option value="1957">1957年</option>
+                  <option value="1956">1956年</option>
+                  <option value="1955">1955年</option>
+                  <option value="1954">1954年</option>
+                  <option value="1953">1953年</option>
+                  <option value="1952">1952年</option>
+                  <option value="1951">1951年</option>
+                  <option value="1950">1950年</option>
+                </select>
+                <select class="reservation-form__select" id="birth-month" name="birth-month">
+                  <option value="">月を選択</option>
+                  <option value="1">1月</option>
+                  <option value="2">2月</option>
+                  <option value="3">3月</option>
+                  <option value="4">4月</option>
+                  <option value="5">5月</option>
+                  <option value="6">6月</option>
+                  <option value="7">7月</option>
+                  <option value="8">8月</option>
+                  <option value="9">9月</option>
+                  <option value="10">10月</option>
+                  <option value="11">11月</option>
+                  <option value="12">12月</option>
+                </select>
+                <select class="reservation-form__select" id="birth-day" name="birth-day">
+                  <option value="">日を選択</option>
+                  <option value="1">1日</option>
+                  <option value="2">2日</option>
+                  <option value="3">3日</option>
+                  <option value="4">4日</option>
+                  <option value="5">5日</option>
+                  <option value="6">6日</option>
+                  <option value="7">7日</option>
+                  <option value="8">8日</option>
+                  <option value="9">9日</option>
+                  <option value="10">10日</option>
+                  <option value="11">11日</option>
+                  <option value="12">12日</option>
+                  <option value="13">13日</option>
+                  <option value="14">14日</option>
+                  <option value="15">15日</option>
+                  <option value="16">16日</option>
+                  <option value="17">17日</option>
+                  <option value="18">18日</option>
+                  <option value="19">19日</option>
+                  <option value="20">20日</option>
+                  <option value="21">21日</option>
+                  <option value="22">22日</option>
+                  <option value="23">23日</option>
+                  <option value="24">24日</option>
+                  <option value="25">25日</option>
+                  <option value="26">26日</option>
+                  <option value="27">27日</option>
+                  <option value="28">28日</option>
+                  <option value="29">29日</option>
+                  <option value="30">30日</option>
+                  <option value="31">31日</option>
+                </select>
+              </div>
             </div>
 
             <div class="reservation-form__field">
@@ -102,6 +234,38 @@
               <label class="reservation-form__label" for="customer-note">要望・質問</label>
               <textarea class="reservation-form__textarea" id="customer-note" name="customer-note" rows="5"></textarea>
             </div>
+
+            <button class="reservation-form__next" id="reservation-confirm-next" type="button">確認へ</button>
+          </section>
+
+          <section class="reservation-form__step3 is-hidden" id="reservation-step3" aria-labelledby="reservation-step3-title">
+            <h2 class="reservation-form__section-title" id="reservation-step3-title">入力内容の確認</h2>
+            <dl class="reservation-form__confirm-list">
+              <div class="reservation-form__confirm-item"><dt>ご予約日</dt><dd id="confirm-date"></dd></div>
+              <div class="reservation-form__confirm-item"><dt>時間</dt><dd id="confirm-time"></dd></div>
+              <div class="reservation-form__confirm-item"><dt>参加人数</dt><dd id="confirm-count"></dd></div>
+              <div class="reservation-form__confirm-item"><dt>コース</dt><dd id="confirm-course"></dd></div>
+              <div class="reservation-form__confirm-item"><dt>お名前</dt><dd id="confirm-name"></dd></div>
+              <div class="reservation-form__confirm-item"><dt>ふりがな</dt><dd id="confirm-kana"></dd></div>
+              <div class="reservation-form__confirm-item"><dt>性別</dt><dd id="confirm-gender"></dd></div>
+              <div class="reservation-form__confirm-item"><dt>生年月日</dt><dd id="confirm-birth"></dd></div>
+              <div class="reservation-form__confirm-item"><dt>電話番号</dt><dd id="confirm-phone"></dd></div>
+              <div class="reservation-form__confirm-item"><dt>メールアドレス</dt><dd id="confirm-email"></dd></div>
+              <div class="reservation-form__confirm-item"><dt>ご要望・ご質問</dt><dd id="confirm-message"></dd></div>
+            </dl>
+            <button class="reservation-form__next" id="reservation-complete-button" type="button">予約する</button>
+          </section>
+
+          <section class="reservation-form__step4 is-hidden" id="reservation-step4" aria-labelledby="reservation-step4-title">
+            <h2 class="reservation-form__section-title" id="reservation-step4-title">ご予約ありがとうございます</h2>
+            <p class="reservation-form__complete-text">ご予約を受け付けました。内容をご確認のうえ、当日店舗までお越しください。</p>
+            <dl class="reservation-form__confirm-list">
+              <div class="reservation-form__confirm-item"><dt>ご予約日</dt><dd id="complete-date"></dd></div>
+              <div class="reservation-form__confirm-item"><dt>時間</dt><dd id="complete-time"></dd></div>
+              <div class="reservation-form__confirm-item"><dt>参加人数</dt><dd id="complete-count"></dd></div>
+              <div class="reservation-form__confirm-item"><dt>コース</dt><dd id="complete-course"></dd></div>
+            </dl>
+            <p class="reservation-form__complete-note">確認のご案内は後日ご登録のご連絡先へお送りします。</p>
           </section>
         </form>
       </div>
