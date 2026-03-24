@@ -211,14 +211,6 @@ button {
   width: 100%;
 }
 
-@media (min-width: 1249px) {
-  .workshop-header[aria-labelledby="workshop-title"],
-  .workshop-header[aria-labelledby="workshop-title"] + main,
-  .workshop-header[aria-labelledby="workshop-title"] + main + .workshop-footer {
-    zoom: calc(100vw / 1248);
-  }
-}
-
 .workshop-header__hero-slider {
   display: flex;
   width: 100%;
