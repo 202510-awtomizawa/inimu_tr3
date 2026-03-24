@@ -1,7 +1,9 @@
 ﻿:root {
   --color-primary: #333333;
   --color-accent: #de9a81;
+  /* Component surface color (cards, controls, etc.) */
   --color-background: #ffffff;
+  /* Page canvas background color */
   --page-background: #ffffff;
   --color-sub: #7a7979;
   --color-border: #e5e5e5;
@@ -834,12 +836,6 @@ button {
 .page-workshop .workshop-course__image-wrapper,
 .page-workshop .workshop-course__button {
   background: var(--page-background);
-}
-
-.page-course .workshop-header__panel,
-.page-course .workshop-header__breadcrumb,
-.page-course .workshop-header__bar {
-  background: #a9a9a9;
 }
 
 @media (max-width: 1024px) {

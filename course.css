@@ -1,6 +1,5 @@
 .course-about {
   padding: 160px 16px 0;
-  background: var(--color-background);
   color: #333333;
 }
 
@@ -119,7 +118,6 @@
 
 .course-detail {
   padding: 200px 16px 120px;
-  background: var(--color-background);
   color: #333333;
 }
 
@@ -155,6 +153,9 @@
   position: absolute;
   top: 32px;
   margin: 0;
+  display: inline-block;
+  padding: 8px 14px;
+  background: rgba(222, 154, 129, 0.8);
   font-family: "Playfair Display", serif;
   font-size: 48px;
   font-style: italic;
@@ -223,7 +224,7 @@
 
 .course-detail__block--standard .course-detail__card {
   right: 0;
-  bottom: 0;
+  bottom: 100px;
 }
 
 .course-detail__block--special .course-detail__visual {
@@ -237,12 +238,11 @@
 
 .course-detail__block--special .course-detail__card {
   left: 0;
-  bottom: 0;
+  bottom: 100px;
 }
 
 .course-detail-extra {
   padding: 32px 16px 0;
-  background: var(--color-background);
   color: #333333;
 }
 
@@ -412,7 +412,6 @@
 
 .fragrance-notes {
   padding: 200px 16px 120px;
-  background: var(--color-background);
   color: #333333;
 }
 
@@ -590,7 +589,6 @@
 
 .course-instructor {
   padding: 200px 16px 120px;
-  background: var(--color-background);
   color: #333333;
 }
 
