@@ -32,13 +32,15 @@ document.addEventListener("click", (event) => {
   const availableCell = event.target.closest('.reservation-calendar .calendar-cell[data-status="available"][data-date]');
   if (!availableCell) return;
   const selectedDate = availableCell.getAttribute("data-date");
+  const selectedCourse = availableCell.classList.contains("calendar-cell--special") ? "special" : "standard";
   if (!selectedDate) return;
-  window.location.href = `./reservation-form.html?date=${encodeURIComponent(selectedDate)}`;
+  window.location.href = `./reservation-form.html?date=${encodeURIComponent(selectedDate)}&course=${encodeURIComponent(selectedCourse)}`;
 });
 
 document.addEventListener("DOMContentLoaded", () => {
   const params = new URLSearchParams(window.location.search);
   const date = params.get("date");
+  const course = params.get("course");
 
   if (date) {
     const formattedDate = date.replace(/-/g, "/");
@@ -46,5 +48,20 @@ document.addEventListener("DOMContentLoaded", () => {
     if (dateEl) {
       dateEl.textContent = formattedDate;
     }
+  }
+
+  const courseValue = course === "special" ? "special" : "standard";
+  const courseEl = document.querySelector(".reservation-form__course");
+  const courseNoteEl = document.querySelector(".reservation-form__note");
+  const courseCardEl = document.querySelector(".reservation-form__static--course");
+
+  if (courseEl) {
+    courseEl.textContent = courseValue === "special" ? "SPECIAL COURSE" : "STANDARD COURSE";
+  }
+  if (courseNoteEl) {
+    courseNoteEl.textContent = "コースは選択した日程に応じて決まります";
+  }
+  if (courseCardEl) {
+    courseCardEl.style.backgroundColor = courseValue === "special" ? "#FDDAC5" : "#CAE8E2";
   }
 });
