@@ -45,9 +45,20 @@ document.addEventListener("DOMContentLoaded", () => {
   const step2El = document.getElementById("reservation-step2");
   const step3El = document.getElementById("reservation-step3");
   const step4El = document.getElementById("reservation-step4");
+  const stepLabelEl = document.getElementById("reservation-step-label");
+  const stepTitleEl = document.getElementById("reservation-step-title");
   const nextButton = step1El ? step1El.querySelector(".reservation-form__next") : null;
   const confirmButton = document.getElementById("reservation-confirm-next");
   const completeButton = document.getElementById("reservation-complete-button");
+
+  const updateReservationStepHeader = (stepNumber, stepTitle) => {
+    if (stepLabelEl) {
+      stepLabelEl.textContent = `STEP ${stepNumber}`;
+    }
+    if (stepTitleEl) {
+      stepTitleEl.textContent = stepTitle;
+    }
+  };
 
   if (date) {
     const formattedDate = date.replace(/-/g, "/");
@@ -72,10 +83,13 @@ document.addEventListener("DOMContentLoaded", () => {
     courseCardEl.style.backgroundColor = courseValue === "special" ? "#FDDAC5" : "#CAE8E2";
   }
 
+  updateReservationStepHeader(1, "ご予約内容の入力");
+
   if (step1El && step2El && nextButton) {
     nextButton.addEventListener("click", () => {
       step1El.classList.add("is-hidden");
       step2El.classList.remove("is-hidden");
+      updateReservationStepHeader(2, "お客様情報の入力");
       step2El.scrollIntoView({ behavior: "smooth", block: "start" });
     });
   }
@@ -130,6 +144,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
       step2El.classList.add("is-hidden");
       step3El.classList.remove("is-hidden");
+      updateReservationStepHeader(3, "ご予約内容の確認");
       step3El.scrollIntoView({ behavior: "smooth", block: "start" });
     });
   }
@@ -148,6 +163,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
       step3El.classList.add("is-hidden");
       step4El.classList.remove("is-hidden");
+      updateReservationStepHeader(4, "ご予約完了");
       step4El.scrollIntoView({ behavior: "smooth", block: "start" });
     });
   }

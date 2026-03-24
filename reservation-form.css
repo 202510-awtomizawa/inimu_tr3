@@ -88,14 +88,22 @@
 }
 
 .reservation-form__next {
+  display: flex;
+  width: 100%;
+  margin-top: 32px;
   min-height: 48px;
-  padding: 12px 20px;
+  padding: 16px 0;
   border: 0;
   background: rgba(222, 154, 129, 0.8);
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
   font-family: "Noto Sans JP", sans-serif;
   font-size: 16px;
   font-weight: 700;
-  line-height: 1;
+  line-height: 1.2;
   color: #ffffff;
 }
 
