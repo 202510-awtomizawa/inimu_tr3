@@ -2,6 +2,7 @@
   --color-primary: #333333;
   --color-accent: #de9a81;
   --color-background: #ffffff;
+  --page-background: #ffffff;
   --color-sub: #7a7979;
   --color-border: #e5e5e5;
   --color-placeholder: #d9d9d9;
@@ -25,14 +26,13 @@
 
 body {
   margin: 0;
-  background: var(--color-background);
+  background: var(--page-background);
   color: var(--color-primary);
   font-family: var(--font-body);
 }
 
 .page-workshop {
-  --color-background: rgba(169, 169, 169, 0.15);
-  background: rgba(169, 169, 169, 0.15);
+  --page-background: rgba(169, 169, 169, 0.15);
 }
 
 a {
@@ -63,7 +63,6 @@ button {
 
 .workshop-header__panel {
   padding: var(--space-3) var(--space-2) var(--space-4);
-  background: var(--color-background);
   padding-top: calc(var(--space-3) + 40px);
 }
 
@@ -370,7 +369,6 @@ button {
   margin: 0 auto;
   padding: 200px var(--space-2) 0;
   margin-top: -48px;
-  background: var(--color-background);
 }
 
 .workshop-intro__container {
@@ -835,7 +833,7 @@ button {
 
 .page-workshop .workshop-course__image-wrapper,
 .page-workshop .workshop-course__button {
-  background: rgba(169, 169, 169, 0.15);
+  background: var(--page-background);
 }
 
 .page-course .workshop-header__panel,
