@@ -35,3 +35,16 @@ document.addEventListener("click", (event) => {
   if (!selectedDate) return;
   window.location.href = `./reservation-form.html?date=${encodeURIComponent(selectedDate)}`;
 });
+
+document.addEventListener("DOMContentLoaded", () => {
+  const params = new URLSearchParams(window.location.search);
+  const date = params.get("date");
+
+  if (date) {
+    const formattedDate = date.replace(/-/g, "/");
+    const dateEl = document.getElementById("selected-date");
+    if (dateEl) {
+      dateEl.textContent = formattedDate;
+    }
+  }
+});

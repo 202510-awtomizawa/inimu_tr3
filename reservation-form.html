@@ -1,0 +1,69 @@
+﻿<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>inimu | Reservation Form</title>
+  <link rel="stylesheet" href="./styles.css" />
+  <link rel="stylesheet" href="./reservation-form.css" />
+</head>
+<body class="page-reservation">
+  <main class="reservation-form">
+    <section class="reservation-form__section" aria-labelledby="reservation-step1-title">
+      <div class="reservation-form__container">
+        <header class="reservation-form__header">
+          <h1 class="reservation-form__title" id="reservation-step1-title">Reservation</h1>
+          <p class="reservation-form__subtitle">Step 1 / ご予約内容の入力</p>
+        </header>
+
+        <form class="reservation-form__form" action="#" method="post">
+          <div class="reservation-form__field">
+            <label class="reservation-form__label" for="selected-date">希望日</label>
+            <div class="reservation-form__static">
+              <span id="selected-date">未選択</span>
+            </div>
+          </div>
+
+          <div class="reservation-form__field">
+            <label class="reservation-form__label" for="reservation-time">時間選択</label>
+            <select class="reservation-form__select" id="reservation-time" name="reservation-time">
+              <option value="">時間を選択してください</option>
+              <option value="11:00">11:00開始</option>
+              <option value="13:00">13:00開始</option>
+              <option value="15:00">15:00開始</option>
+            </select>
+          </div>
+
+          <div class="reservation-form__field">
+            <label class="reservation-form__label" for="reservation-people">参加人数</label>
+            <select class="reservation-form__select" id="reservation-people" name="reservation-people">
+              <option value="">人数を選択してください</option>
+              <option value="1">1名</option>
+              <option value="2">2名</option>
+              <option value="3">3名</option>
+              <option value="4">4名</option>
+              <option value="5">5名</option>
+              <option value="6">6名</option>
+              <option value="7">7名</option>
+              <option value="8">8名</option>
+              <option value="9">9名</option>
+              <option value="10">10名</option>
+            </select>
+          </div>
+
+          <div class="reservation-form__field">
+            <p class="reservation-form__label">コース確認</p>
+            <div class="reservation-form__static reservation-form__static--course">
+              <p class="reservation-form__course">STANDARD COURSE</p>
+              <p class="reservation-form__note">コースは選択した日程に応じて決まります</p>
+            </div>
+          </div>
+
+          <button class="reservation-form__next" type="button">次へ</button>
+        </form>
+      </div>
+    </section>
+  </main>
+  <script src="./script.js"></script>
+</body>
+</html>
