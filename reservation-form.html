@@ -60,6 +60,49 @@
           </div>
 
           <button class="reservation-form__next" type="button">次へ</button>
+
+          <section class="reservation-form__step2" aria-labelledby="reservation-step2-title">
+            <h2 class="reservation-form__section-title" id="reservation-step2-title">お客様情報</h2>
+
+            <div class="reservation-form__field">
+              <label class="reservation-form__label" for="customer-name">名前（漢字）</label>
+              <input class="reservation-form__input" id="customer-name" name="customer-name" type="text" />
+            </div>
+
+            <div class="reservation-form__field">
+              <label class="reservation-form__label" for="customer-kana">ふりがな</label>
+              <input class="reservation-form__input" id="customer-kana" name="customer-kana" type="text" />
+            </div>
+
+            <div class="reservation-form__field">
+              <p class="reservation-form__label">性別</p>
+              <div class="reservation-form__radio-group" role="radiogroup" aria-label="性別">
+                <label class="reservation-form__radio"><input type="radio" name="customer-gender" value="male" />男性</label>
+                <label class="reservation-form__radio"><input type="radio" name="customer-gender" value="female" />女性</label>
+                <label class="reservation-form__radio"><input type="radio" name="customer-gender" value="other" />その他</label>
+              </div>
+            </div>
+
+            <div class="reservation-form__field">
+              <label class="reservation-form__label" for="customer-birthday">生年月日</label>
+              <input class="reservation-form__input" id="customer-birthday" name="customer-birthday" type="date" />
+            </div>
+
+            <div class="reservation-form__field">
+              <label class="reservation-form__label" for="customer-tel">電話番号</label>
+              <input class="reservation-form__input" id="customer-tel" name="customer-tel" type="tel" />
+            </div>
+
+            <div class="reservation-form__field">
+              <label class="reservation-form__label" for="customer-email">メールアドレス</label>
+              <input class="reservation-form__input" id="customer-email" name="customer-email" type="email" />
+            </div>
+
+            <div class="reservation-form__field">
+              <label class="reservation-form__label" for="customer-note">要望・質問</label>
+              <textarea class="reservation-form__textarea" id="customer-note" name="customer-note" rows="5"></textarea>
+            </div>
+          </section>
         </form>
       </div>
     </section>
