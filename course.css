@@ -135,6 +135,10 @@
   margin-top: 180px;
 }
 
+.course-detail__block + .course-detail__block.course-detail__block--special {
+  margin-top: 80px;
+}
+
 .course-detail__visual {
   width: min(100%, 720px);
   height: 480px;
@@ -224,7 +228,7 @@
 
 .course-detail__block--standard .course-detail__card {
   right: 0;
-  bottom: 100px;
+  bottom: 160px;
 }
 
 .course-detail__block--special .course-detail__visual {
@@ -238,7 +242,7 @@
 
 .course-detail__block--special .course-detail__card {
   left: 0;
-  bottom: 100px;
+  bottom: 160px;
 }
 
 .course-detail-extra {
@@ -310,7 +314,7 @@
 
 .course-detail-extra__card--wide {
   width: min(100%, 1020px);
-  margin: 120px 0 0 84px;
+  margin: -80px 0 0 84px;
   padding: 44px 56px 40px;
 }
 
@@ -342,6 +346,10 @@
     margin-top: 120px;
   }
 
+  .course-detail__block + .course-detail__block.course-detail__block--special {
+    margin-top: 20px;
+  }
+
   .course-detail__visual,
   .course-detail__block--standard .course-detail__visual,
   .course-detail__block--special .course-detail__visual {
@@ -364,6 +372,7 @@
     position: static;
     width: 100%;
     padding: 28px 20px;
+    margin-top: -160px;
   }
 
   .course-detail__lead,
@@ -399,7 +408,7 @@
 
   .course-detail-extra__card--wide {
     width: 100%;
-    margin: 72px 0 0 0;
+    margin: -40px 0 0 0;
     padding: 30px 18px 26px;
   }
 
