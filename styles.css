@@ -63,7 +63,7 @@ button {
 
 .workshop-header__panel {
   padding: var(--space-3) var(--space-2) var(--space-4);
-  background: rgba(222, 154, 129, 0.8);
+  background: var(--color-background);
   padding-top: calc(var(--space-3) + 40px);
 }
 
@@ -202,6 +202,7 @@ button {
 
 .workshop-header[aria-labelledby="workshop-title"] .workshop-header__breadcrumb {
   width: fit-content;
+  max-width: 100%;
   margin-left: 0;
   margin-right: 0;
 }
@@ -843,6 +844,12 @@ button {
 .page-workshop .workshop-course__image-wrapper,
 .page-workshop .workshop-course__button {
   background: rgba(169, 169, 169, 0.15);
+}
+
+.page-course .workshop-header__panel,
+.page-course .workshop-header__breadcrumb,
+.page-course .workshop-header__bar {
+  background: #a9a9a9;
 }
 
 @media (max-width: 1024px) {
