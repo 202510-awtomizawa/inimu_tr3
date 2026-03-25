@@ -1,0 +1,302 @@
+﻿<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Reservation Admin</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;600&family=Playfair+Display:wght@500;600&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --primary: #333333;
+      --sub: #7A7979;
+      --bg-subtle: rgba(169, 169, 169, 0.15);
+      --white: #ffffff;
+      --line: #e5e5e5;
+      --radius: 8px;
+      --shadow: 0 8px 24px rgba(51, 51, 51, 0.08);
+      --space-8: 8px;
+      --space-16: 16px;
+      --space-24: 24px;
+      --space-32: 32px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      padding: var(--space-32) var(--space-16);
+      font-family: "Noto Sans JP", sans-serif;
+      color: var(--primary);
+      background: #ffffff;
+      line-height: 1.6;
+    }
+
+    .admin-wrap {
+      max-width: 960px;
+      margin: 0 auto;
+    }
+
+    .admin-card {
+      background: var(--white);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: var(--space-24);
+    }
+
+    .admin-title {
+      margin: 0 0 var(--space-24);
+      font-family: "Playfair Display", serif;
+      font-size: clamp(28px, 4vw, 40px);
+      font-weight: 600;
+      letter-spacing: 0.02em;
+      line-height: 1.2;
+    }
+
+    .admin-toolbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: var(--space-16);
+      margin-bottom: var(--space-24);
+      flex-wrap: wrap;
+    }
+
+    .month-switch {
+      display: inline-flex;
+      align-items: center;
+      gap: var(--space-8);
+    }
+
+    .month-label {
+      min-width: 112px;
+      text-align: center;
+      font-weight: 600;
+      letter-spacing: 0.02em;
+      padding: 10px 12px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--bg-subtle);
+    }
+
+    .btn,
+    .status-select {
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: #fff;
+      color: var(--primary);
+      font-family: "Noto Sans JP", sans-serif;
+      font-size: 14px;
+      padding: 10px 14px;
+      line-height: 1.2;
+    }
+
+    .btn {
+      cursor: pointer;
+      transition: background-color 0.2s ease, border-color 0.2s ease;
+    }
+
+    .btn:hover {
+      background: var(--bg-subtle);
+      border-color: #d6d6d6;
+    }
+
+    .btn-save {
+      min-width: 132px;
+      background: var(--primary);
+      border-color: var(--primary);
+      color: #fff;
+      font-weight: 500;
+    }
+
+    .btn-save:hover {
+      background: #4a4a4a;
+      border-color: #4a4a4a;
+    }
+
+    .btn-save:disabled {
+      opacity: 0.45;
+      cursor: not-allowed;
+      background: var(--primary);
+      border-color: var(--primary);
+    }
+
+    .btn-save:disabled:hover {
+      background: var(--primary);
+      border-color: var(--primary);
+    }
+
+    .change-count-text {
+      margin: 0;
+      color: var(--sub);
+      font-size: 14px;
+      white-space: nowrap;
+    }
+
+    .list-card {
+      background: var(--bg-subtle);
+      border-radius: var(--radius);
+      padding: var(--space-16);
+      overflow-x: auto;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      overflow: hidden;
+    }
+
+    thead th {
+      text-align: left;
+      font-weight: 600;
+      color: var(--sub);
+      background: #fafafa;
+      padding: 12px var(--space-16);
+      border-bottom: 1px solid var(--line);
+      white-space: nowrap;
+    }
+
+    tbody td {
+      padding: 12px var(--space-16);
+      border-bottom: 1px solid var(--line);
+      vertical-align: middle;
+    }
+
+    tbody tr:last-child td {
+      border-bottom: none;
+    }
+
+    tbody tr.is-dirty td {
+      background: rgba(169, 169, 169, 0.18);
+    }
+
+    .course-badge {
+      display: inline-block;
+      min-width: 76px;
+      text-align: center;
+      padding: 4px 10px;
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.02em;
+      background: #f4f4f4;
+      color: var(--sub);
+    }
+
+    .course-standard {
+      background: #f4f4f4;
+      color: var(--primary);
+    }
+
+    .course-special {
+      background: #efefef;
+      color: var(--primary);
+    }
+
+    .course-none {
+      background: #fbfbfb;
+      color: var(--sub);
+    }
+
+    .status-select {
+      width: 72px;
+      padding-right: 10px;
+    }
+
+    .day-holiday {
+      color: #a24a3f;
+      font-weight: 600;
+    }
+
+    @media (max-width: 720px) {
+      body {
+        padding: var(--space-24) var(--space-16);
+      }
+
+      .admin-card {
+        padding: var(--space-16);
+      }
+
+      thead {
+        display: none;
+      }
+
+      table,
+      tbody,
+      tr,
+      td {
+        display: block;
+        width: 100%;
+      }
+
+      tbody tr {
+        border-bottom: 1px solid var(--line);
+        padding: var(--space-8) 0;
+      }
+
+      tbody tr:last-child {
+        border-bottom: none;
+      }
+
+      tbody td {
+        border: none;
+        padding: 6px var(--space-8);
+      }
+
+      tbody td::before {
+        content: attr(data-label);
+        display: inline-block;
+        width: 80px;
+        color: var(--sub);
+        font-weight: 500;
+      }
+
+      .status-select {
+        width: 100%;
+        max-width: 120px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="admin-wrap">
+    <section class="admin-card" aria-label="予約管理画面">
+      <h1 class="admin-title">Reservation Admin</h1>
+
+      <div class="admin-toolbar">
+        <div class="month-switch" aria-label="対象月の切り替え">
+          <button id="prevMonthBtn" class="btn" type="button">前月</button>
+          <div id="currentMonthLabel" class="month-label" aria-live="polite">2026.03</div>
+          <button id="nextMonthBtn" class="btn" type="button">次月</button>
+        </div>
+
+        <p id="changeCountText" class="change-count-text">未保存の変更はありません</p>
+        <button id="saveBtn" class="btn btn-save" type="button">保存</button>
+      </div>
+
+      <div class="list-card">
+        <table aria-label="日別予約ステータス一覧">
+          <thead>
+            <tr>
+              <th>日付</th>
+              <th>曜日</th>
+              <th>コース</th>
+              <th>ステータス</th>
+            </tr>
+          </thead>
+          <tbody id="adminTableBody"></tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+
+  <script src="js/admin.js" defer></script>
+</body>
+</html>
