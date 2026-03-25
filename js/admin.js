@@ -1,6 +1,7 @@
 ﻿(() => {
   const WEEKDAY_LABELS = ["日", "月", "火", "水", "木", "金", "土"];
   const STATUS_OPTIONS = ["○", "△", "×", "―"];
+  const COURSE_OPTIONS = ["standard", "special", "-"];
   const HOLIDAY_SET = new Set([
     "2026-03-20"
   ]);
@@ -13,7 +14,9 @@
   const adminTableBody = document.getElementById("adminTableBody");
 
   const statusStore = {};
+  const courseStore = {};
   const savedStatusStore = {};
+  const savedCourseStore = {};
   let viewDate = new Date(2026, 2, 1);
 
   function formatMonthLabel(date) {
@@ -59,8 +62,12 @@
     return course === "-" ? "―" : "○";
   }
 
+  function isRowDirty(isoDate) {
+    return statusStore[isoDate] !== savedStatusStore[isoDate] || courseStore[isoDate] !== savedCourseStore[isoDate];
+  }
+
   function getDirtyCount() {
-    return Object.keys(statusStore).filter((isoDate) => statusStore[isoDate] !== savedStatusStore[isoDate]).length;
+    return Object.keys(statusStore).filter((isoDate) => isRowDirty(isoDate)).length;
   }
 
   function updateChangeSummary() {
@@ -70,7 +77,7 @@
   }
 
   function syncRowDirtyState(tr, isoDate) {
-    tr.classList.toggle("is-dirty", statusStore[isoDate] !== savedStatusStore[isoDate]);
+    tr.classList.toggle("is-dirty", isRowDirty(isoDate));
   }
 
   function createStatusSelect(isoDate, initialStatus, tr) {
@@ -95,25 +102,49 @@
     return select;
   }
 
-  function createCourseBadge(course) {
-    const span = document.createElement("span");
-    span.classList.add("course-badge");
-
-    if (course === "special") {
-      span.classList.add("course-special");
-      span.textContent = "special";
-      return span;
+  function syncStatusAvailability(isoDate, statusSelect, statusHelp) {
+    const isCourseUnset = courseStore[isoDate] === "-";
+    if (isCourseUnset && statusStore[isoDate] !== "―") {
+      statusStore[isoDate] = "―";
+      statusSelect.value = "―";
     }
+    statusSelect.disabled = isCourseUnset;
+    statusHelp.hidden = !isCourseUnset;
+  }
 
-    if (course === "standard") {
-      span.classList.add("course-standard");
-      span.textContent = "standard";
-      return span;
-    }
+  function createCourseSelect(isoDate, initialCourse, statusSelect, statusHelp, tr) {
+    const select = document.createElement("select");
+    select.className = "status-select course-select";
+    select.setAttribute("aria-label", `${isoDate} のコース`);
 
-    span.classList.add("course-none");
-    span.textContent = "-";
-    return span;
+    COURSE_OPTIONS.forEach((course) => {
+      const option = document.createElement("option");
+      option.value = course;
+      option.textContent = course;
+      select.appendChild(option);
+    });
+
+    select.value = initialCourse;
+    select.addEventListener("change", (event) => {
+      const nextCourse = event.target.value;
+      courseStore[isoDate] = nextCourse;
+
+      if (nextCourse === "-") {
+        if (statusStore[isoDate] !== "―") {
+          statusStore[isoDate] = "―";
+          statusSelect.value = "―";
+        }
+      } else if (statusStore[isoDate] === "―") {
+        statusStore[isoDate] = "○";
+        statusSelect.value = "○";
+      }
+
+      syncStatusAvailability(isoDate, statusSelect, statusHelp);
+      syncRowDirtyState(tr, isoDate);
+      updateChangeSummary();
+    });
+
+    return select;
   }
 
   function createRow(date) {
@@ -125,8 +156,14 @@
     if (!Object.prototype.hasOwnProperty.call(statusStore, isoDate)) {
       statusStore[isoDate] = getDefaultStatus(course);
     }
+    if (!Object.prototype.hasOwnProperty.call(courseStore, isoDate)) {
+      courseStore[isoDate] = course;
+    }
     if (!Object.prototype.hasOwnProperty.call(savedStatusStore, isoDate)) {
       savedStatusStore[isoDate] = statusStore[isoDate];
+    }
+    if (!Object.prototype.hasOwnProperty.call(savedCourseStore, isoDate)) {
+      savedCourseStore[isoDate] = courseStore[isoDate];
     }
 
     const tr = document.createElement("tr");
@@ -144,11 +181,18 @@
 
     const courseTd = document.createElement("td");
     courseTd.dataset.label = "コース";
-    courseTd.appendChild(createCourseBadge(course));
-
     const statusTd = document.createElement("td");
     statusTd.dataset.label = "ステータス";
-    statusTd.appendChild(createStatusSelect(isoDate, statusStore[isoDate], tr));
+    statusTd.classList.add("status-cell");
+    const statusSelect = createStatusSelect(isoDate, statusStore[isoDate], tr);
+    const statusHelp = document.createElement("small");
+    statusHelp.className = "status-help";
+    statusHelp.textContent = "コース未設定のため変更できません";
+    const courseSelect = createCourseSelect(isoDate, courseStore[isoDate], statusSelect, statusHelp, tr);
+    courseTd.appendChild(courseSelect);
+    statusTd.appendChild(statusSelect);
+    statusTd.appendChild(statusHelp);
+    syncStatusAvailability(isoDate, statusSelect, statusHelp);
 
     tr.appendChild(dateTd);
     tr.appendChild(weekdayTd);
@@ -185,8 +229,15 @@
   });
 
   saveBtn.addEventListener("click", () => {
+    const hasInvalidRow = Object.keys(statusStore).some((isoDate) => courseStore[isoDate] === "-" && statusStore[isoDate] !== "―");
+    if (hasInvalidRow) {
+      alert("先にコースを設定してください");
+      return;
+    }
+
     Object.keys(statusStore).forEach((isoDate) => {
       savedStatusStore[isoDate] = statusStore[isoDate];
+      savedCourseStore[isoDate] = courseStore[isoDate];
     });
     adminTableBody.querySelectorAll("tr.is-dirty").forEach((tr) => {
       tr.classList.remove("is-dirty");
