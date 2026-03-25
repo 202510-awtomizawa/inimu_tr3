@@ -465,8 +465,8 @@ button {
   position: absolute;
   bottom: 24px;
   width: min(100%, 400px);
-  padding: 40px 20px;
-  background: rgba(222, 154, 129, 0.8);
+  padding: 32px 40px;
+  background: #c8836b;
 }
 
 .workshop-value__item--right .workshop-value__card {
@@ -480,7 +480,9 @@ button {
 .workshop-value__text {
   margin: 0;
   font-size: 1rem;
-  line-height: 1.9;
+  line-height: 1.75;
+  font-weight: 500;
+  color: #ffffff;
   text-align: center;
 }
 
@@ -531,8 +533,8 @@ button {
   display: grid;
   grid-template-rows: auto auto auto 1fr auto;
   justify-items: center;
-  padding: 32px 24px 36px;
-  background: rgba(222, 154, 129, 0.8);
+  padding: 36px 24px 40px;
+  background: #c8836b;
   text-align: center;
 }
 
@@ -542,12 +544,15 @@ button {
   font-size: 2rem;
   font-weight: 600;
   line-height: 1.1;
+  color: #ffffff;
 }
 
 .workshop-course__card-subtitle {
   margin: 8px 0 0;
   font-size: 0.875rem;
-  line-height: 1.6;
+  line-height: 1.75;
+  font-weight: 500;
+  color: #ffffff;
 }
 
 .workshop-course__image-wrapper {
@@ -570,7 +575,9 @@ button {
 .workshop-course__description {
   margin: 28px 0 0;
   font-size: 0.875rem;
-  line-height: 1.7;
+  line-height: 1.75;
+  font-weight: 500;
+  color: #ffffff;
 }
 
 .workshop-course__button {
@@ -699,7 +706,7 @@ button {
   display: grid;
   place-items: center;
   min-height: 240px;
-  background: #de9a81;
+  background: #c8836b;
 }
 
 .workshop-reservation__link {
