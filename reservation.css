@@ -1,5 +1,5 @@
 .reservation-main {
-  padding: 96px 16px 120px;
+  padding: 48px 16px 120px;
   color: #333333;
 }
 
@@ -346,7 +346,7 @@
 
 @media (max-width: 768px) {
   .reservation-main {
-    padding: 72px 16px 96px;
+    padding: 40px 16px 96px;
   }
 
   .reservation-main__title {
