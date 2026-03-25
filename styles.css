@@ -474,6 +474,14 @@ button {
   background: #c8836b;
 }
 
+.workshop-value__card::before {
+  content: "";
+  position: absolute;
+  inset: 10px;
+  border: 1.5px solid #ffffff;
+  pointer-events: none;
+}
+
 .workshop-value__item--right .workshop-value__card {
   right: 24px;
 }

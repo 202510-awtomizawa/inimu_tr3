@@ -1,5 +1,5 @@
 .course-about {
-  padding: 160px 16px 0;
+  padding: 96px 16px 0;
   color: #333333;
 }
 
@@ -159,7 +159,7 @@
   margin: 0;
   display: inline-block;
   padding: 8px 14px;
-  background: rgba(222, 154, 129, 0.8);
+  background: #c8836b;
   color: #ffffff;
   font-family: "Playfair Display", serif;
   font-size: 48px;
@@ -172,16 +172,17 @@
 .course-detail__card {
   position: absolute;
   width: min(100%, 420px);
-  padding: 36px 32px;
+  padding: 40px 32px;
   border: 1px solid #d8d0ca;
-  background: #ffffff;
+  background: #c8836b;
+  color: #ffffff;
 }
 
 .course-detail__card::before {
   content: "";
   position: absolute;
   inset: 10px;
-  border: 1px solid rgba(222, 154, 129, 0.45);
+  border: 1.5px solid #ffffff;
   pointer-events: none;
 }
 
@@ -189,8 +190,9 @@
   margin: 0;
   font-family: "Noto Sans JP", sans-serif;
   font-size: 18px;
-  font-weight: 400;
-  line-height: 1.95;
+  font-weight: 500;
+  line-height: 1.8;
+  color: #ffffff;
 }
 
 .course-detail__meta {
@@ -206,7 +208,8 @@
   margin: 0;
   font-family: "Noto Sans JP", sans-serif;
   font-size: 18px;
-  line-height: 1.8;
+  line-height: 1.75;
+  color: #ffffff;
 }
 
 .course-detail__meta-row dt {
@@ -215,7 +218,7 @@
 
 .course-detail__meta-row dd {
   margin-top: 4px;
-  font-weight: 400;
+  font-weight: 500;
 }
 
 .course-detail__block--standard .course-detail__visual {
