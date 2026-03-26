@@ -322,22 +322,18 @@
 		  <script>
 		    const menuButton = document.querySelector(".workshop-header__menu");
 		    const courseSidebar = document.querySelector(".course-sidebar");
-		    const courseSidebarOverlay = document.querySelector(".course-sidebar-overlay");
 		
-		    if (menuButton && courseSidebar && courseSidebarOverlay) {
-		      let isSidebarOpen = false;
+		    if (menuButton && courseSidebar) {
+		      document.body.classList.add("is-sidebar-open");
+		      let isSidebarOpen = true;
 		
 		      const openSidebar = () => {
-		        courseSidebar.style.transform = "translateX(0)";
-		        courseSidebarOverlay.style.opacity = "1";
-		        courseSidebarOverlay.style.visibility = "visible";
+		        document.body.classList.add("is-sidebar-open");
 		        isSidebarOpen = true;
 		      };
 		
 		      const closeSidebar = () => {
-		        courseSidebar.style.transform = "translateX(-100%)";
-		        courseSidebarOverlay.style.opacity = "0";
-		        courseSidebarOverlay.style.visibility = "hidden";
+		        document.body.classList.remove("is-sidebar-open");
 		        isSidebarOpen = false;
 		      };
 		
@@ -347,10 +343,6 @@
 		          return;
 		        }
 		        openSidebar();
-		      });
-		
-		      courseSidebarOverlay.addEventListener("click", () => {
-		        closeSidebar();
 		      });
 		    }
 		  </script>
