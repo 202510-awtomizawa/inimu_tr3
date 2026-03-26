@@ -737,3 +737,50 @@
     line-height: 1.75;
   }
 }
+
+.course-sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 300px;
+  height: 100vh;
+  padding: 120px 40px 40px;
+  background: #787878;
+  z-index: 30;
+  transform: translateX(-100%);
+  transition: transform 0.3s ease;
+}
+
+.course-sidebar__list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  gap: 20px;
+}
+
+.course-sidebar__list a {
+  color: #ffffff;
+  text-decoration: none;
+  font-family: "Playfair Display", serif;
+  font-style: italic;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 2;
+  letter-spacing: 0.06em;
+  transition: color 0.2s ease;
+}
+
+.course-sidebar__list a:hover {
+  color: #de9a81;
+}
+
+.course-sidebar-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.35);
+  z-index: 20;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}

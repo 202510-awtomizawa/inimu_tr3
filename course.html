@@ -43,6 +43,17 @@
       </div>
     </div>
   </header>
+  <aside class="course-sidebar">
+    <nav class="course-sidebar__nav">
+      <ul class="course-sidebar__list">
+        <li><a href="#">トップページ</a></li>
+        <li><a href="#">コース</a></li>
+        <li><a href="#">予約</a></li>
+        <li><a href="#">アクセス</a></li>
+      </ul>
+    </nav>
+  </aside>
+  <div class="course-sidebar-overlay"></div>
 
   <main>
     <section class="course-about" aria-labelledby="course-about-title">
@@ -279,8 +290,8 @@
 	      </div>
 	    </section>
 	  </main>
-	  <footer class="workshop-footer">
-	    <div class="workshop-footer__container">
+		  <footer class="workshop-footer">
+		    <div class="workshop-footer__container">
 	      <div class="workshop-footer__links">
 	        <div class="workshop-footer__column">
 	          <a class="workshop-footer__link" href="#">TOP</a>
@@ -306,8 +317,43 @@
 	      <p class="workshop-footer__copyright">
 	        香りのものづくりSTORE POWERED BY KYARAINNOVATE
 	      </p>
-	    </div>
-	  </footer>
-	</body>
-
-</html>
+		    </div>
+		  </footer>
+		  <script>
+		    const menuButton = document.querySelector(".workshop-header__menu");
+		    const courseSidebar = document.querySelector(".course-sidebar");
+		    const courseSidebarOverlay = document.querySelector(".course-sidebar-overlay");
+		
+		    if (menuButton && courseSidebar && courseSidebarOverlay) {
+		      let isSidebarOpen = false;
+		
+		      const openSidebar = () => {
+		        courseSidebar.style.transform = "translateX(0)";
+		        courseSidebarOverlay.style.opacity = "1";
+		        courseSidebarOverlay.style.visibility = "visible";
+		        isSidebarOpen = true;
+		      };
+		
+		      const closeSidebar = () => {
+		        courseSidebar.style.transform = "translateX(-100%)";
+		        courseSidebarOverlay.style.opacity = "0";
+		        courseSidebarOverlay.style.visibility = "hidden";
+		        isSidebarOpen = false;
+		      };
+		
+		      menuButton.addEventListener("click", () => {
+		        if (isSidebarOpen) {
+		          closeSidebar();
+		          return;
+		        }
+		        openSidebar();
+		      });
+		
+		      courseSidebarOverlay.addEventListener("click", () => {
+		        closeSidebar();
+		      });
+		    }
+		  </script>
+		</body>
+	
+	</html>
