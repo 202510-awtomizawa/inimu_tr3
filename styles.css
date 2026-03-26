@@ -69,7 +69,7 @@ button {
 
 .workshop-header__panel {
   padding: var(--space-3) var(--space-2) var(--space-4);
-  padding-top: calc(var(--space-3) + 40px);
+  padding-top: 0;
 }
 
 .workshop-header__bar {
@@ -171,7 +171,7 @@ button {
 }
 
 .workshop-header__hero {
-  margin-top: var(--space-4);
+  margin-top: 0;
 }
 
 .workshop-header__title {
@@ -334,11 +334,11 @@ button {
 
 @media (min-width: 768px) {
   .workshop-header {
-    padding: var(--space-5) var(--space-4) 80px;
+    padding: 0 var(--space-4) 80px;
   }
 
   .workshop-header__panel {
-    padding: calc(var(--space-4) + 48px) var(--space-5) 64px;
+    padding: 0 var(--space-5) 64px;
   }
 
   .workshop-header__bar {
@@ -360,7 +360,7 @@ button {
   }
 
   .workshop-header__hero {
-    margin-top: var(--space-5);
+    margin-top: 0;
   }
 
   .workshop-header__title {
@@ -913,11 +913,11 @@ button {
 
 @media (max-width: 768px) {
   .workshop-header {
-    padding: 24px 12px 48px;
+    padding: 0 12px 48px;
   }
 
   .workshop-header__panel {
-    padding: 20px 12px 32px;
+    padding: 0 12px 32px;
   }
 
   .workshop-header__bar {
