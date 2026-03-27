@@ -856,6 +856,12 @@
   font-weight: 400;
 }
 
+.page-course .workshop-header__menu .material-symbols-outlined {
+  font-family: "Material Symbols Outlined";
+  font-style: normal;
+  line-height: 1;
+}
+
 .page-course .workshop-header__menu .workshop-header__menu-close-icon,
 .page-course .workshop-header__menu .workshop-header__menu-close-label {
   display: none;
