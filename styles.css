@@ -937,6 +937,26 @@ button {
   background: none;
 }
 
+.page-workshop .workshop-header__menu .workshop-header__menu-line {
+  display: block;
+}
+
+.page-workshop .workshop-header__menu .workshop-header__menu-open-icon {
+  display: block;
+  width: auto;
+  height: auto;
+  background: none;
+  font-size: 34px;
+  line-height: 1;
+  font-weight: 400;
+}
+
+.page-workshop .workshop-header__menu .material-symbols-outlined {
+  font-family: "Material Symbols Outlined";
+  font-style: normal;
+  line-height: 1;
+}
+
 .page-workshop .workshop-header__menu .workshop-header__menu-close-icon,
 .page-workshop .workshop-header__menu .workshop-header__menu-close-label {
   display: none;
@@ -964,7 +984,8 @@ button {
   transform: translateX(0);
 }
 
-.page-workshop.is-sidebar-open .workshop-header__menu > span:nth-child(-n+3),
+.page-workshop.is-sidebar-open .workshop-header__menu .workshop-header__menu-line,
+.page-workshop.is-sidebar-open .workshop-header__menu .workshop-header__menu-open-icon,
 .page-workshop.is-sidebar-open .workshop-header__menu .workshop-header__menu-label {
   display: none;
 }
