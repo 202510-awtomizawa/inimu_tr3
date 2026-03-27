@@ -783,6 +783,24 @@
   color: #de9a81;
 }
 
+.page-course .course-sidebar__list li:nth-child(2) > a {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  padding-left: 12px;
+}
+
+.page-course .course-sidebar__list li:nth-child(2) > a::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  width: 2px;
+  height: 1.1em;
+  transform: translateY(-50%);
+  background: #de9a81;
+}
+
 .course-sidebar-overlay {
   position: fixed;
   inset: 0;
@@ -796,6 +814,60 @@
 .page-course .workshop-header__bar {
   left: 0;
   width: 100%;
+}
+
+.page-course .workshop-header__icon {
+  flex-direction: column;
+  gap: 2px;
+}
+
+.page-course .workshop-header__menu-label,
+.page-course .workshop-header__menu-close-label,
+.page-course .workshop-header__icon-label {
+  font-family: "Inter", sans-serif;
+  font-size: 11px;
+  font-weight: 400;
+  line-height: 1;
+  letter-spacing: 0.08em;
+  color: #000000;
+}
+
+.page-course .workshop-header__menu .workshop-header__menu-label {
+  display: block;
+  width: auto;
+  height: auto;
+  background: none;
+}
+
+.page-course .workshop-header__menu .workshop-header__menu-line {
+  display: block;
+  width: 36px;
+  height: 2px;
+  background: currentColor;
+}
+
+.page-course .workshop-header__menu .workshop-header__menu-close-icon,
+.page-course .workshop-header__menu .workshop-header__menu-close-label {
+  display: none;
+  width: auto;
+  height: auto;
+  background: none;
+}
+
+.page-course .workshop-header__menu .workshop-header__menu-close-icon {
+  font-size: 34px;
+  line-height: 1;
+  font-weight: 400;
+}
+
+.page-course.is-sidebar-open .workshop-header__menu .workshop-header__menu-line,
+.page-course.is-sidebar-open .workshop-header__menu .workshop-header__menu-label {
+  display: none;
+}
+
+.page-course.is-sidebar-open .workshop-header__menu .workshop-header__menu-close-icon,
+.page-course.is-sidebar-open .workshop-header__menu .workshop-header__menu-close-label {
+  display: block;
 }
 
 .page-course .course-sidebar {
