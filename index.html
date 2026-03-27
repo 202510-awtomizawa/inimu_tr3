@@ -11,10 +11,12 @@
   <link
     href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Noto+Sans+JP:wght@400;500;700&family=Playfair+Display:wght@600;700&display=swap"
     rel="stylesheet" />
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
   <link rel="stylesheet" href="./styles.css" />
 </head>
 
-<body class="page-workshop">  <header class="workshop-header" aria-labelledby="workshop-title">
+<body class="page-workshop is-sidebar-open">  <header class="workshop-header" aria-labelledby="workshop-title">
     <div class="workshop-header__shell">
       <div class="workshop-header__panel">
         <div class="workshop-header__bar">
@@ -22,6 +24,9 @@
             <span></span>
             <span></span>
             <span></span>
+            <span class="workshop-header__menu-label">Menu</span>
+            <span class="workshop-header__menu-close-icon material-symbols-outlined">close</span>
+            <span class="workshop-header__menu-close-label">Close</span>
           </button>
 
 	          <a class="workshop-header__logo" href="./index.html" aria-label="nana ホーム">
@@ -36,6 +41,7 @@
               <path d="M3.5 8.5H20.5"></path>
               <path d="M8 13l2.2 2.2L16 9.8"></path>
             </svg>
+            <span class="workshop-header__icon-label">Reserve</span>
           </a>
         </div>
 
@@ -66,6 +72,17 @@
       </div>
     </div>
   </header>
+
+  <aside class="top-sidebar">
+    <nav class="top-sidebar__nav">
+      <ul class="top-sidebar__list">
+        <li><a href="#">トップページ</a></li>
+        <li><a href="#">コース</a></li>
+        <li><a href="#">予約</a></li>
+        <li><a href="#">アクセス</a></li>
+      </ul>
+    </nav>
+  </aside>
 
   <main>
     <section class="workshop-intro" aria-labelledby="workshop-intro-title">

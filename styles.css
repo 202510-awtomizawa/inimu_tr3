@@ -853,13 +853,138 @@ button {
   background: #ffffff;
 }
 
-.page-workshop .workshop-header__bar {
-  background: rgba(222, 154, 129, 0.8);
+.page-workshop .top-sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 240px;
+  height: 100vh;
+  padding: 120px 40px 40px;
+  background: #333333;
+  color: #ffffff;
+  transform: translateX(-100%);
+  transition: transform 0.3s ease;
+  z-index: 30;
 }
 
-.page-workshop .workshop-course__image-wrapper,
-.page-workshop .workshop-course__button {
-  background: var(--page-background);
+.page-workshop .top-sidebar__list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.page-workshop .top-sidebar__list li {
+  padding: 14px 0;
+}
+
+.page-workshop .top-sidebar__list li + li {
+  border-top: 1px solid rgba(255, 255, 255, 0.16);
+}
+
+.page-workshop .top-sidebar__list a {
+  color: #ffffff;
+  text-decoration: none;
+  font-family: "Playfair Display", serif;
+  font-style: italic;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 2;
+  letter-spacing: 0.06em;
+  transition: color 0.2s ease;
+}
+
+.page-workshop .top-sidebar__list a:hover {
+  color: #de9a81;
+}
+
+.page-workshop .top-sidebar__list li:nth-child(1) > a {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  padding-left: 12px;
+}
+
+.page-workshop .top-sidebar__list li:nth-child(1) > a::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  width: 2px;
+  height: 1.1em;
+  transform: translateY(-50%);
+  background: #de9a81;
+}
+
+.page-workshop .workshop-header__icon {
+  flex-direction: column;
+  gap: 2px;
+}
+
+.page-workshop .workshop-header__menu-label,
+.page-workshop .workshop-header__icon-label {
+  font-family: "Inter", sans-serif;
+  font-size: 11px;
+  font-weight: 400;
+  line-height: 1;
+  letter-spacing: 0.08em;
+  color: #000000;
+}
+
+.page-workshop .workshop-header__menu .workshop-header__menu-label {
+  display: block;
+  width: auto;
+  height: auto;
+  background: none;
+}
+
+.page-workshop .workshop-header__menu .workshop-header__menu-close-icon,
+.page-workshop .workshop-header__menu .workshop-header__menu-close-label {
+  display: none;
+  width: auto;
+  height: auto;
+  background: none;
+}
+
+.page-workshop .workshop-header__menu .workshop-header__menu-close-icon {
+  font-size: 34px;
+  line-height: 1;
+  font-weight: 400;
+}
+
+.page-workshop .workshop-header__menu .workshop-header__menu-close-label {
+  font-family: "Inter", sans-serif;
+  font-size: 11px;
+  font-weight: 400;
+  line-height: 1;
+  letter-spacing: 0.08em;
+  color: #000000;
+}
+
+.page-workshop.is-sidebar-open .top-sidebar {
+  transform: translateX(0);
+}
+
+.page-workshop.is-sidebar-open .workshop-header__menu > span:nth-child(-n+3),
+.page-workshop.is-sidebar-open .workshop-header__menu .workshop-header__menu-label {
+  display: none;
+}
+
+.page-workshop.is-sidebar-open .workshop-header__menu .workshop-header__menu-close-icon,
+.page-workshop.is-sidebar-open .workshop-header__menu .workshop-header__menu-close-label {
+  display: block;
+}
+
+.page-workshop.is-sidebar-open .workshop-header__bar {
+  left: 240px;
+  width: calc(100% - 240px);
+}
+
+.page-workshop.is-sidebar-open main {
+  margin-left: 240px;
+}
+
+.page-workshop.is-sidebar-open .workshop-footer {
+  margin-left: 240px;
 }
 
 @media (max-width: 1024px) {
