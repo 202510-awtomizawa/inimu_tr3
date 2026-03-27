@@ -840,10 +840,20 @@
 }
 
 .page-course .workshop-header__menu .workshop-header__menu-line {
-  display: block;
+  display: none;
   width: 36px;
   height: 2px;
   background: currentColor;
+}
+
+.page-course .workshop-header__menu .workshop-header__menu-open-icon {
+  display: block;
+  width: auto;
+  height: auto;
+  background: none;
+  font-size: 34px;
+  line-height: 1;
+  font-weight: 400;
 }
 
 .page-course .workshop-header__menu .workshop-header__menu-close-icon,
@@ -861,6 +871,7 @@
 }
 
 .page-course.is-sidebar-open .workshop-header__menu .workshop-header__menu-line,
+.page-course.is-sidebar-open .workshop-header__menu .workshop-header__menu-open-icon,
 .page-course.is-sidebar-open .workshop-header__menu .workshop-header__menu-label {
   display: none;
 }
