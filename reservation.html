@@ -15,7 +15,7 @@
   <link rel="stylesheet" href="./reservation.css" />
 </head>
 
-<body class="page-reservation">
+<body class="page-reservation is-sidebar-open">
   <header class="workshop-header">
     <div class="workshop-header__shell">
       <div class="workshop-header__panel">
@@ -24,6 +24,9 @@
             <span></span>
             <span></span>
             <span></span>
+            <span class="workshop-header__menu-label">Menu</span>
+            <span class="workshop-header__menu-close-icon material-symbols-outlined">close</span>
+            <span class="workshop-header__menu-close-label">Close</span>
           </button>
 
           <a class="workshop-header__logo" href="./index.html" aria-label="nana ホーム">
@@ -38,11 +41,23 @@
               <path d="M3.5 8.5H20.5"></path>
               <path d="M8 13l2.2 2.2L16 9.8"></path>
             </svg>
+            <span class="workshop-header__icon-label">Reserve</span>
           </a>
         </div>
       </div>
     </div>
   </header>
+  <aside class="reservation-sidebar">
+    <nav class="reservation-sidebar__nav">
+      <ul class="reservation-sidebar__list">
+        <li><a href="#">トップページ</a></li>
+        <li><a href="#">コース</a></li>
+        <li><a href="#">予約</a></li>
+        <li><a href="#">アクセス</a></li>
+      </ul>
+    </nav>
+  </aside>
+  <div class="reservation-sidebar-overlay"></div>
 
   <main>
     <section class="reservation-main" aria-labelledby="reservation-main-title">
