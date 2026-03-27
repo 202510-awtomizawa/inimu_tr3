@@ -16,7 +16,7 @@
   <link rel="stylesheet" href="./styles.css" />
 </head>
 
-<body class="page-workshop is-sidebar-open">  <header class="workshop-header" aria-labelledby="workshop-title">
+<body class="page-workshop">  <header class="workshop-header" aria-labelledby="workshop-title">
     <div class="workshop-header__shell">
       <div class="workshop-header__panel">
         <div class="workshop-header__bar">
@@ -318,8 +318,16 @@
 	      </p>
 	    </div>
 	  </footer>
-  <script src="./script.js"></script>
-</body>
+	  <script src="./script.js"></script>
+  <script>
+    const menu = document.querySelector(".workshop-header__menu");
+    if (menu) {
+      menu.addEventListener("click", () => {
+        document.body.classList.toggle("is-sidebar-open");
+      });
+    }
+  </script>
+	</body>
 
 </html>
 
