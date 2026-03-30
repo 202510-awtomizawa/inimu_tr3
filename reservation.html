@@ -385,8 +385,21 @@
   </script>
   <script>
     const menu = document.querySelector(".workshop-header__menu");
+    const accessSection = document.getElementById("access");
     if (window.location.hash === "#access") {
       document.body.classList.add("is-access-current");
+    }
+    if ("IntersectionObserver" in window && accessSection) {
+      const accessObserver = new IntersectionObserver((entries) => {
+        const entry = entries[0];
+        if (!entry) return;
+        if (entry.isIntersecting) {
+          document.body.classList.add("is-access-current");
+        } else {
+          document.body.classList.remove("is-access-current");
+        }
+      }, { rootMargin: "-80px 0px -55% 0px" });
+      accessObserver.observe(accessSection);
     }
     if (menu) {
       menu.addEventListener("click", () => {

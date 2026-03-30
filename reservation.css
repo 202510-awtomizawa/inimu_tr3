@@ -668,6 +668,28 @@
   background: #de9a81;
 }
 
+.page-reservation.is-access-current .reservation-sidebar__list li:nth-child(3) > a::before {
+  content: none;
+}
+
+.page-reservation.is-access-current .reservation-sidebar__list li:nth-child(4) > a {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  padding-left: 12px;
+}
+
+.page-reservation.is-access-current .reservation-sidebar__list li:nth-child(4) > a::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  width: 2px;
+  height: 1.1em;
+  transform: translateY(-50%);
+  background: #de9a81;
+}
+
 .page-reservation .workshop-header__icon {
   flex-direction: column;
   gap: 2px;
