@@ -54,9 +54,9 @@
     <nav class="reservation-sidebar__nav">
       <ul class="reservation-sidebar__list">
         <li><a href="./index.html">トップページ</a></li>
-        <li><a href="#">コース</a></li>
+        <li><a href="./course.html">コース</a></li>
         <li><a href="#">予約</a></li>
-        <li><a href="#">アクセス</a></li>
+        <li><a href="./reservation.html#access">アクセス</a></li>
       </ul>
     </nav>
   </aside>
@@ -385,6 +385,9 @@
   </script>
   <script>
     const menu = document.querySelector(".workshop-header__menu");
+    if (window.location.hash === "#access") {
+      document.body.classList.add("is-access-current");
+    }
     if (menu) {
       menu.addEventListener("click", () => {
         document.body.classList.toggle("is-sidebar-open");
