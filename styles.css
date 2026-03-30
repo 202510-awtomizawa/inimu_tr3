@@ -244,17 +244,17 @@ button {
   right: 16px;
   bottom: 16px;
   display: grid;
-  justify-items: center;
-  gap: var(--space-2);
-  max-width: 360px;
-  padding: 18px 20px;
-  background: rgba(255, 255, 255, 0.2);
-  border: 1px solid rgba(255, 255, 255, 0.45);
-  border-radius: 10px;
-  box-shadow: 0 10px 24px rgba(51, 51, 51, 0.08);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  text-align: center;
+  justify-items: start;
+  gap: 10px;
+  max-width: none;
+  padding: 0;
+  background: transparent;
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+  text-align: left;
 }
 
 .workshop-header__copy,
@@ -263,7 +263,7 @@ button {
 }
 
 .workshop-header__copy {
-  display: grid;
+  display: none;
   gap: var(--space-1);
   font-size: 48px;
   font-weight: 500;
@@ -272,35 +272,69 @@ button {
 
 .workshop-header__subcopy {
   font-family: var(--font-sub);
-  font-size: 36px;
-  line-height: 1.25;
+  font-size: 42px;
+  font-weight: 500;
+  line-height: 1.15;
+  letter-spacing: 0.02em;
+  color: #ffffff;
+  white-space: nowrap;
+  text-shadow:
+    0 0 1px rgba(0, 0, 0, 0.8),
+    0 0 2px rgba(0, 0, 0, 0.4);
 }
 
 .workshop-header__cta {
   display: inline-flex;
   align-items: center;
-  justify-content: center;
-  min-width: 88px;
-  min-height: 30px;
-  padding: 7px 14px;
-  border: 1px solid #8e816f;
-  background: rgba(255, 250, 246, 0.92);
-  font-size: 15px;
+  justify-content: flex-start;
+  gap: 12px;
+  position: relative;
+  min-width: 0;
+  min-height: 0;
+  padding: 2px 24px 6px 0;
+  border: 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.75);
+  background: transparent;
+  font-size: 16px;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  color: #ffffff;
   line-height: 1;
-  box-shadow: 0 4px 12px rgba(51, 51, 51, 0.08);
-  transition: background-color 0.2s ease, border-color 0.2s ease,
-    box-shadow 0.2s ease;
+  box-shadow: none;
+  transition: border-color 0.2s ease, color 0.2s ease;
+}
+
+.workshop-header__cta::before {
+  content: "";
+  position: absolute;
+  right: 0;
+  bottom: 6px;
+  width: 14px;
+  height: 14px;
+  border-top: 1px solid currentColor;
+  border-right: 1px solid currentColor;
+  pointer-events: none;
+}
+
+.workshop-header__cta::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  bottom: 6px;
+  width: 20px;
+  border-top: 1px solid currentColor;
+  transform-origin: right top;
+  transform: rotate(135deg);
+  pointer-events: none;
 }
 
 .workshop-header__cta:hover {
-  background: rgba(255, 248, 241, 0.98);
-  border-color: #7c6f5d;
-  box-shadow: 0 6px 14px rgba(51, 51, 51, 0.12);
+  border-color: #ffffff;
+  color: #ffffff;
 }
 
 .workshop-header__cta {
-  transition: background-color 0.2s ease, border-color 0.2s ease,
-    box-shadow 0.2s ease, transform 0.22s ease;
+  transition: border-color 0.2s ease, color 0.2s ease, transform 0.22s ease;
 }
 
 .workshop-header__cta:hover {
@@ -370,8 +404,8 @@ button {
 
   .workshop-header__content {
     right: 36px;
-    bottom: 12px;
-    max-width: 360px;
+    bottom: 14px;
+    max-width: none;
   }
 }
 
@@ -1092,11 +1126,11 @@ button {
 
   .workshop-header__content {
     right: 12px;
-    left: auto;
     bottom: 12px;
-    width: min(64%, 288px);
-    max-width: 320px;
-    padding: 14px 16px;
+    left: auto;
+    width: min(72%, 320px);
+    max-width: 340px;
+    padding: 0;
     transform: none;
   }
 
@@ -1106,12 +1140,14 @@ button {
   }
 
   .workshop-header__subcopy {
-    font-size: clamp(1rem, 4.4vw, 1.5rem);
+    font-size: clamp(1.25rem, 4.6vw, 1.75rem);
   }
 
   .workshop-header__cta {
-    min-width: 104px;
-    min-height: 36px;
+    min-width: 0;
+    min-height: 0;
+    font-size: 14px;
+    gap: 8px;
   }
 
   .workshop-intro,
@@ -1277,9 +1313,8 @@ button {
   }
 
   .workshop-header__content {
-    padding: 12px;
-    width: min(70%, 252px);
-    max-width: 280px;
+    width: min(76%, 280px);
+    max-width: 300px;
   }
 
   .workshop-header__copy {
@@ -1287,7 +1322,7 @@ button {
   }
 
   .workshop-header__subcopy {
-    font-size: 0.9375rem;
+    font-size: 1rem;
   }
 
   .workshop-intro__title,
