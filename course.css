@@ -174,25 +174,25 @@
   width: min(100%, 420px);
   padding: 40px 32px;
   border: 1px solid #d8d0ca;
-  background: #c8836b;
-  color: #ffffff;
+  background: #f8efe8;
+  color: #444444;
 }
 
 .course-detail__card::before {
   content: "";
   position: absolute;
   inset: 10px;
-  border: 1.5px solid #ffffff;
+  border: 1.5px solid rgba(255,255,255,0.3);
   pointer-events: none;
 }
 
 .course-detail__lead {
   margin: 0;
   font-family: "Noto Sans JP", sans-serif;
-  font-size: 18px;
+  font-size: 17px;
   font-weight: 500;
   line-height: 1.8;
-  color: #ffffff;
+  color: #444444;
 }
 
 .course-detail__meta {
@@ -207,9 +207,9 @@
 .course-detail__meta-row dd {
   margin: 0;
   font-family: "Noto Sans JP", sans-serif;
-  font-size: 18px;
+  font-size: 16px;
   line-height: 1.75;
-  color: #ffffff;
+  color: #444444;
 }
 
 .course-detail__meta-row dt {
@@ -379,9 +379,7 @@
     margin-top: -160px;
   }
 
-  .course-detail__lead,
-  .course-detail__meta-row dt,
-  .course-detail__meta-row dd {
+  .course-detail__meta-row dt {
     font-size: 16px;
   }
 
