@@ -117,7 +117,7 @@
 }
 
 .course-detail {
-  padding: 200px 16px 120px;
+  padding: 200px 16px 40px;
   color: #333333;
 }
 
@@ -250,7 +250,7 @@
 }
 
 .course-detail-extra {
-  padding: 32px 16px 0;
+  padding: 8px 16px 0;
   color: #444444;
 }
 
@@ -270,7 +270,7 @@
   border: 1px solid #d8d0ca;
   background: #f8efe8;
   color: #444444;
-  padding: 28px 24px;
+  padding: 56px 32px;
   text-align: center;
 }
 
