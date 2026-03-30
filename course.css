@@ -251,7 +251,7 @@
 
 .course-detail-extra {
   padding: 32px 16px 0;
-  color: #333333;
+  color: #444444;
 }
 
 .course-detail-extra__container {
@@ -259,17 +259,26 @@
   margin: 0 auto;
 }
 
+.course-detail-extra__grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 24px;
+}
+
 .course-detail-extra__card {
   position: relative;
   border: 1px solid #d8d0ca;
-  background: #ffffff;
+  background: #f8efe8;
+  color: #444444;
+  padding: 28px 24px;
+  text-align: center;
 }
 
 .course-detail-extra__card::before {
   content: "";
   position: absolute;
   inset: 10px;
-  border: 1px solid rgba(222, 154, 129, 0.45);
+  border: 1px solid #e4d8d1;
   pointer-events: none;
 }
 
@@ -286,9 +295,11 @@
 .course-detail-extra__lead {
   margin: 0;
   font-family: "Noto Sans JP", sans-serif;
-  font-size: 18px;
-  font-weight: 400;
+  font-size: 17px;
+  font-weight: 600;
   line-height: 1.8;
+  letter-spacing: 0.02em;
+  color: #444444;
 }
 
 .course-detail-extra__meta {
@@ -323,12 +334,13 @@
 }
 
 .course-detail-extra__note {
-  margin: 18px 0 0;
+  margin: 12px 0 0;
   font-family: "Noto Sans JP", sans-serif;
-  font-size: 18px;
+  font-size: 16px;
   font-weight: 400;
   line-height: 1.8;
-  text-align: center;
+  color: #444444;
+  text-align: inherit;
 }
 
 .course-detail-extra__note:first-child {
@@ -387,6 +399,11 @@
     padding-top: 24px;
   }
 
+  .course-detail-extra__grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
   .course-detail-extra__card--info {
     width: 100%;
     margin-left: 0;
@@ -394,7 +411,7 @@
   }
 
   .course-detail-extra__lead {
-    font-size: 16px;
+    font-size: 17px;
     line-height: 1.9;
   }
 
@@ -417,7 +434,7 @@
   .course-detail-extra__note {
     font-size: 16px;
     line-height: 1.9;
-    text-align: left;
+    text-align: inherit;
   }
 }
 
