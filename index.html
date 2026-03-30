@@ -322,6 +322,7 @@
 	  <script src="./script.js?v=20260327-1"></script>
   <script>
     const menu = document.querySelector(".workshop-header__menu");
+    document.body.classList.add("is-sidebar-open");
     if (menu) {
       menu.addEventListener("click", () => {
         document.body.classList.toggle("is-sidebar-open");
