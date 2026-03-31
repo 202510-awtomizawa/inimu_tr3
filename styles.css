@@ -272,7 +272,7 @@ button {
 
 .workshop-header__subcopy {
   font-family: var(--font-sub);
-  font-size: 42px;
+  font-size: 44px;
   font-weight: 500;
   line-height: 1.15;
   letter-spacing: 0.02em;
@@ -287,15 +287,16 @@ button {
   display: inline-flex;
   align-items: center;
   justify-content: flex-start;
+  justify-self: end;
   gap: 12px;
   position: relative;
   min-width: 0;
   min-height: 0;
-  padding: 2px 24px 6px 0;
+  padding: 5px 56px 11px 0;
   border: 0;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.75);
+  border-bottom: 1.5px solid rgba(255, 255, 255, 0.75);
   background: transparent;
-  font-size: 16px;
+  font-size: 20px;
   font-weight: 500;
   letter-spacing: 0.08em;
   color: #ffffff;
@@ -309,10 +310,10 @@ button {
   position: absolute;
   right: 0;
   bottom: 6px;
-  width: 14px;
-  height: 14px;
-  border-top: 1px solid currentColor;
-  border-right: 1px solid currentColor;
+  width: 20px;
+  height: 20px;
+  border-top: 1.5px solid currentColor;
+  border-right: 1.5px solid currentColor;
   pointer-events: none;
 }
 
@@ -320,9 +321,9 @@ button {
   content: "";
   position: absolute;
   right: 0;
-  bottom: 20px;
-  width: 19.8px;
-  border-top: 1px solid currentColor;
+  bottom: 26px;
+  width: 28.3px;
+  border-top: 1.5px solid currentColor;
   transform-origin: right top;
   transform: rotate(-45deg);
   pointer-events: none;
@@ -406,6 +407,11 @@ button {
     right: 36px;
     bottom: 14px;
     max-width: none;
+  }
+
+  .workshop-header__cta {
+    font-size: 22px;
+    padding: 10px 56px 14px 0;
   }
 }
 
@@ -1140,14 +1146,15 @@ button {
   }
 
   .workshop-header__subcopy {
-    font-size: clamp(1.25rem, 4.6vw, 1.75rem);
+    font-size: clamp(1.3rem, 4.6vw, 1.85rem);
   }
 
   .workshop-header__cta {
     min-width: 0;
     min-height: 0;
-    font-size: 14px;
+    font-size: 18px;
     gap: 8px;
+    padding: 8px 56px 13px 0;
   }
 
   .workshop-intro,
@@ -1322,7 +1329,7 @@ button {
   }
 
   .workshop-header__subcopy {
-    font-size: 1rem;
+    font-size: 1.05rem;
   }
 
   .workshop-intro__title,
