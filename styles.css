@@ -368,12 +368,16 @@ button {
 }
 
 @media (min-width: 768px) {
+  .workshop-header__visual {
+    max-height: calc(100vh - 10px);
+  }
+
   .workshop-header {
-    padding: 0 var(--space-4) 80px;
+    padding: 0 var(--space-4) 52px;
   }
 
   .workshop-header__panel {
-    padding: 0 var(--space-5) 64px;
+    padding: 0 var(--space-5) 36px;
   }
 
   .workshop-header__bar {
@@ -420,6 +424,12 @@ button {
   margin: 0 auto;
   padding: 200px var(--space-2) 0;
   margin-top: -48px;
+}
+
+@media (min-width: 768px) {
+  .workshop-intro {
+    margin-top: 0;
+  }
 }
 
 .workshop-intro__container {
@@ -1038,6 +1048,23 @@ button {
 .page-workshop.is-sidebar-open .workshop-header__bar {
   left: 240px;
   width: calc(100% - 240px);
+}
+
+.page-workshop.is-sidebar-open .workshop-header[aria-labelledby="workshop-title"] {
+  margin-left: 240px;
+  margin-right: 0;
+  width: calc(100% - 240px);
+}
+
+.page-workshop.is-sidebar-open .workshop-header[aria-labelledby="workshop-title"] .workshop-header__hero {
+  width: 100%;
+  margin-left: 0;
+  margin-right: 0;
+}
+
+.page-workshop.is-sidebar-open .workshop-header__panel {
+  padding-left: 0;
+  padding-right: 0;
 }
 
 .page-workshop.is-sidebar-open main {
