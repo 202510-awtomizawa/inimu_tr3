@@ -713,6 +713,56 @@ button {
   box-shadow: none;
 }
 
+.workshop-course__cards > .workshop-course__card:nth-child(2) .workshop-course__button {
+  font-family: "Playfair Display", serif;
+  font-style: italic;
+  justify-content: flex-start;
+  width: auto;
+  height: auto;
+  min-width: 0;
+  min-height: 0;
+  padding: 6px 78px 12px 0;
+  border: 0;
+  border-bottom: 1.5px solid #ffffff;
+  background: transparent;
+  color: #ffffff;
+  font-size: 1.6rem;
+  line-height: 1;
+  letter-spacing: 0.08em;
+  position: relative;
+  box-shadow: none;
+  transition: border-color 0.2s ease, color 0.2s ease, transform 0.22s ease;
+}
+
+.workshop-course__cards > .workshop-course__card:nth-child(2) .workshop-course__button::before {
+  content: "";
+  position: absolute;
+  right: 0;
+  bottom: 14px;
+  width: 24px;
+  height: 24px;
+  border-top: 1.5px solid currentColor;
+  border-right: 1.5px solid currentColor;
+  pointer-events: none;
+}
+
+.workshop-course__cards > .workshop-course__card:nth-child(2) .workshop-course__button::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  bottom: 38px;
+  width: 33.9px;
+  border-top: 1.5px solid currentColor;
+  transform-origin: right top;
+  transform: rotate(-45deg);
+  pointer-events: none;
+}
+
+.workshop-course__cards > .workshop-course__card:nth-child(2) .workshop-course__button:hover {
+  transform: translateY(-2px);
+  box-shadow: none;
+}
+
 .workshop-flow {
   padding: 200px var(--space-2) 0;
 }
