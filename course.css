@@ -757,7 +757,7 @@
   position: fixed;
   top: 0;
   left: 0;
-  width: 240px;
+  width: 224px;
   height: 100vh;
   padding: 120px 40px 40px;
   background: #333333;
@@ -920,14 +920,14 @@
 }
 
 .page-course.is-sidebar-open .workshop-header__bar {
-  left: 240px;
-  width: calc(100% - 240px);
+  left: 224px;
+  width: calc(100% - 224px);
 }
 
 .page-course.is-sidebar-open main {
-  margin-left: 240px;
+  margin-left: 224px;
 }
 
 .page-course.is-sidebar-open .workshop-footer {
-  margin-left: 240px;
+  margin-left: 224px;
 }

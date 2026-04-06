@@ -1007,7 +1007,7 @@ button {
   position: fixed;
   top: 0;
   left: 0;
-  width: 240px;
+  width: 224px;
   height: 100vh;
   padding: 120px 40px 40px;
   background: #333333;
@@ -1146,14 +1146,14 @@ button {
 }
 
 .page-workshop.is-sidebar-open .workshop-header__bar {
-  left: 240px;
-  width: calc(100% - 240px);
+  left: 224px;
+  width: calc(100% - 224px);
 }
 
 .page-workshop.is-sidebar-open .workshop-header[aria-labelledby="workshop-title"] {
-  margin-left: 240px;
+  margin-left: 224px;
   margin-right: 0;
-  width: calc(100% - 240px);
+  width: calc(100% - 224px);
 }
 
 .page-workshop.is-sidebar-open .workshop-header[aria-labelledby="workshop-title"] .workshop-header__hero {
@@ -1168,11 +1168,11 @@ button {
 }
 
 .page-workshop.is-sidebar-open main {
-  margin-left: 240px;
+  margin-left: 224px;
 }
 
 .page-workshop.is-sidebar-open .workshop-footer {
-  margin-left: 240px;
+  margin-left: 224px;
 }
 
 @media (max-width: 1024px) {
