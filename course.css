@@ -968,3 +968,93 @@
 .page-course.is-sidebar-open .workshop-footer {
   margin-left: 224px;
 }
+
+.page-course .workshop-reservation__container {
+  background: #c8836b;
+}
+
+.page-course .workshop-reservation__frame {
+  background: transparent;
+}
+
+.page-course .workshop-reservation__link {
+  background: transparent;
+  box-shadow: none;
+  transition: box-shadow 0.2s ease;
+}
+
+.page-course .workshop-reservation__link:hover {
+  transform: none;
+  box-shadow: none;
+}
+
+.page-course .workshop-reservation__title,
+.page-course .workshop-reservation__text {
+  transition: color 0.32s ease, text-shadow 0.32s ease;
+}
+
+.page-course .workshop-reservation__arrow-line {
+  transform-origin: left center;
+}
+
+.page-course .workshop-reservation__arrow-head-line {
+  transition:
+    opacity 0.14s ease,
+    background-color 0.32s ease,
+    filter 0.32s ease;
+}
+
+.page-course .workshop-reservation__link:hover .workshop-reservation__title,
+.page-course .workshop-reservation__link:hover .workshop-reservation__text {
+  color: #ffffff;
+  text-shadow:
+    0 0 4px rgba(255, 255, 255, 0.35),
+    0 0 10px rgba(255, 255, 255, 0.2);
+}
+
+.page-course .workshop-reservation__link:hover .workshop-reservation__arrow-line,
+.page-course .workshop-reservation__link:hover .workshop-reservation__arrow-head-line {
+  background-color: #ffffff;
+  filter: drop-shadow(0 0 4px rgba(255, 255, 255, 0.35));
+}
+
+.page-course .workshop-reservation__link:hover .workshop-reservation__arrow-line {
+  animation: courseReservationArrowLineReplay 0.34s ease;
+}
+
+.page-course .workshop-reservation__link:hover .workshop-reservation__arrow-head-line--top,
+.page-course .workshop-reservation__link:hover .workshop-reservation__arrow-head-line--bottom {
+  animation: courseReservationArrowHeadReplay 0.22s ease 0.2s both;
+}
+
+@keyframes courseReservationArrowLineReplay {
+  0% {
+    transform: scaleX(1);
+    opacity: 1;
+  }
+
+  12% {
+    transform: scaleX(0);
+    opacity: 0;
+  }
+
+  13% {
+    transform: scaleX(0);
+    opacity: 1;
+  }
+
+  100% {
+    transform: scaleX(1);
+    opacity: 1;
+  }
+}
+
+@keyframes courseReservationArrowHeadReplay {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
