@@ -1186,49 +1186,77 @@ body.page-workshop:not(.page-course) .workshop-header__cta > span {
   position: relative;
   z-index: 2;
   display: inline-block;
-  background: linear-gradient(
-    to right,
-    #b85f56 0%,
-    #b85f56 50%,
-    #ffffff 50%,
-    #ffffff 100%
-  );
-  background-size: 200% 100%;
-  background-position: 100% 0;
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
-  transition: background-position 0.4s ease;
-  text-shadow: none;
-  filter:
-    drop-shadow(0 0 4px rgba(255, 255, 255, 0.55))
-    drop-shadow(0 0 10px rgba(255, 255, 255, 0.35));
+  color: #ffffff;
+  background: none;
+  -webkit-background-clip: initial;
+  background-clip: initial;
+  transition: none;
+  filter: none;
 }
 
 body.page-workshop:not(.page-course) .workshop-header__cta::selection {
   background: transparent;
 }
 
-body.page-workshop:not(.page-course) .workshop-header__cta > span::after {
-  content: attr(data-text);
-  position: absolute;
-  left: 0;
-  top: 0;
-  color: #b85f56;
-  transform: scaleX(0);
-  transform-origin: left center;
-  transition: transform 0.4s ease;
-  white-space: nowrap;
-  pointer-events: none;
-  opacity: 0;
+body.page-workshop:not(.page-course) .workshop-header__cta:hover {
+  transform: none;
 }
 
-body.page-workshop:not(.page-course) .workshop-header__cta:hover > span::after {
+body.page-workshop:not(.page-course) .workshop-header__cta > span::after {
+  content: none;
+}
+
+body.page-workshop:not(.page-course) .workshop-header__cta > span::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -11px;
+  width: calc(100% + 56px);
+  border-top: 1.5px solid rgba(255, 255, 255, 0.95);
+  transform: scaleX(0);
+  transform-origin: left center;
+  transition: transform 0.32s ease;
+  pointer-events: none;
+}
+
+body.page-workshop:not(.page-course) .workshop-header__cta::before,
+body.page-workshop:not(.page-course) .workshop-header__cta::after {
+  opacity: 0;
+  transition:
+    opacity 0.16s ease 0.28s,
+    transform 0.22s ease 0.28s;
+}
+
+body.page-workshop:not(.page-course) .workshop-header__cta::before {
+  transform: translateY(4px);
+}
+
+body.page-workshop:not(.page-course) .workshop-header__cta::after {
+  transform-origin: right top;
+  transform: rotate(-45deg) translateY(4px);
+}
+
+body.page-workshop:not(.page-course) .workshop-header__cta:hover > span::before {
   transform: scaleX(1);
 }
 
-body.page-workshop:not(.page-course) .workshop-header__cta:hover > span {
-  background-position: 0 0;
+body.page-workshop:not(.page-course) .workshop-header__cta:hover::before {
+  opacity: 1;
+  transform: translateY(-2px);
+}
+
+body.page-workshop:not(.page-course) .workshop-header__cta:hover::after {
+  opacity: 1;
+  transform: rotate(-45deg) translateY(-2px);
+}
+
+body.page-workshop:not(.page-course) .workshop-header__copy,
+body.page-workshop:not(.page-course) .workshop-header__subcopy {
+  text-shadow:
+    0 0 1px rgba(0, 0, 0, 0.72),
+    0 0 2px rgba(0, 0, 0, 0.35),
+    0 0 4px rgba(255, 255, 255, 0.28),
+    0 0 10px rgba(255, 255, 255, 0.16);
 }
 
 .page-workshop.is-sidebar-open .top-sidebar {
