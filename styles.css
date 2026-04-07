@@ -809,6 +809,14 @@ body.page-workshop:not(.page-course) .workshop-course__cards > .workshop-course_
 
 @keyframes index-course-button-line-replay {
   0% {
+    background-size: 100% 1.5px;
+  }
+
+  12% {
+    background-size: 0% 1.5px;
+  }
+
+  13% {
     background-size: 0% 1.5px;
   }
 
@@ -1081,12 +1089,23 @@ body.page-workshop:not(.page-course) .workshop-course__cards > .workshop-course_
   background: #ffffff;
 }
 
+body.page-workshop:not(.page-course) .workshop-reservation__container {
+  background: #c8836b;
+}
+
+body.page-workshop:not(.page-course) .workshop-reservation__frame {
+  background: transparent;
+}
+
 body.page-workshop:not(.page-course) .workshop-reservation__link {
+  background: transparent;
+  box-shadow: none;
   transition: box-shadow 0.2s ease;
 }
 
 body.page-workshop:not(.page-course) .workshop-reservation__link:hover {
   transform: none;
+  box-shadow: none;
 }
 
 body.page-workshop:not(.page-course) .workshop-reservation__title,
@@ -1106,12 +1125,16 @@ body.page-workshop:not(.page-course) .workshop-reservation__arrow-head-line {
 
 body.page-workshop:not(.page-course) .workshop-reservation__link:hover .workshop-reservation__title,
 body.page-workshop:not(.page-course) .workshop-reservation__link:hover .workshop-reservation__text {
-  color: #403f3f;
+  color: #ffffff;
+  text-shadow:
+    0 0 4px rgba(255, 255, 255, 0.35),
+    0 0 10px rgba(255, 255, 255, 0.2);
 }
 
 body.page-workshop:not(.page-course) .workshop-reservation__link:hover .workshop-reservation__arrow-line,
 body.page-workshop:not(.page-course) .workshop-reservation__link:hover .workshop-reservation__arrow-head-line {
-  background-color: #403f3f;
+  background: #ffffff;
+  filter: drop-shadow(0 0 4px rgba(255, 255, 255, 0.35));
 }
 
 body.page-workshop:not(.page-course) .workshop-reservation__link:hover .workshop-reservation__arrow-line {
