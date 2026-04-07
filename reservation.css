@@ -725,6 +725,19 @@
 .page-reservation .workshop-header__icon {
   flex-direction: column;
   gap: 2px;
+  transition: color 0.24s ease;
+}
+
+.page-reservation .workshop-header__icon-label {
+  transition: color 0.24s ease;
+}
+
+.page-reservation .workshop-header__icon:hover {
+  color: #ffffff;
+}
+
+.page-reservation .workshop-header__icon:hover .workshop-header__icon-label {
+  color: #ffffff;
 }
 
 .page-reservation .workshop-header__menu-label,
@@ -742,6 +755,7 @@
   width: auto;
   height: auto;
   background: none;
+  transition: color 0.24s ease;
 }
 
 .page-reservation .workshop-header__menu .workshop-header__menu-line {
@@ -756,6 +770,19 @@
   font-size: 34px;
   line-height: 1;
   font-weight: 400;
+  transition: color 0.24s ease;
+}
+
+.page-reservation:not(.is-sidebar-open) .workshop-header__menu {
+  transition: color 0.24s ease;
+}
+
+.page-reservation:not(.is-sidebar-open) .workshop-header__menu:hover {
+  color: #ffffff;
+}
+
+.page-reservation:not(.is-sidebar-open) .workshop-header__menu:hover .workshop-header__menu-label {
+  color: #ffffff;
 }
 
 .page-reservation .workshop-header__menu .material-symbols-outlined {
@@ -776,6 +803,7 @@
   font-size: 34px;
   line-height: 1;
   font-weight: 400;
+  transition: color 0.24s ease;
 }
 
 .page-reservation .workshop-header__menu .workshop-header__menu-close-label {
@@ -785,6 +813,19 @@
   line-height: 1;
   letter-spacing: 0.08em;
   color: #000000;
+  transition: color 0.24s ease;
+}
+
+.page-reservation.is-sidebar-open .workshop-header__menu {
+  transition: color 0.24s ease;
+}
+
+.page-reservation.is-sidebar-open .workshop-header__menu:hover {
+  color: #ffffff;
+}
+
+.page-reservation.is-sidebar-open .workshop-header__menu:hover .workshop-header__menu-close-label {
+  color: #ffffff;
 }
 
 .page-reservation .reservation-sidebar-overlay {
