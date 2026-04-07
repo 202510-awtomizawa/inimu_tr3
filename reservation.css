@@ -762,6 +762,16 @@
   display: block;
 }
 
+.page-reservation .workshop-header__menu {
+  align-items: center;
+  justify-content: center;
+  gap: 2px;
+}
+
+.page-reservation:not(.is-sidebar-open) .workshop-header__menu .workshop-header__menu-line {
+  display: none;
+}
+
 .page-reservation .workshop-header__menu .workshop-header__menu-open-icon {
   display: block;
   width: auto;
