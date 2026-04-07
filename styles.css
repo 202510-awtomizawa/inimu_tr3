@@ -763,6 +763,84 @@ button {
   box-shadow: none;
 }
 
+body.page-workshop:not(.page-course) .workshop-course__cards > .workshop-course__card:first-child .workshop-course__button,
+body.page-workshop:not(.page-course) .workshop-course__cards > .workshop-course__card:nth-child(2) .workshop-course__button {
+  border-bottom: 0;
+  background-image: linear-gradient(rgba(255, 255, 255, 0.95), rgba(255, 255, 255, 0.95));
+  background-repeat: no-repeat;
+  background-position: left 100%;
+  background-size: 100% 1.5px;
+}
+
+body.page-workshop:not(.page-course) .workshop-course__cards > .workshop-course__card:first-child .workshop-course__button::before,
+body.page-workshop:not(.page-course) .workshop-course__cards > .workshop-course__card:first-child .workshop-course__button::after,
+body.page-workshop:not(.page-course) .workshop-course__cards > .workshop-course__card:nth-child(2) .workshop-course__button::before,
+body.page-workshop:not(.page-course) .workshop-course__cards > .workshop-course__card:nth-child(2) .workshop-course__button::after {
+  opacity: 1;
+}
+
+body.page-workshop:not(.page-course) .workshop-course__cards > .workshop-course__card:first-child .workshop-course__button::before,
+body.page-workshop:not(.page-course) .workshop-course__cards > .workshop-course__card:nth-child(2) .workshop-course__button::before {
+  transform: translateY(0);
+}
+
+body.page-workshop:not(.page-course) .workshop-course__cards > .workshop-course__card:first-child .workshop-course__button::after,
+body.page-workshop:not(.page-course) .workshop-course__cards > .workshop-course__card:nth-child(2) .workshop-course__button::after {
+  transform-origin: right top;
+  transform: rotate(-45deg) translateY(0);
+}
+
+body.page-workshop:not(.page-course) .workshop-course__cards > .workshop-course__card:first-child .workshop-course__button:hover,
+body.page-workshop:not(.page-course) .workshop-course__cards > .workshop-course__card:nth-child(2) .workshop-course__button:hover {
+  transform: none;
+  box-shadow: none;
+  animation: index-course-button-line-replay 0.32s ease both;
+}
+
+body.page-workshop:not(.page-course) .workshop-course__cards > .workshop-course__card:first-child .workshop-course__button:hover::before,
+body.page-workshop:not(.page-course) .workshop-course__cards > .workshop-course__card:nth-child(2) .workshop-course__button:hover::before {
+  animation: index-course-button-arrow-before-replay 0.22s ease 0.28s both;
+}
+
+body.page-workshop:not(.page-course) .workshop-course__cards > .workshop-course__card:first-child .workshop-course__button:hover::after,
+body.page-workshop:not(.page-course) .workshop-course__cards > .workshop-course__card:nth-child(2) .workshop-course__button:hover::after {
+  animation: index-course-button-arrow-after-replay 0.22s ease 0.28s both;
+}
+
+@keyframes index-course-button-line-replay {
+  0% {
+    background-size: 0% 1.5px;
+  }
+
+  100% {
+    background-size: 100% 1.5px;
+  }
+}
+
+@keyframes index-course-button-arrow-before-replay {
+  0% {
+    opacity: 0;
+    transform: translateY(4px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(-2px);
+  }
+}
+
+@keyframes index-course-button-arrow-after-replay {
+  0% {
+    opacity: 0;
+    transform: rotate(-45deg) translateY(4px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: rotate(-45deg) translateY(-2px);
+  }
+}
+
 .workshop-flow {
   padding: 200px var(--space-2) 0;
 }
@@ -1003,6 +1081,80 @@ button {
   background: #ffffff;
 }
 
+body.page-workshop:not(.page-course) .workshop-reservation__link {
+  transition: box-shadow 0.2s ease;
+}
+
+body.page-workshop:not(.page-course) .workshop-reservation__link:hover {
+  transform: none;
+}
+
+body.page-workshop:not(.page-course) .workshop-reservation__title,
+body.page-workshop:not(.page-course) .workshop-reservation__text {
+  transition: color 0.32s ease;
+}
+
+body.page-workshop:not(.page-course) .workshop-reservation__arrow-line {
+  transform-origin: left center;
+}
+
+body.page-workshop:not(.page-course) .workshop-reservation__arrow-head-line {
+  transition:
+    opacity 0.14s ease,
+    background-color 0.32s ease;
+}
+
+body.page-workshop:not(.page-course) .workshop-reservation__link:hover .workshop-reservation__title,
+body.page-workshop:not(.page-course) .workshop-reservation__link:hover .workshop-reservation__text {
+  color: #403f3f;
+}
+
+body.page-workshop:not(.page-course) .workshop-reservation__link:hover .workshop-reservation__arrow-line,
+body.page-workshop:not(.page-course) .workshop-reservation__link:hover .workshop-reservation__arrow-head-line {
+  background-color: #403f3f;
+}
+
+body.page-workshop:not(.page-course) .workshop-reservation__link:hover .workshop-reservation__arrow-line {
+  animation: reservationArrowLineReplay 0.34s ease;
+}
+
+body.page-workshop:not(.page-course) .workshop-reservation__link:hover .workshop-reservation__arrow-head-line--top,
+body.page-workshop:not(.page-course) .workshop-reservation__link:hover .workshop-reservation__arrow-head-line--bottom {
+  animation: reservationArrowHeadReplay 0.22s ease 0.2s both;
+}
+
+@keyframes reservationArrowLineReplay {
+  0% {
+    transform: scaleX(1);
+    opacity: 1;
+  }
+
+  12% {
+    transform: scaleX(0);
+    opacity: 0;
+  }
+
+  13% {
+    transform: scaleX(0);
+    opacity: 1;
+  }
+
+  100% {
+    transform: scaleX(1);
+    opacity: 1;
+  }
+}
+
+@keyframes reservationArrowHeadReplay {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
 .page-workshop .top-sidebar {
   position: fixed;
   top: 0;
@@ -1180,6 +1332,7 @@ body.page-workshop:not(.page-course) .workshop-header__icon:hover .workshop-head
 body.page-workshop:not(.page-course) .workshop-header__cta {
   position: relative;
   overflow: hidden;
+  border-bottom: none;
 }
 
 body.page-workshop:not(.page-course) .workshop-header__cta > span {
@@ -1213,41 +1366,71 @@ body.page-workshop:not(.page-course) .workshop-header__cta > span::before {
   bottom: -11px;
   width: calc(100% + 56px);
   border-top: 1.5px solid rgba(255, 255, 255, 0.95);
-  transform: scaleX(0);
+  transform: scaleX(1);
   transform-origin: left center;
-  transition: transform 0.32s ease;
+  transition: none;
   pointer-events: none;
 }
 
 body.page-workshop:not(.page-course) .workshop-header__cta::before,
 body.page-workshop:not(.page-course) .workshop-header__cta::after {
-  opacity: 0;
-  transition:
-    opacity 0.16s ease 0.28s,
-    transform 0.22s ease 0.28s;
+  opacity: 1;
+  transition: none;
 }
 
 body.page-workshop:not(.page-course) .workshop-header__cta::before {
-  transform: translateY(4px);
+  transform: translateY(0);
 }
 
 body.page-workshop:not(.page-course) .workshop-header__cta::after {
   transform-origin: right top;
-  transform: rotate(-45deg) translateY(4px);
+  transform: rotate(-45deg) translateY(0);
 }
 
 body.page-workshop:not(.page-course) .workshop-header__cta:hover > span::before {
-  transform: scaleX(1);
+  animation: index-cta-line-replay 0.32s ease both;
 }
 
 body.page-workshop:not(.page-course) .workshop-header__cta:hover::before {
-  opacity: 1;
-  transform: translateY(-2px);
+  animation: index-cta-arrow-before-replay 0.22s ease 0.28s both;
 }
 
 body.page-workshop:not(.page-course) .workshop-header__cta:hover::after {
-  opacity: 1;
-  transform: rotate(-45deg) translateY(-2px);
+  animation: index-cta-arrow-after-replay 0.22s ease 0.28s both;
+}
+
+@keyframes index-cta-line-replay {
+  0% {
+    transform: scaleX(0);
+  }
+
+  100% {
+    transform: scaleX(1);
+  }
+}
+
+@keyframes index-cta-arrow-before-replay {
+  0% {
+    opacity: 0;
+    transform: translateY(4px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(-2px);
+  }
+}
+
+@keyframes index-cta-arrow-after-replay {
+  0% {
+    opacity: 0;
+    transform: rotate(-45deg) translateY(4px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: rotate(-45deg) translateY(-2px);
+  }
 }
 
 body.page-workshop:not(.page-course) .workshop-header__copy,
@@ -1257,6 +1440,12 @@ body.page-workshop:not(.page-course) .workshop-header__subcopy {
     0 0 2px rgba(0, 0, 0, 0.35),
     0 0 4px rgba(255, 255, 255, 0.28),
     0 0 10px rgba(255, 255, 255, 0.16);
+}
+
+body.page-workshop:not(.page-course) .workshop-course__card-title {
+  text-shadow:
+    0 0 3px rgba(255, 255, 255, 0.22),
+    0 0 8px rgba(255, 255, 255, 0.12);
 }
 
 .page-workshop.is-sidebar-open .top-sidebar {
