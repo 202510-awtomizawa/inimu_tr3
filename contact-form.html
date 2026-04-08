@@ -16,10 +16,11 @@
         </header>
 
         <p class="contact-form__intro" id="contact-form-intro">
-          ご不明点やご相談がございましたら、下記フォームよりお問い合わせください。
+          ご不明点やご相談がございましたら、下記フォームよりお問い合わせください。<br />
+          ご予約は<a href="./reservation-form.html">予約フォーム</a>よりお願いいたします。
         </p>
 
-        <form class="contact-form__form" action="#" method="post" aria-describedby="contact-form-intro contact-form-note">
+        <form class="contact-form__form" action="./contact-complete.html" method="get" aria-describedby="contact-form-intro">
           <div class="contact-form__field">
             <label class="contact-form__label" for="contact-name">お名前 <span class="contact-form__required-text">必須</span></label>
             <input class="contact-form__input" id="contact-name" name="name" type="text" autocomplete="name" required />
@@ -54,8 +55,6 @@
               <span><a href="./privacy-policy.html">プライバシーポリシー</a>に同意する <span class="contact-form__required-text">必須</span></span>
             </label>
           </div>
-
-          <p class="contact-form__note" id="contact-form-note">返信メールが届かない場合は、迷惑メールフォルダをご確認ください。</p>
 
           <button class="contact-form__submit" type="submit">送信する</button>
         </form>
