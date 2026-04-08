@@ -581,8 +581,18 @@ button {
 
 .workshop-course__lead {
   margin: 0;
+  display: inline-flex;
+  align-items: center;
+  gap: 20px;
   font-size: 0.875rem;
   line-height: 1.5;
+}
+
+.workshop-course__lead::after {
+  content: "";
+  width: 56px;
+  height: 1px;
+  background: #9c9c9c;
 }
 
 .workshop-course__cards {
@@ -880,8 +890,18 @@ body.page-workshop:not(.page-course) .workshop-course__cards > .workshop-course_
 
 .workshop-flow__lead {
   margin: 0;
+  display: inline-flex;
+  align-items: center;
+  gap: 20px;
   font-size: 0.875rem;
   line-height: 1.5;
+}
+
+.workshop-flow__lead::after {
+  content: "";
+  width: 56px;
+  height: 1px;
+  background: #9c9c9c;
 }
 
 .workshop-flow__list {
@@ -898,7 +918,19 @@ body.page-workshop:not(.page-course) .workshop-course__cards > .workshop-course_
 }
 
 .workshop-flow__item--left-image {
-  grid-template-columns: 180px 1fr 140px;
+  grid-template-columns: 140px 1fr 180px;
+}
+
+.workshop-flow__item--left-image .workshop-flow__label {
+  order: 1;
+}
+
+.workshop-flow__item--left-image .workshop-flow__content {
+  order: 2;
+}
+
+.workshop-flow__item--left-image .workshop-flow__image-wrapper {
+  order: 3;
 }
 
 .workshop-flow__label {
@@ -1707,6 +1739,22 @@ body.page-workshop:not(.page-course) .workshop-course__card-title {
 
   .workshop-course__line,
   .workshop-flow__line {
+    width: 40px;
+  }
+
+  .workshop-course__lead {
+    gap: 12px;
+  }
+
+  .workshop-course__lead::after {
+    width: 40px;
+  }
+
+  .workshop-flow__lead {
+    gap: 12px;
+  }
+
+  .workshop-flow__lead::after {
     width: 40px;
   }
 
