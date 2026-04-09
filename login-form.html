@@ -50,10 +50,13 @@
 
     if (!date && !course) return;
 
-    const nextParams = new URLSearchParams();
-    if (date) nextParams.set("date", date);
-    if (course) nextParams.set("course", course);
-    form.action = `./reservation-form.html?${nextParams.toString()}`;
+    form.addEventListener("submit", function (event) {
+      event.preventDefault();
+      const nextParams = new URLSearchParams();
+      if (date) nextParams.set("date", date);
+      if (course) nextParams.set("course", course);
+      window.location.href = `./reservation-form.html?${nextParams.toString()}`;
+    });
   })();
 </script>
 </body>
