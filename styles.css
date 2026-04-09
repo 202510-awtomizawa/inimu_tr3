@@ -2096,3 +2096,99 @@ body.page-workshop:not(.page-course) .workshop-course__card-title {
     line-height: 1.75;
   }
 }
+
+/* privacy policy: quiet reading page */
+.page-privacy-policy .contact-form {
+  padding-top: 104px;
+}
+
+.page-privacy-policy .contact-form__container {
+  max-width: 800px;
+  padding: 48px 40px;
+}
+
+.page-privacy-policy .contact-form__header {
+  margin-bottom: 28px;
+}
+
+.page-privacy-policy .contact-form__title {
+  font-size: 36px;
+}
+
+.page-privacy-policy .contact-form__subtitle {
+  font-size: 15px;
+}
+
+.page-privacy-policy .contact-form__intro {
+  margin-bottom: 40px;
+  font-size: 15px;
+  line-height: 1.85;
+}
+
+.page-privacy-policy .privacy-policy__container > section {
+  margin-top: 28px;
+}
+
+.page-privacy-policy .privacy-policy__container > section h2 {
+  margin: 0 0 10px;
+  font-family: "Noto Sans JP", sans-serif;
+  font-size: 19px;
+  font-weight: 500;
+  line-height: 1.65;
+  color: #333333;
+}
+
+.page-privacy-policy .privacy-policy__container > section p {
+  margin: 0;
+  font-family: "Noto Sans JP", sans-serif;
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 1.85;
+  color: #333333;
+}
+
+.page-privacy-policy .privacy-policy__container > p:last-child {
+  margin-top: 40px;
+}
+
+@media (max-width: 768px) {
+  .page-privacy-policy .contact-form {
+    padding-top: 88px;
+  }
+
+  .page-privacy-policy .contact-form__container {
+    padding: 36px 24px;
+  }
+
+  .page-privacy-policy .contact-form__title {
+    font-size: 32px;
+  }
+
+  .page-privacy-policy .contact-form__subtitle {
+    font-size: 14px;
+  }
+
+  .page-privacy-policy .contact-form__intro {
+    margin-bottom: 32px;
+    font-size: 14px;
+    line-height: 1.8;
+  }
+
+  .page-privacy-policy .privacy-policy__container > section {
+    margin-top: 22px;
+  }
+
+  .page-privacy-policy .privacy-policy__container > section h2 {
+    font-size: 17px;
+    line-height: 1.6;
+  }
+
+  .page-privacy-policy .privacy-policy__container > section p {
+    font-size: 14px;
+    line-height: 1.8;
+  }
+
+  .page-privacy-policy .privacy-policy__container > p:last-child {
+    margin-top: 32px;
+  }
+}

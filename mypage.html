@@ -1,0 +1,251 @@
+﻿<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>inimu | My Page</title>
+  <meta name="description" content="香水ワークショップ inimu のマイページ（デモ表示）" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Noto+Sans+JP:wght@400;500;700&family=Playfair+Display:ital,wght@0,600;1,500;1,600&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
+  <link rel="stylesheet" href="./styles.css?v=20260327-1" />
+  <link rel="stylesheet" href="./reservation.css?v=20260327-1" />
+</head>
+
+<body class="page-reservation page-mypage">
+  <header class="workshop-header">
+    <div class="workshop-header__shell">
+      <div class="workshop-header__panel">
+        <div class="workshop-header__bar">
+          <button class="workshop-header__menu" type="button" aria-label="メニュー">
+            <span class="workshop-header__menu-line"></span>
+            <span class="workshop-header__menu-line"></span>
+            <span class="workshop-header__menu-line"></span>
+            <span class="workshop-header__menu-open-icon material-symbols-outlined">menu</span>
+            <span class="workshop-header__menu-label">Menu</span>
+            <span class="workshop-header__menu-close-icon material-symbols-outlined">close</span>
+            <span class="workshop-header__menu-close-label">Close</span>
+          </button>
+
+          <a class="workshop-header__logo" href="./index.html" aria-label="nana ホーム">
+            <img class="workshop-header__logo-image" src="./assets/logo-nana.svg" alt="nana" />
+          </a>
+
+          <a class="workshop-header__icon" href="./reservation.html" aria-label="予約">
+            <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false" class="workshop-header__icon-svg">
+              <rect x="3.5" y="4.5" width="17" height="16" rx="1.5"></rect>
+              <path d="M7 2.5V6"></path>
+              <path d="M17 2.5V6"></path>
+              <path d="M3.5 8.5H20.5"></path>
+              <path d="M8 13l2.2 2.2L16 9.8"></path>
+            </svg>
+            <span class="workshop-header__icon-label">Reserve</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <aside class="reservation-sidebar">
+    <nav class="reservation-sidebar__nav">
+      <ul class="reservation-sidebar__list">
+        <li><a href="./index.html">トップページ</a></li>
+        <li><a href="./course.html">コース</a></li>
+        <li><a href="./reservation.html">予約</a></li>
+        <li><a href="./reservation.html#access">アクセス</a></li>
+      </ul>
+    </nav>
+  </aside>
+  <div class="reservation-sidebar-overlay"></div>
+
+  <main class="mypage" id="main-content">
+    <section class="reservation-main" aria-labelledby="mypage-title">
+      <div class="reservation-main__container">
+        <header class="reservation-main__header">
+          <h1 class="reservation-main__title" id="mypage-title">MY PAGE</h1>
+          <div class="reservation-main__subhead" aria-label="ご予約とご利用情報のご案内">
+            <span class="reservation-main__line" aria-hidden="true"></span>
+            <p class="reservation-main__subtitle">ご予約とご利用情報のご案内</p>
+            <span class="reservation-main__line" aria-hidden="true"></span>
+          </div>
+        </header>
+
+        <section class="mypage-section" aria-labelledby="mypage-profile-title">
+          <h2 id="mypage-profile-title">プロフィール</h2>
+          <dl>
+            <div>
+              <dt>お名前</dt>
+              <dd>山田 花子</dd>
+            </div>
+            <div>
+              <dt>メールアドレス</dt>
+              <dd>
+                <span class="mypage-sensitive-wrap">
+                  <span class="mypage-sensitive" id="mypage-email" data-masked="hanako.ya***@example.com" data-full="hanako.yamada@example.com">hanako.ya***@example.com</span>
+                  <button class="mypage-reveal" type="button" data-target="mypage-email" data-state="masked" aria-expanded="false">確認する</button>
+                </span>
+              </dd>
+            </div>
+            <div>
+              <dt>電話番号</dt>
+              <dd>
+                <span class="mypage-sensitive-wrap">
+                  <span class="mypage-sensitive" id="mypage-phone" data-masked="090-****-5678" data-full="090-1234-5678">090-****-5678</span>
+                  <button class="mypage-reveal" type="button" data-target="mypage-phone" data-state="masked" aria-expanded="false">確認する</button>
+                </span>
+              </dd>
+            </div>
+            <div>
+              <dt>お好みの香り</dt>
+              <dd>フローラル・シトラス</dd>
+            </div>
+            <div>
+              <dt>お知らせメール受信希望</dt>
+              <dd>希望する</dd>
+            </div>
+          </dl>
+          <p>※デモ表示です。実際の登録情報ではありません。</p>
+        </section>
+
+        <section class="mypage-section" aria-labelledby="mypage-reservation-title">
+          <h2 id="mypage-reservation-title">ご予約内容</h2>
+          <dl>
+            <div>
+              <dt>日付</dt>
+              <dd>2026年5月23日（土）</dd>
+            </div>
+            <div>
+              <dt>時間</dt>
+              <dd>13:00〜15:00</dd>
+            </div>
+            <div>
+              <dt>人数</dt>
+              <dd>2名</dd>
+            </div>
+            <div>
+              <dt>コース</dt>
+              <dd>STANDARD COURSE</dd>
+            </div>
+          </dl>
+          <p><a href="./reservation.html">予約ページへ</a></p>
+        </section>
+
+        <section class="mypage-section" aria-labelledby="mypage-history-title">
+          <h2 id="mypage-history-title">予約履歴</h2>
+          <dl>
+            <div>
+              <dt>参加日</dt>
+              <dd>2026年2月11日（水）</dd>
+            </div>
+            <div>
+              <dt>コース</dt>
+              <dd>SPECIAL COURSE</dd>
+            </div>
+            <div>
+              <dt>人数</dt>
+              <dd>1名</dd>
+            </div>
+            <div>
+              <dt>香りのイメージ</dt>
+              <dd>朝の庭園に差し込むやわらかな光</dd>
+            </div>
+            <div>
+              <dt>使用した香りの例</dt>
+              <dd>ベルガモット</dd>
+            </div>
+          </dl>
+          <p>※過去のご参加例として表示しています。</p>
+        </section>
+
+        <section class="mypage-section" aria-labelledby="mypage-info-title">
+          <h2 id="mypage-info-title">ご案内</h2>
+          <ul>
+            <li>当日は開始10分前を目安にお越しください。</li>
+            <li>日時変更のご相談は、前日までにご連絡いただけますとスムーズです。</li>
+            <li>アクセス詳細は <a href="./reservation.html#access">こちら</a> からご確認いただけます。</li>
+            <li>コース内容の詳細は <a href="./course.html">コースページ</a> にてご案内しています。</li>
+          </ul>
+        </section>
+
+        <section class="mypage-section" aria-labelledby="mypage-contact-title">
+          <h2 id="mypage-contact-title">お問い合わせ</h2>
+          <p>ご不明点やご相談は、下記フォームよりお気軽にご連絡ください。</p>
+          <p><a href="./contact-form.html">お問い合わせフォームへ</a></p>
+        </section>
+      </div>
+    </section>
+  </main>
+
+  <footer class="workshop-footer">
+    <div class="workshop-footer__container">
+      <div class="workshop-footer__links">
+        <div class="workshop-footer__column">
+          <a class="workshop-footer__link" href="./index.html">TOP</a>
+          <a class="workshop-footer__link" href="#">返品について</a>
+          <a class="workshop-footer__link" href="#">プライバシーポリシー</a>
+          <a class="workshop-footer__link" href="#">配送・送料について</a>
+          <a class="workshop-footer__link" href="#">お支払い方法について</a>
+          <a class="workshop-footer__link" href="#">特定商取引法に基づく表記</a>
+        </div>
+        <div class="workshop-footer__column">
+          <a class="workshop-footer__link" href="#">メルマガ登録・解除</a>
+          <a class="workshop-footer__link" href="#">RSS</a>
+          <a class="workshop-footer__link" href="#">ATOM</a>
+        </div>
+        <div class="workshop-footer__column">
+          <a class="workshop-footer__link" href="#">マイアカウント</a>
+          <a class="workshop-footer__link" href="#">会員登録</a>
+          <a class="workshop-footer__link" href="#">ログイン</a>
+          <a class="workshop-footer__link" href="#">カートを見る</a>
+          <a class="workshop-footer__link" href="./contact-form.html">お問い合わせ</a>
+        </div>
+      </div>
+      <p class="workshop-footer__copyright">
+        香りのものづくり STORE POWERED BY KYARAINNOVATE
+      </p>
+    </div>
+  </footer>
+  <script>
+    (function () {
+      const menu = document.querySelector(".workshop-header__menu");
+      document.body.classList.add("is-sidebar-open");
+      if (menu) {
+        menu.addEventListener("click", () => {
+          document.body.classList.toggle("is-sidebar-open");
+        });
+      }
+    })();
+  </script>
+  <script>
+    (function () {
+      const pageRoot = document.querySelector(".page-mypage");
+      if (!pageRoot) return;
+
+      const buttons = pageRoot.querySelectorAll(".mypage-reveal[data-target]");
+      buttons.forEach((button) => {
+        button.addEventListener("click", () => {
+          const targetId = button.getAttribute("data-target");
+          if (!targetId) return;
+
+          const target = pageRoot.querySelector("#" + targetId);
+          if (!target) return;
+
+          const masked = target.getAttribute("data-masked") || "";
+          const full = target.getAttribute("data-full") || "";
+          const isMasked = button.getAttribute("data-state") !== "full";
+
+          target.textContent = isMasked ? full : masked;
+          button.textContent = isMasked ? "隠す" : "確認する";
+          button.setAttribute("data-state", isMasked ? "full" : "masked");
+          button.setAttribute("aria-expanded", isMasked ? "true" : "false");
+        });
+      });
+    })();
+  </script>
+</body>
+
+</html>

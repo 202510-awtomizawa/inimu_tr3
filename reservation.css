@@ -870,3 +870,227 @@
 .page-reservation.is-sidebar-open .workshop-footer {
   margin-left: 224px;
 }
+
+/* mypage: minimal scoped adjustments */
+.page-mypage .reservation-main {
+  padding: 48px 16px 120px;
+}
+
+.page-mypage .reservation-main__container {
+  width: min(100%, 960px);
+}
+
+.page-mypage .reservation-main__header {
+  gap: 16px;
+}
+
+.page-mypage .reservation-main__title {
+  font-size: clamp(40px, 8vw, 64px);
+}
+
+.page-mypage .reservation-main__subtitle {
+  font-size: clamp(14px, 2.4vw, 18px);
+}
+
+.page-mypage .reservation-sidebar__list li:nth-child(3) > a::before {
+  content: none;
+}
+
+.page-mypage .mypage-section {
+  margin-top: 32px;
+  padding: 32px;
+  border: 1px solid rgba(51, 51, 51, 0.2);
+  background: #ffffff;
+}
+
+.page-mypage .mypage-section:first-of-type {
+  margin-top: 56px;
+}
+
+.page-mypage .mypage-section h2 {
+  margin: 0 0 24px;
+  font-family: "Noto Sans JP", sans-serif;
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 1.6;
+  color: #333333;
+}
+
+.page-mypage .mypage-section dl {
+  margin: 0;
+  padding: 0;
+}
+
+.page-mypage .mypage-section dl > div {
+  display: grid;
+  grid-template-columns: 176px 1fr;
+  gap: 16px;
+  padding: 10px 0;
+  border-top: 1px solid rgba(51, 51, 51, 0.16);
+}
+
+.page-mypage .mypage-section dl > div:first-child {
+  border-top: 0;
+  padding-top: 0;
+}
+
+.page-mypage .mypage-section dt,
+.page-mypage .mypage-section dd {
+  margin: 0;
+}
+
+.page-mypage .mypage-section dt {
+  font-family: "Inter", sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.7;
+  letter-spacing: 0.02em;
+  color: #7a7979;
+}
+
+.page-mypage .mypage-section dd {
+  font-family: "Noto Sans JP", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.75;
+  color: #333333;
+}
+
+.page-mypage .mypage-sensitive-wrap {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.page-mypage .mypage-sensitive {
+  font-variant-numeric: tabular-nums;
+}
+
+.page-mypage .mypage-reveal {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: none;
+  cursor: pointer;
+  font-family: "Inter", sans-serif;
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 1.4;
+  color: #7a7979;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.page-mypage .mypage-reveal:hover {
+  color: #de9a81;
+}
+
+.page-mypage .mypage-reveal:focus-visible {
+  outline: 1px solid #de9a81;
+  outline-offset: 2px;
+}
+
+.page-mypage .mypage-section ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.page-mypage .mypage-section li {
+  margin: 0;
+  padding: 10px 0;
+  border-top: 1px solid rgba(51, 51, 51, 0.16);
+  font-family: "Noto Sans JP", sans-serif;
+  font-size: 16px;
+  line-height: 1.75;
+  color: #333333;
+}
+
+.page-mypage .mypage-section li:first-child {
+  border-top: 0;
+  padding-top: 0;
+}
+
+.page-mypage .mypage-section p {
+  margin: 16px 0 0;
+  font-family: "Noto Sans JP", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.75;
+  color: #333333;
+}
+
+.page-mypage #mypage-profile-title + dl + p,
+.page-mypage #mypage-history-title + dl + p {
+  font-size: 14px;
+  color: #7a7979;
+}
+
+.page-mypage .mypage-section a {
+  color: #333333;
+  text-underline-offset: 3px;
+  text-decoration-thickness: 1px;
+  transition: color 0.2s ease;
+}
+
+.page-mypage .mypage-section a:hover {
+  color: #de9a81;
+}
+
+.page-mypage .mypage-section[aria-labelledby="mypage-info-title"] a,
+.page-mypage .mypage-section[aria-labelledby="mypage-contact-title"] a {
+  color: #b7745d;
+  text-decoration-line: underline;
+  text-decoration-color: rgba(183, 116, 93, 0.85);
+  text-decoration-thickness: 1.5px;
+  text-underline-offset: 3px;
+}
+
+.page-mypage .mypage-section[aria-labelledby="mypage-info-title"] a:hover,
+.page-mypage .mypage-section[aria-labelledby="mypage-contact-title"] a:hover {
+  color: #de9a81;
+  text-decoration-color: #de9a81;
+}
+
+.page-mypage .mypage-section[aria-labelledby="mypage-info-title"] a:focus-visible,
+.page-mypage .mypage-section[aria-labelledby="mypage-contact-title"] a:focus-visible {
+  outline: 1px solid #de9a81;
+  outline-offset: 2px;
+}
+
+@media (max-width: 768px) {
+  .page-mypage .reservation-main {
+    padding: 40px 16px 96px;
+  }
+
+  .page-mypage .mypage-section {
+    margin-top: 24px;
+    padding: 24px 20px;
+  }
+
+  .page-mypage .mypage-section:first-of-type {
+    margin-top: 40px;
+  }
+
+  .page-mypage .mypage-section h2 {
+    margin-bottom: 16px;
+    font-size: 20px;
+  }
+
+  .page-mypage .mypage-section dl > div {
+    grid-template-columns: 1fr;
+    gap: 4px;
+    padding: 8px 0;
+  }
+
+  .page-mypage .mypage-section dt {
+    font-size: 13px;
+  }
+
+  .page-mypage .mypage-section dd,
+  .page-mypage .mypage-section li,
+  .page-mypage .mypage-section p {
+    font-size: 15px;
+  }
+}
