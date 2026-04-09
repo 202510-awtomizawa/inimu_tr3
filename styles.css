@@ -2152,6 +2152,14 @@ body.page-workshop:not(.page-course) .workshop-course__card-title {
   text-align: center;
 }
 
+.reservation-entry__choices a {
+  transition: color 0.2s ease;
+}
+
+.reservation-entry__choices a:hover {
+  color: #de9a81;
+}
+
 @media (max-width: 768px) {
   .page-privacy-policy .contact-form {
     padding-top: 88px;
