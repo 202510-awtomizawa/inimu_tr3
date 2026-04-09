@@ -39,5 +39,22 @@
       </div>
     </section>
   </main>
+<script>
+  (function () {
+    const form = document.querySelector(".contact-form__form");
+    if (!form) return;
+
+    const params = new URLSearchParams(window.location.search);
+    const date = params.get("date");
+    const course = params.get("course");
+
+    if (!date && !course) return;
+
+    const nextParams = new URLSearchParams();
+    if (date) nextParams.set("date", date);
+    if (course) nextParams.set("course", course);
+    form.action = `./reservation-form.html?${nextParams.toString()}`;
+  })();
+</script>
 </body>
 </html>

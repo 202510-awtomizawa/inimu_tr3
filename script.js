@@ -34,7 +34,7 @@ document.addEventListener("click", (event) => {
   const selectedDate = availableCell.getAttribute("data-date");
   const selectedCourse = availableCell.classList.contains("calendar-cell--special") ? "special" : "standard";
   if (!selectedDate) return;
-  window.location.href = `./reservation-form.html?date=${encodeURIComponent(selectedDate)}&course=${encodeURIComponent(selectedCourse)}`;
+  window.location.href = `./reservation-entry.html?date=${encodeURIComponent(selectedDate)}&course=${encodeURIComponent(selectedCourse)}`;
 });
 
 document.addEventListener("DOMContentLoaded", () => {
