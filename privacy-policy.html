@@ -1,0 +1,85 @@
+﻿<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>inimu | Privacy Policy</title>
+  <meta name="description" content="香水ワークショップ inimu のプライバシーポリシー" />
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body class="page-contact page-privacy-policy">
+  <main class="contact-form privacy-policy" id="main-content">
+    <section class="contact-form__section privacy-policy__section" aria-labelledby="privacy-policy-title">
+      <div class="contact-form__container privacy-policy__container">
+        <header class="contact-form__header privacy-policy__header">
+          <h1 class="contact-form__title" id="privacy-policy-title">PRIVACY POLICY</h1>
+          <p class="contact-form__subtitle">プライバシーポリシー</p>
+        </header>
+
+        <p class="contact-form__intro" id="privacy-policy-intro">
+          香水ワークショップ inimu では、お問い合わせ時にお預かりする情報を、
+          ご案内とご連絡のために適切に取り扱います。
+        </p>
+
+        <section aria-labelledby="privacy-collected-title">
+          <h2 id="privacy-collected-title">1. 取得する情報</h2>
+          <p>お問い合わせフォームでは、お名前、メールアドレス、お問い合わせ内容などをご入力いただきます。</p>
+        </section>
+
+        <section aria-labelledby="privacy-purpose-title">
+          <h2 id="privacy-purpose-title">2. 利用目的</h2>
+          <p>お預かりした情報は、お問い合わせへの回答、ご連絡、必要なご案内のために使用します。</p>
+        </section>
+
+        <section aria-labelledby="privacy-thirdparty-title">
+          <h2 id="privacy-thirdparty-title">3. 第三者提供について</h2>
+          <p>法令に基づく場合を除き、ご本人の同意なく第三者へ提供することはありません。</p>
+        </section>
+
+        <section aria-labelledby="privacy-management-title">
+          <h2 id="privacy-management-title">4. 情報の管理について</h2>
+          <p>お預かりした情報は、漏えい・紛失・不正アクセスなどを防ぐため、適切な方法で管理します。</p>
+        </section>
+
+        <section aria-labelledby="privacy-disclosure-title">
+          <h2 id="privacy-disclosure-title">5. 開示・訂正等について</h2>
+          <p>ご本人からの開示、訂正、削除等のご希望がある場合は、内容を確認のうえ適切に対応します。</p>
+        </section>
+
+        <section aria-labelledby="privacy-update-title">
+          <h2 id="privacy-update-title">6. 改定について</h2>
+          <p>本ポリシーは、必要に応じて見直し・改定することがあります。改定後は本ページに掲載します。</p>
+        </section>
+
+        <section aria-labelledby="privacy-lastupdate-title">
+          <h2 id="privacy-lastupdate-title">7. 最終更新日</h2>
+          <p>2026年4月9日</p>
+        </section>
+
+        <p><a href="./contact-form.html" id="privacy-back-link" data-fallback="./contact-form.html">前のページへ戻る</a></p>
+      </div>
+    </section>
+  </main>
+  <script>
+    (function () {
+      const backLink = document.getElementById("privacy-back-link");
+      if (!backLink) return;
+
+      backLink.addEventListener("click", function (event) {
+        event.preventDefault();
+        const fallback = backLink.getAttribute("data-fallback") || "./contact-form.html";
+
+        if (window.history.length > 1) {
+          window.history.back();
+          window.setTimeout(function () {
+            window.location.href = fallback;
+          }, 800);
+          return;
+        }
+
+        window.location.href = fallback;
+      });
+    })();
+  </script>
+</body>
+</html>
