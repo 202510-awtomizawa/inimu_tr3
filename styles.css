@@ -2149,6 +2149,7 @@ body.page-workshop:not(.page-course) .workshop-course__card-title {
 
 .page-privacy-policy .privacy-policy__container > p:last-child {
   margin-top: 40px;
+  text-align: center;
 }
 
 @media (max-width: 768px) {

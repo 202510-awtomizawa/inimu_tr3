@@ -1,0 +1,57 @@
+﻿<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>inimu | Sign Up</title>
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body class="page-contact">
+  <main class="contact-form" id="main-content">
+    <section class="contact-form__section" aria-labelledby="register-form-title">
+      <div class="contact-form__container">
+        <header class="contact-form__header">
+          <h1 class="contact-form__title" id="register-form-title">SIGN UP</h1>
+          <p class="contact-form__subtitle">会員登録</p>
+        </header>
+
+        <p class="contact-form__intro" id="register-form-intro">
+          ワークショップのご案内を受け取りたい方向けの会員登録フォームです。<br />
+          下記項目をご入力ください。
+        </p>
+
+        <form class="contact-form__form" action="./register-complete.html" method="get" aria-describedby="register-form-intro">
+          <div class="contact-form__field">
+            <label class="contact-form__label" for="register-name">お名前 <span class="contact-form__required-text">必須</span></label>
+            <input class="contact-form__input" id="register-name" name="name" type="text" autocomplete="name" required />
+          </div>
+
+          <div class="contact-form__field">
+            <label class="contact-form__label" for="register-email">メールアドレス <span class="contact-form__required-text">必須</span></label>
+            <input class="contact-form__input" id="register-email" name="email" type="email" autocomplete="email" required />
+          </div>
+
+          <div class="contact-form__field">
+            <label class="contact-form__label" for="register-password">パスワード <span class="contact-form__required-text">必須</span></label>
+            <input class="contact-form__input" id="register-password" name="password" type="password" autocomplete="new-password" required />
+          </div>
+
+          <div class="contact-form__field">
+            <label class="contact-form__label" for="register-password-confirm">パスワード（確認） <span class="contact-form__required-text">必須</span></label>
+            <input class="contact-form__input" id="register-password-confirm" name="password-confirm" type="password" autocomplete="new-password" required />
+          </div>
+
+          <div class="contact-form__field contact-form__field--consent">
+            <label class="contact-form__checkbox-label" for="register-consent">
+              <input class="contact-form__checkbox" id="register-consent" name="consent" type="checkbox" required />
+              <span><a href="./privacy-policy.html">プライバシーポリシー</a>に同意する <span class="contact-form__required-text">必須</span></span>
+            </label>
+          </div>
+
+          <button class="contact-form__submit" type="submit">登録する</button>
+        </form>
+      </div>
+    </section>
+  </main>
+</body>
+</html>
