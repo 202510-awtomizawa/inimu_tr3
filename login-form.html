@@ -1,0 +1,43 @@
+﻿<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>inimu | Log In</title>
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body class="page-contact">
+  <main class="contact-form" id="main-content">
+    <section class="contact-form__section" aria-labelledby="login-form-title">
+      <div class="contact-form__container">
+        <header class="contact-form__header">
+          <h1 class="contact-form__title" id="login-form-title">LOG IN</h1>
+          <p class="contact-form__subtitle">ログイン</p>
+        </header>
+
+        <p class="contact-form__intro" id="login-form-intro">
+          マイページ（デモ表示）をご覧いただくためのログイン画面です。
+        </p>
+
+        <form class="contact-form__form" action="./mypage.html" method="get" aria-describedby="login-form-intro">
+          <div class="contact-form__field">
+            <label class="contact-form__label" for="login-email">メールアドレス <span class="contact-form__required-text">必須</span></label>
+            <input class="contact-form__input" id="login-email" name="email" type="email" autocomplete="email" required />
+          </div>
+
+          <div class="contact-form__field">
+            <label class="contact-form__label" for="login-password">パスワード <span class="contact-form__required-text">必須</span></label>
+            <input class="contact-form__input" id="login-password" name="password" type="password" autocomplete="current-password" required />
+          </div>
+
+          <button class="contact-form__submit" type="submit">ログインする</button>
+        </form>
+
+        <p class="contact-form__intro">
+          <a href="./register-form.html">会員登録はこちら</a>
+        </p>
+      </div>
+    </section>
+  </main>
+</body>
+</html>
