@@ -23,5 +23,27 @@
       </div>
     </section>
   </main>
+  <script>
+    (function () {
+      const container = document.querySelector(".contact-complete__container");
+      if (!container) return;
+
+      const params = new URLSearchParams(window.location.search);
+      const date = params.get("date");
+      const course = params.get("course");
+      if (!date && !course) return;
+
+      const nextParams = new URLSearchParams();
+      if (date) nextParams.set("date", date);
+      if (course) nextParams.set("course", course);
+
+      const reservationLink = document.createElement("a");
+      reservationLink.className = "contact-complete__back";
+      reservationLink.href = `./reservation-form.html?${nextParams.toString()}`;
+      reservationLink.textContent = "予約を進める";
+      reservationLink.style.marginTop = "16px";
+      container.appendChild(reservationLink);
+    })();
+  </script>
 </body>
 </html>

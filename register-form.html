@@ -58,5 +58,44 @@
       </div>
     </section>
   </main>
+  <script>
+    (function () {
+      const form = document.querySelector(".contact-form__form");
+      if (!form) return;
+      const params = new URLSearchParams(window.location.search);
+      const date = params.get("date");
+      const course = params.get("course");
+      if (date || course) {
+        const nextParams = new URLSearchParams();
+        if (date) nextParams.set("date", date);
+        if (course) nextParams.set("course", course);
+        form.action = `./register-complete.html?${nextParams.toString()}`;
+      }
+
+      const nameInput = document.getElementById("register-name");
+      const telInput = document.getElementById("register-tel");
+      const emailInput = document.getElementById("register-email");
+
+      form.addEventListener("submit", function () {
+        const existingRaw = sessionStorage.getItem("reservationProfile");
+        let existingProfile = {};
+        if (existingRaw) {
+          try {
+            existingProfile = JSON.parse(existingRaw);
+          } catch (error) {
+            existingProfile = {};
+          }
+        }
+
+        const nextProfile = {
+          ...existingProfile,
+          name: nameInput ? nameInput.value.trim() : "",
+          tel: telInput ? telInput.value.trim() : "",
+          email: emailInput ? emailInput.value.trim() : ""
+        };
+        sessionStorage.setItem("reservationProfile", JSON.stringify(nextProfile));
+      });
+    })();
+  </script>
 </body>
 </html>

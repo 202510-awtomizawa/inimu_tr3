@@ -40,12 +40,18 @@
       if (!date && !course) return;
 
       const loginLink = document.querySelector('.reservation-entry__choices a[href*="login-form.html"]');
-      if (!loginLink) return;
+      const registerLink = document.querySelector('.reservation-entry__choices a[href*="register-form.html"]');
+      if (!loginLink && !registerLink) return;
 
       const nextParams = new URLSearchParams();
       if (date) nextParams.set("date", date);
       if (course) nextParams.set("course", course);
-      loginLink.href = `./login-form.html?${nextParams.toString()}`;
+      if (loginLink) {
+        loginLink.href = `./login-form.html?${nextParams.toString()}`;
+      }
+      if (registerLink) {
+        registerLink.href = `./register-form.html?${nextParams.toString()}`;
+      }
     })();
   </script>
 </body>

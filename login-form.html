@@ -43,6 +43,24 @@
   (function () {
     const form = document.querySelector(".contact-form__form");
     if (!form) return;
+    const emailInput = document.getElementById("login-email");
+
+    form.addEventListener("submit", function () {
+      const existingRaw = sessionStorage.getItem("reservationProfile");
+      let existingProfile = {};
+      if (existingRaw) {
+        try {
+          existingProfile = JSON.parse(existingRaw);
+        } catch (error) {
+          existingProfile = {};
+        }
+      }
+      const nextProfile = {
+        ...existingProfile,
+        email: emailInput ? emailInput.value.trim() : ""
+      };
+      sessionStorage.setItem("reservationProfile", JSON.stringify(nextProfile));
+    });
 
     const params = new URLSearchParams(window.location.search);
     const date = params.get("date");

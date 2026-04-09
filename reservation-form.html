@@ -121,5 +121,33 @@
     </section>
   </main>
   <script src="./script.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const storedProfile = sessionStorage.getItem("reservationProfile");
+      if (!storedProfile) return;
+
+      let profile;
+      try {
+        profile = JSON.parse(storedProfile);
+      } catch (error) {
+        return;
+      }
+      if (!profile || typeof profile !== "object") return;
+
+      const nameInput = document.getElementById("customer-name");
+      const telInput = document.getElementById("customer-tel");
+      const emailInput = document.getElementById("customer-email");
+
+      if (nameInput && !nameInput.value.trim() && typeof profile.name === "string") {
+        nameInput.value = profile.name;
+      }
+      if (telInput && !telInput.value.trim() && typeof profile.tel === "string") {
+        telInput.value = profile.tel;
+      }
+      if (emailInput && !emailInput.value.trim() && typeof profile.email === "string") {
+        emailInput.value = profile.email;
+      }
+    });
+  </script>
 </body>
 </html>
