@@ -25,7 +25,7 @@
           <p><span class="contact-form__required-text">or</span></p>
           <p><a href="./register-form.html">会員登録</a></p>
           <hr />
-          <p><a href="./reservation.html">会員登録せずに予約する</a></p>
+          <p><a href="./reservation-form.html">会員登録せずに予約する</a></p>
         </nav>
 
         <p class="contact-form__required-text">※会員登録・ログインは任意です。</p>
@@ -41,7 +41,8 @@
 
       const loginLink = document.querySelector('.reservation-entry__choices a[href*="login-form.html"]');
       const registerLink = document.querySelector('.reservation-entry__choices a[href*="register-form.html"]');
-      if (!loginLink && !registerLink) return;
+      const guestLink = document.querySelector('.reservation-entry__choices a[href*="reservation-form.html"]');
+      if (!loginLink && !registerLink && !guestLink) return;
 
       const nextParams = new URLSearchParams();
       if (date) nextParams.set("date", date);
@@ -51,6 +52,9 @@
       }
       if (registerLink) {
         registerLink.href = `./register-form.html?${nextParams.toString()}`;
+      }
+      if (guestLink) {
+        guestLink.href = `./reservation-form.html?${nextParams.toString()}`;
       }
     })();
   </script>
