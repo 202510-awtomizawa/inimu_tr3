@@ -21,6 +21,8 @@
         </p>
 
         <form class="contact-form__form" action="./register-complete.html" method="get" aria-describedby="register-form-intro">
+          <input type="hidden" id="register-date-param" name="date" />
+          <input type="hidden" id="register-course-param" name="course" />
           <div class="contact-form__field">
             <label class="contact-form__label" for="register-name">お名前 <span class="contact-form__required-text">必須</span></label>
             <input class="contact-form__input" id="register-name" name="name" type="text" autocomplete="name" required />
@@ -65,11 +67,22 @@
       const params = new URLSearchParams(window.location.search);
       const date = params.get("date");
       const course = params.get("course");
-      if (date || course) {
-        const nextParams = new URLSearchParams();
-        if (date) nextParams.set("date", date);
-        if (course) nextParams.set("course", course);
-        form.action = `./register-complete.html?${nextParams.toString()}`;
+      form.action = "./register-complete.html";
+      const dateHidden = document.getElementById("register-date-param");
+      const courseHidden = document.getElementById("register-course-param");
+      if (dateHidden) {
+        if (date) {
+          dateHidden.value = date;
+        } else {
+          dateHidden.disabled = true;
+        }
+      }
+      if (courseHidden) {
+        if (course) {
+          courseHidden.value = course;
+        } else {
+          courseHidden.disabled = true;
+        }
       }
 
       const nameInput = document.getElementById("register-name");

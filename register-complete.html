@@ -40,9 +40,18 @@
       const reservationLink = document.createElement("a");
       reservationLink.className = "contact-complete__back";
       reservationLink.href = `./reservation-form.html?${nextParams.toString()}`;
-      reservationLink.textContent = "予約を進める";
+      reservationLink.textContent = "予約に進む";
       reservationLink.style.marginTop = "16px";
-      container.appendChild(reservationLink);
+      reservationLink.style.borderColor = "#de9a81";
+      reservationLink.style.backgroundColor = "#de9a81";
+      reservationLink.style.color = "#ffffff";
+      const backLink = container.querySelector('.contact-complete__back[href="./index.html"]');
+      if (backLink) {
+        backLink.style.marginTop = "16px";
+        container.insertBefore(reservationLink, backLink);
+      } else {
+        container.appendChild(reservationLink);
+      }
     })();
   </script>
 </body>
